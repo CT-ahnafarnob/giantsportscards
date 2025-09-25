@@ -1,0 +1,231 @@
+{{ 'giantsports.css' | asset_url | stylesheet_tag }}
+{% liquid
+  assign heading_tag  = section.settings.heading_level 
+  assign heading_color =  section.settings.heading_color
+  assign background_color = section.settings.background_color
+  assign banner_1_upper = section.settings.banner_1_upper
+  assign banner_1_lower = section.settings.banner_1_lower
+  assign banner_2_upper = section.settings.banner_2_upper
+  assign banner_2_lower = section.settings.banner_2_lower
+  assign banner_3_upper = section.settings.banner_3_upper
+  assign banner_3_lower = section.settings.banner_3_lower
+%}
+
+<style>
+    
+  .special-features__inner {
+    max-width: 1900px;
+    margin: auto;
+    padding: 40px 20px 20px 20px;
+    background-color: {{background_color}};
+}
+
+.special-features__blocks {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.special-features__blocks a{
+    text-decoration: none;
+} 
+
+.special-features__blocks__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.special-features__blocks__item__content h1, h2, h3, h4, h5, h6 {
+    color: {{heading_color}};
+    line-height:1;
+    font-family: var(--italic-gothic-font) ! important;
+    letter-spacing: 2px ;
+    font-weight: bold ;
+    text-transform: uppercase;
+}
+
+.special-features__blocks__item__content span{
+    color: #00342c;
+}
+
+.special-features__blocks__item__image img{
+    width: 110px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.special-features__blocks__item__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media(max-width: 1100px){
+   .special-features__blocks {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+} 
+}
+
+</style>
+
+<div class="special-features__inner">
+    <div class="special-features__blocks">
+      
+        
+        
+          <a href="">
+        
+        <div class="special-features__blocks__item" style="
+                         background-image: url(//cdn.shopify.com/s/files/1/0607/5393/6592/files/Background_1.avif?v=1758774101); 
+          ">
+          
+            <div class="special-features__blocks__item__image">
+              <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/Layer_1.avif?v=1758774806" alt="" width="200" height="188">
+            </div>
+          
+          <div class="special-features__blocks__item__content">
+          
+             <{{heading_tag}}><span>{{banner_1_upper}}</span><br>{{banner_1_lower}}</{{heading_tag}}>
+          </div>
+        </div>
+        
+          </a>
+        
+      
+        
+        
+          <a href="https://giantsportscards.com/collections/new-releases">
+        
+        <div class="special-features__blocks__item" style="
+                        background-image: url(//cdn.shopify.com/s/files/1/0607/5393/6592/files/Background_1.avif?v=1758774101); 
+          ">
+          
+            <div class="special-features__blocks__item__image">
+              <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/Layer_1_1.avif?v=1758774848" alt="" width="200" height="171">
+            </div>
+          
+          <div class="special-features__blocks__item__content">
+             <{{heading_tag}}><span>{{banner_2_upper}}</span><br>{{banner_2_lower}}</{{heading_tag}}>
+          </div>
+        </div> 
+        
+          </a>
+        
+      
+        
+        
+          <a href="https://giantsportscards.com/policies/shipping-policy">
+        
+        <div class="special-features__blocks__item" style="
+                       background-image: url(//cdn.shopify.com/s/files/1/0607/5393/6592/files/Background_1.avif?v=1758774101); 
+          ">
+          
+            <div class="special-features__blocks__item__image">
+              <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/Layer_1_1.avif?v=1758774848" alt=""  width="200" height="200">
+            </div>
+          
+          <div class="special-features__blocks__item__content" >
+           <{{heading_tag}}><span>{{banner_3_upper}}</span><br>{{banner_3_lower}}</{{heading_tag}}>
+          </div>
+        </div>
+        
+          </a>
+        
+      
+    </div>
+  </div>
+
+
+
+{% schema %}
+    {
+        "name": "Custom Multi-Column",
+        "disabled_on": {
+            "groups": ["footer","header"]
+        },
+        "settings": [
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "Section background color",
+                "default": "#ece8cf"
+            },
+            {
+                "type": "select",
+                "id": "heading_level",
+                "label": "Heading level",
+                "default": "h1",
+                "options":
+                [
+                    { "value": "h1", "label": "H1" },
+                    { "value": "h2", "label": "H2" },
+                    { "value": "h3", "label": "H3" },
+                    { "value": "h4", "label": "H4" },
+                    { "value": "h5", "label": "H5" },
+                    { "value": "h6", "label": "H6" }
+                ]   
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Lower Heading Text color",
+                "default": "#FFFFFF"
+            },
+            {
+                "type": "header",
+                "content": "Banner Text Settings"
+            },
+            {
+                "type": "text",
+                "id": "banner_1_upper",
+                "label": "Banner 1 - Upper Text",
+                "default": "PRE-SALE"
+            },
+            {
+                "type": "text",
+                "id": "banner_1_lower", 
+                "label": "Banner 1 - Lower Text",
+                "default": "CALENDAR"
+            },
+            {
+                "type": "text",
+                "id": "banner_2_upper",
+                "label": "Banner 2 - Upper Text", 
+                "default": "NEW"
+            },
+            {
+                "type": "text",
+                "id": "banner_2_lower",
+                "label": "Banner 2 - Lower Text",
+                "default": "RELEASES"
+            },
+            {
+                "type": "text",
+                "id": "banner_3_upper",
+                "label": "Banner 3 - Upper Text",
+                "default": "FREE SHIPPING"
+            },
+            {
+                "type": "text",
+                "id": "banner_3_lower",
+                "label": "Banner 3 - Lower Text", 
+                "default": "ORDERS $100+"
+            }
+
+        ],
+        "presets": [
+            {
+                "name": "Custom Multi-Column Image Text"
+            }
+              
+        ]
+    }
+{% endschema %}

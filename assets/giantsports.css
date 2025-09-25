@@ -1,0 +1,32 @@
+:root {
+  --italic-gothic-font: "Dharma Gothic E Regular";
+  --regular-gothic-font: "Dharma Gothic E";
+}
+
+@font-face {
+  font-family: "Dharma Gothic E Regular";
+  src: url("https://cdn.shopify.com/s/files/1/0607/5393/6592/files/DharmaGothicE-RegularItalic.woff2?v=1758820769")
+      format("woff2"),
+    url("https://cdn.shopify.com/s/files/1/0607/5393/6592/files/DharmaGothicE-RegularItalic.woff?v=1758820747")
+      format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Dharma Gothic E";
+  src: url("https://cdn.shopify.com/s/files/1/0607/5393/6592/files/DharmaGothicE-Regular.woff2?v=1758820770")
+      format("woff2"),
+    url("https://cdn.shopify.com/s/files/1/0607/5393/6592/files/DharmaGothicE-Regular.woff?v=1758820771")
+      format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.custom-page-width {
+  margin: auto;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
