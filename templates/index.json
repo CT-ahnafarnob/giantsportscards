@@ -27,6 +27,7 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "settings": {
         "collection": "all",
         "products_to_show": 8,
@@ -52,10 +53,26 @@
         "padding_top": 44,
         "padding_bottom": 36
       }
+    },
+    "giantsports_multicolumn_text_image_M7AJch": {
+      "type": "giantsports-multicolumn-text-image",
+      "name": "Custom Multi-Column Image Text",
+      "settings": {
+        "background_color": "#ece8cf",
+        "heading_level": "h1",
+        "heading_color": "#FFFFFF",
+        "banner_1_upper": "PRE-SALE",
+        "banner_1_lower": "CALENDAR",
+        "banner_2_upper": "NEW",
+        "banner_2_lower": "RELEASES",
+        "banner_3_upper": "FREE SHIPPING",
+        "banner_3_lower": "ORDERS $100+"
+      }
     }
   },
   "order": [
     "image_banner",
-    "featured_collection"
+    "featured_collection",
+    "giantsports_multicolumn_text_image_M7AJch"
   ]
 }
