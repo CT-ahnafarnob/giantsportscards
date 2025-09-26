@@ -1,0 +1,107 @@
+{% liquid
+    assign heading_tag = section.settings.heading_level | default: 'h2'
+    assign heading = section.settings.heading
+    assign heading_color = section.settings.heading_color
+%}  
+
+<style>
+    .{{section.id}} {
+        margin:auto;
+        padding:0
+    }
+    .main_container_grid_image{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        justify-items: center;
+        gap: 20px;
+        box-sizing: border-box;
+        margin: auto;
+    }
+</style>
+<section class="{{section.id}} custom-page-width">
+    <div class="main_container">
+
+        {% comment %} Heading {% endcomment %}
+        <div class="main_container_heading">
+             {% if heading_tag != blank %}
+                    <{{heading_tag}}>{{heading}}</{{heading_tag}}>
+                   {% else %}
+                     <h2>{{heading}}</h2>
+                {% endif %}
+        </div>
+
+        {% comment %} Image Grid {% endcomment %}
+        <div class="main_container_grid_image">
+            {% for block in section.blocks %}
+                {% if block.settings.image!=blank %}
+                        <img src="{{ block.settings.image | image_url }}" alt="" width="500" height="300">
+                    {% else %}
+                        <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/New-Releases_540x_9c595ef7-5c1b-4ac1-b019-ee26b20ce629.webp?v=1758849998" 
+                        alt="image" width="480" height="300">
+                {% endif %} 
+            {% endfor %}
+        </div>
+
+
+    </div>
+</section>
+
+{% schema %}
+    {
+        "name": "Custom Grid",
+        "disabled_on": {
+            "groups": ["header","footer"]
+        },
+        "settings": [
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Write Heading",
+                "default":"Unbox Your Love of the Game™ at Our Sports Card Store"
+            },
+            {
+                "type": "select",
+                "id": "heading_level",
+                "label": "Heading level",
+                "default": "h2",
+                "options": 
+                [
+                    { "value": "h1", "label": "H1" },
+                    { "value": "h2", "label": "H2" },
+                    { "value": "h3", "label": "H3" },
+                    { "value": "h4", "label": "H4" },
+                    { "value": "h5", "label": "H5" },
+                    { "value": "h6", "label": "H6" }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading color",
+                "default":"#00342c"
+            }
+        ],
+        "blocks": [
+            {
+                "type": "image_block",
+                "name": "image Block",
+                "settings": [
+                    {
+                        "type": "image_picker",
+                        "id": "image",
+                        "label": "Add Image"
+                    }
+                ]
+
+            }
+        ],
+        "max_blocks": 12,
+        "presets": [
+            {
+                "name": "Custom Grid",
+                "category": "Custom Section"
+            }
+        ]
+    }
+{% endschema %}
