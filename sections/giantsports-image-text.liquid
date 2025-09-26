@@ -6,14 +6,14 @@
   assign rich_text_color = section.settings.rich_text_color
   assign background_color = section.settings.background_color
   assign content = section.settings.content 
+  assign font_size = section.settings.font_size
 %}
 <style>
     .{{section.id}} {
         background-color: {{background_color}};
+        
     }
     .{{section.id}} .container{
-        max-width: 1900px;
-        margin: auto;
         padding: 5rem 5rem 5rem 10rem;
         overflow: hidden;
 
@@ -30,20 +30,26 @@
     .{{section.id}} .container__content h1, h2, h3, h4, h5, h6 {
         color: {{heading_color}};
         line-height:1;
-        font-family: var(--italic-gothic-font) ! important;
+        font-family: var(--gothic-font) ! important;
         letter-spacing: 2px ;
-        font-weight: bold ;
+        font-weight: bold;
+        font-style:italic;
         text-transform: uppercase;
     } 
     .{{section.id}} .container__content p {
         color: {{rich_text_color}};
         font-family: var(--regular-arialMT-font) ! important;
-        font-size: 16px;
+        font-size: {{font_size}}px;
         line-height:27px;
         word-wrap: break-word;
         word-break: break-word;
         white-space: normal;
+    }
 
+    .{{section.id}} .container__image img{
+        width: 100%;  
+        height: auto; 
+        max-width: 600px;
     }
 
 @media (max-width: 1000px) {
@@ -80,15 +86,15 @@
 }
 
 </style>
-<section class="{{section.id}} custom-page-width">
-    <div class="container">
+<section class="{{section.id}}">
+    <div class="container custom-page-width">
         {% comment %} Image {% endcomment %}
         <div class="container__image">
             {% if section.settings.image != blank %}
-               <img src="{{ section.settings.image | image_url }}" alt="" width="600" height="300">
+               <img src="{{ section.settings.image | image_url }}" alt="" width="600" height="350">
                 {% else %}
                     <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/sports-card-collectors_1080x_fe480732-f97d-4277-aacc-4f1f65166440.webp?v=1758842098" 
-                    alt="image" width="600" height="300">
+                    alt="image" width="600" height="350">
             {% endif %}    
         </div>
          {% comment %} Heading {% endcomment %}
@@ -99,7 +105,7 @@
                      <h2>{{heading}}</h2>
                 {% endif %}
                 {% comment %} content {% endcomment %}
-             <div class="">
+             <div class="text">
                 {% if content != blank %}
                    <p>{{content}}</p> 
                 {% endif %}
@@ -160,6 +166,16 @@
                 "label": "Write Description",
                 "default":"<p>Giant Sports Cards understands the needs of today’s collectors. In addition to selling online, we have a sports card shop near Atlanta: the Ultimate Collector’s Cave™! Whether you’re a fan of basketball, football, baseball, soccer, or another sport, we offer all of the newest sports card releases to appeal to a wide range of sports enthusiasts! Our vast inventory of card boxes and cases make it easy for you to find what you need to build your collection. With a focus on stellar products, unmatched integrity, and keeping the passion of collecting alive, Giant Sports Cards is your go-to sports card store for all your favorite sports card boxes and cases. Ready to dive into the action? Let’s go!</p>"
 
+            },
+            {
+                "type": "range",
+                "id": "font_size",
+                "min": 12,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Font size",
+                "default": 16
             },
             {
                 "type": "color",

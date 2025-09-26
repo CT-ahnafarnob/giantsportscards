@@ -1,30 +1,130 @@
+{{ 'giantsports.css' | asset_url | stylesheet_tag }}
 {% liquid
     assign heading_tag = section.settings.heading_level | default: 'h2'
     assign heading = section.settings.heading
     assign heading_color = section.settings.heading_color
+    assign background_color = section.settings.background_color
 %}  
 
 <style>
     .{{section.id}} {
-        margin:auto;
-        padding:0
+        background-color: {{background_color}};
+        
     }
-    .main_container_grid_image{
+    .{{section.id}} .main_container{
+        padding: 40px !important;
+    }
+    .{{section.id}} .main_container__heading h1, h2, h3, h4, h5, h6 {
+        color: {{heading_color}};
+        line-height:1;
+        font-family: var(--gothic-font) ! important;
+        letter-spacing: 2px ;
+        font-weight: bold;
+        font-style:normal;
+        text-transform: uppercase;
+    } 
+    .{{section.id}} .main_container__grid{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        align-items: center;
-        justify-items: center;
         gap: 20px;
         box-sizing: border-box;
-        margin: auto;
+        justify-content: center;  
     }
+
+    .{{section.id}} .main_container_grid__items{
+        transition: transform 0.5s ease; 
+        /* transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); */
+        position: relative;
+    }
+    
+    .{{section.id}} .main_container_grid__items:hover {
+        transform: scale(1.05);
+    }
+    
+    .{{section.id}} .main_container_grid__items::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 20px; 
+        z-index: 1; 
+        transition: background-color 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);; 
+    }
+    .{{section.id}} .main_container_grid__items:hover::after {
+        background-color: rgba(0, 0, 0, 0.3); 
+        z-index: 2;
+    }
+    .{{section.id}} .main_container_grid__image {
+        width: 100%;  
+         min-height: 300px;
+        max-width: 500px; 
+        object-fit: cover;
+    }
+    .main_container_grid__text{
+        position: absolute;
+        bottom: 0;
+        z-index: 3;
+        width: 100%;
+        background-color: #28675c;
+        min-height: 40px;
+    }
+    .main_container_grid__text h3{
+        font-family: var(--gothic-font);
+        font-style: normal;
+        line-height: 20px;
+        text-transform: uppercase;
+        font-weight: 400;
+        color: #ffffff;
+        padding: 0 20px;
+    }
+
+@media (max-width: 768px) {
+        .{{section.id}} .main_container{
+            padding: 20px !important;
+        }
+        
+        .{{section.id}} .main_container__grid{
+            grid-template-columns: 1fr 1fr; 
+            gap: 10px; 
+        }
+       
+        .{{section.id}} .main_container_grid__image {
+            height: 170px; 
+            min-height: auto;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .main_container_grid__text{
+            min-height: 42px;
+         }
+
+        .main_container_grid__text h3{
+            line-height: 15px;
+            padding: 0px 5px; 
+        }
+
+        .{{section.id}} .main_container_grid__items::after {
+            display: none; 
+        }
+  
+    }
+@media (max-width: 509px) {
+.{{section.id}} .main_container_grid__image {          
+            object-fit: contain;
+          
+        }
+}
+
+   
 </style>
-<section class="{{section.id}} custom-page-width">
-    <div class="main_container">
+<section class="{{section.id}} ">
+    <div class="main_container custom-page-width">
 
         {% comment %} Heading {% endcomment %}
-        <div class="main_container_heading">
-             {% if heading_tag != blank %}
+        <div class="main_container__heading" >
+             {% if heading_tag != blank and heading != blank %}
                     <{{heading_tag}}>{{heading}}</{{heading_tag}}>
                    {% else %}
                      <h2>{{heading}}</h2>
@@ -32,18 +132,28 @@
         </div>
 
         {% comment %} Image Grid {% endcomment %}
-        <div class="main_container_grid_image">
+        <div class="main_container__grid">
             {% for block in section.blocks %}
-                {% if block.settings.image!=blank %}
-                        <img src="{{ block.settings.image | image_url }}" alt="" width="500" height="300">
-                    {% else %}
-                        <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/New-Releases_540x_9c595ef7-5c1b-4ac1-b019-ee26b20ce629.webp?v=1758849998" 
-                        alt="image" width="480" height="300">
-                {% endif %} 
+               {% liquid
+                assign product_name = block.settings.product_name
+                assign text_alignment = block.settings.text_alignment
+                assign product_url = block.settings.product_url
+                assign font_size = block.settings.font_size
+               %}
+                <a href="{{product_url}}" class="main_container_grid__items">
+                    {% if block.settings.grid_image != blank %}
+                            <img class="main_container_grid__image" src="{{ block.settings.grid_image | image_url }}" alt="" width="500" height="300">
+                            {% else %}
+                                <img class="main_container_grid__image" src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/New-Releases_540x_9c595ef7-5c1b-4ac1-b019-ee26b20ce629.webp?v=1758849998" 
+                                alt="image" width="480" height="300">
+                    {% endif %} 
+                    <div class="main_container_grid__text" style="text-align: {{ text_alignment }}">
+                        <h3 style= "font-size: {{font_size}}px"> {{ product_name }} </h3>
+                    </div> 
+                </a>
             {% endfor %}
+            
         </div>
-
-
     </div>
 </section>
 
@@ -54,6 +164,12 @@
             "groups": ["header","footer"]
         },
         "settings": [
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "Section background color",
+                "default":"#ffffff"
+            },
             {
                 "type": "text",
                 "id": "heading",
@@ -89,11 +205,52 @@
                 "settings": [
                     {
                         "type": "image_picker",
-                        "id": "image",
+                        "id": "grid_image",
                         "label": "Add Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "product_name",
+                        "label": "Add Product Name",
+                        "default":"Baseball Cards"
+
+                    },
+                    {
+                        "type": "range",
+                        "id": "font_size",
+                        "min": 12,
+                        "max": 20,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Font size",
+                        "default": 16
+                    },
+                    {
+                        "type": "select",
+                        "id": "text_alignment",
+                        "label": "Text alignment",
+                        "options": [
+                            {
+                                "value": "left",
+                                "label": "Left"
+                            },
+                            {
+                                "value": "center",
+                                "label": "Center"
+                            },
+                            {
+                                "value": "right",
+                                "label": "Right"
+                            }
+                        ],
+                        "default": "center"
+                    },
+                    {
+                        "type": "url",
+                        "id": "product_url",
+                        "label": "Add Product Link"
                     }
                 ]
-
             }
         ],
         "max_blocks": 12,
