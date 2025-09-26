@@ -60,7 +60,7 @@
       "settings": {
         "background_color": "#ece8cf",
         "heading_level": "h1",
-        "heading_color": "#FFFFFF",
+        "heading_color": "#ffffff",
         "banner_1_upper": "PRE-SALE",
         "banner_1_lower": "CALENDAR",
         "banner_2_upper": "NEW",
@@ -68,11 +68,24 @@
         "banner_3_upper": "FREE SHIPPING",
         "banner_3_lower": "ORDERS $100+"
       }
+    },
+    "giantsports_image_text_dhBcy8": {
+      "type": "giantsports-image-text",
+      "name": "Custom Image with Text",
+      "settings": {
+        "background_color": "#ece8cf",
+        "heading": "Unbox Your Love of the Game™ at Our Sports Card Store",
+        "heading_level": "h1",
+        "heading_color": "#00342c",
+        "content": "<p>Giant Sports Cards understands the needs of today’s collectors. In addition to selling online, we have a sports card shop near Atlanta: the Ultimate Collector’s Cave™! Whether you’re a fan of basketball, football, baseball, soccer, or another sport, we offer all of the newest sports card releases to appeal to a wide range of sports enthusiasts! Our vast inventory of card boxes and cases make it easy for you to find what you need to build your collection. With a focus on stellar products, unmatched integrity, and keeping the passion of collecting alive, Giant Sports Cards is your go-to sports card store for all your favorite sports card boxes and cases. Ready to dive into the action? Let’s go!</p>",
+        "rich_text_color": "#00342c"
+      }
     }
   },
   "order": [
     "image_banner",
     "featured_collection",
-    "giantsports_multicolumn_text_image_M7AJch"
+    "giantsports_multicolumn_text_image_M7AJch",
+    "giantsports_image_text_dhBcy8"
   ]
 }
