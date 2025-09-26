@@ -1,0 +1,199 @@
+<section
+  class="custom-rich-blocks"
+  {% if section.settings.background_color != blank %}
+    style="background-color: {{ section.settings.background_color | escape }};"
+  {% endif %}
+  aria-label="{{ section.settings.section_label | default: 'Custom rich blocks' }}"
+>
+<div class="page-width">
+      <div class="custom-rich-blocks__inner">
+    {% if section.blocks.size > 0 %}
+      <div class="custom-rich-blocks__grid">
+        {% for block in section.blocks %}
+          {% assign bid = block.id %}
+          <div class="custom-rich-block custom-rich-block--{{ forloop.index0 }}" id="custom-rich-block-{{ bid }}">
+            <div class="custom-rich-block__content">
+              {%- comment -%}
+                Heading (dynamic level)
+              {%- endcomment -%}
+              {% if block.settings.heading != blank %}
+                {% assign heading_tag = block.settings.heading_level | default: 'h2' %}
+                {% if heading_tag == blank %}{% assign heading_tag = 'h2' %}{% endif %}
+                {% capture heading_style %}
+                  {% if block.settings.heading_color != blank %}color: {{ block.settings.heading_color | escape }};{% endif %}
+                {% endcapture %}
+                <{{ heading_tag }} class="custom-rich-block__heading"
+                  {% if heading_style != blank %} style="{{ heading_style | strip }}" {% endif %}
+                >
+                  {{ block.settings.heading }}
+                </{{ heading_tag }}>
+              {% endif %}
+
+              {%- comment -%}
+                Rich text (output as richtext)
+              {%- endcomment -%}
+              {% if block.settings.rich_text != blank %}
+               
+                <div class="anc-text-col custom-rich-block__text--{{ forloop.index0 }}">
+                  {{ block.settings.rich_text }}
+                  <style>
+                    .custom-rich-block__text--{{ forloop.index0 }} p{
+                        color: {{ block.settings.rich_text_color }};
+                    }
+                </style>
+                </div>
+              {% endif %}
+
+              {%- comment -%}
+                Button (optional)
+              {%- endcomment -%}
+              {% if block.settings.button_label != blank %}
+                <div class="custom-rich-block__actions">
+                  <a
+                    href="{{ block.settings.button_url | default: '#' }}"
+                    class="custom-rich-block__button"
+                    {% if block.settings.button_label != blank %} aria-label="{{ block.settings.button_label }}" {% endif %}
+                  >
+                    {{ block.settings.button_label }}
+                  </a>
+                </div>
+              {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="custom-rich-blocks__empty">
+        <!-- Optional placeholder text shown in theme editor when no blocks exist -->
+        <p>Add blocks to show content here.</p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+  </section>
+
+  <style>
+    .anc-text-col a{
+    color: white;
+    text-decoration: underline;
+    }
+   .custom-rich-blocks__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    padding: 40px;
+}
+
+.custom-rich-blocks__grid h2{
+    font-size: 36px;
+    letter-spacing: -2px;
+}
+
+a.custom-rich-block__button {
+    display: inline-block;
+    color: rgb(194, 17, 17);
+    text-transform: uppercase;
+    font-weight: bold;
+    border: 2px solid;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
+
+.custom-rich-blocks__inner {
+    padding: 60px 0;
+}
+
+.custom-rich-blocks{
+    margin-bottom: 40px;
+    
+}
+
+@media(max-width: 768px){
+    .custom-rich-blocks__grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 10px;
+}
+    .custom-rich-blocks__inner {
+    padding: 20px 0;
+}
+}
+  </style>
+
+  {% schema %}
+  {
+    "name": "Custom Rich Blocks",
+    "settings": [
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "Section background color"
+      },
+      {
+        "type": "text",
+        "id": "section_label",
+        "label": "Section aria label (optional)",
+        "default": "Custom rich blocks"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "rich_block",
+        "name": "Rich Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
+            "type": "select",
+            "id": "heading_level",
+            "label": "Heading level",
+            "default": "h2",
+            "options": [
+              { "value": "h1", "label": "H1" },
+              { "value": "h2", "label": "H2" },
+              { "value": "h3", "label": "H3" },
+              { "value": "h4", "label": "H4" },
+              { "value": "h5", "label": "H5" },
+              { "value": "h6", "label": "H6" }
+            ]
+          },
+          {
+            "type": "color",
+            "id": "heading_color",
+            "label": "Heading color"
+          },
+          {
+            "type": "richtext",
+            "id": "rich_text",
+            "label": "Rich text"
+          },
+          {
+            "type": "color",
+            "id": "rich_text_color",
+            "label": "Rich text color"
+          },
+          {
+            "type": "text",
+            "id": "button_label",
+            "label": "Button label"
+          },
+          {
+            "type": "url",
+            "id": "button_url",
+            "label": "Button URL"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 12,
+    "presets": [
+      {
+        "name": "Custom rich blocks",
+        "category": "Custom Section"
+      }
+    ]
+  }
+  {% endschema %}

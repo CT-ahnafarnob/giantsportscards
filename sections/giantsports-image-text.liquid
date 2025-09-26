@@ -1,0 +1,177 @@
+{{ 'giantsports.css' | asset_url | stylesheet_tag }}
+{% liquid
+  assign heading_tag = section.settings.heading_level | default: 'h2'
+  assign heading = section.settings.heading
+  assign heading_color = section.settings.heading_color
+  assign rich_text_color = section.settings.rich_text_color
+  assign background_color = section.settings.background_color
+  assign content = section.settings.content 
+%}
+<style>
+    .{{section.id}} {
+        max-width: 1900px;
+        margin: auto;
+        padding: 5rem 5rem 5rem 10rem;
+        overflow: hidden;
+        background-color: {{background_color}};
+    }
+    .{{section.id}} .container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        text-align: left;
+        margin: 0px auto;
+    }
+    .container__content {
+        width: 53%;
+    }
+    .{{section.id}} .container__content h1, h2, h3, h4, h5, h6 {
+        color: {{heading_color}};
+        line-height:1;
+        font-family: var(--italic-gothic-font) ! important;
+        letter-spacing: 2px ;
+        font-weight: bold ;
+        text-transform: uppercase;
+    } 
+    .{{section.id}} .container__content p {
+        color: {{rich_text_color}};
+        font-family: var(--regular-arialMT-font) ! important;
+        font-size: 16px;
+        line-height:27px;
+        word-wrap: break-word;
+        word-break: break-word;
+        white-space: normal;
+
+    }
+
+@media (max-width: 1000px) {
+    .{{section.id}} {
+        margin: auto;
+        padding: 2rem;
+    }
+     .{{section.id}} .container{
+        flex-direction: column;
+        margin: 5px;
+       }
+    .container__content {
+        width: 100%;
+    }
+    .container__image {
+        margin: 0 10px;
+    }
+    .container__image img {
+        width: 400px;
+        height: 200px;
+    }
+    .{{section.id}} .container{
+        text-align: center;
+       
+    }
+
+} 
+@media (max-width: 480px) {
+    .container__image img {
+        width: 320px;
+        height: 200px;
+    }
+}
+
+</style>
+<section class="{{section.id}} custom-page-width">
+    <div class="container">
+        {% comment %} Image {% endcomment %}
+        <div class="container__image">
+            {% if section.settings.image != blank %}
+               <img src="{{ section.settings.image | image_url }}" alt="" width="600" height="300">
+                {% else %}
+                    <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/sports-card-collectors_1080x_fe480732-f97d-4277-aacc-4f1f65166440.webp?v=1758842098" 
+                    alt="image" width="600" height="300">
+            {% endif %}    
+        </div>
+         {% comment %} Heading {% endcomment %}
+            <div class="container__content">
+                {% if heading_tag != blank %}
+                    <{{heading_tag}}>{{heading}}</{{heading_tag}}>
+                   {% else %}
+                     <h2>{{heading}}</h2>
+                {% endif %}
+                {% comment %} content {% endcomment %}
+             <div class="">
+                {% if content != blank %}
+                   <p>{{content}}</p> 
+                {% endif %}
+             </div>
+            </div>
+            
+    </div>
+</section>
+{% schema %}
+    {
+        "name": "Custom Image with Text",
+        "disabled_on": {
+            "groups": ["header","footer"]
+        },
+        "settings": 
+        [
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "Section background color",
+                "default":"#ece8cf"
+            },
+            {   
+                "type": "image_picker",
+                "id": "image",
+                "label": "Change Image"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Write Heading",
+                "default":"Unbox Your Love of the Game™ at Our Sports Card Store"
+            },
+            {
+                "type": "select",
+                "id": "heading_level",
+                "label": "Heading level",
+                "default": "h2",
+                "options": 
+                [
+                    { "value": "h1", "label": "H1" },
+                    { "value": "h2", "label": "H2" },
+                    { "value": "h3", "label": "H3" },
+                    { "value": "h4", "label": "H4" },
+                    { "value": "h5", "label": "H5" },
+                    { "value": "h6", "label": "H6" }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading color",
+                "default":"#00342c"
+            },
+            {
+                "type": "richtext",
+                "id": "content",
+                "label": "Write Description",
+                "default":"<p>Giant Sports Cards understands the needs of today’s collectors. In addition to selling online, we have a sports card shop near Atlanta: the Ultimate Collector’s Cave™! Whether you’re a fan of basketball, football, baseball, soccer, or another sport, we offer all of the newest sports card releases to appeal to a wide range of sports enthusiasts! Our vast inventory of card boxes and cases make it easy for you to find what you need to build your collection. With a focus on stellar products, unmatched integrity, and keeping the passion of collecting alive, Giant Sports Cards is your go-to sports card store for all your favorite sports card boxes and cases. Ready to dive into the action? Let’s go!</p>"
+
+            },
+            {
+                "type": "color",
+                "id": "rich_text_color",
+                "label": "Description text color",
+                "default":"#00342c"
+            }
+        ],
+        "presets": [
+            {
+                "name": "Custom Image with Text",
+                "category": "Custom Section"
+            }
+            
+        ]
+    }
+{% endschema %}
