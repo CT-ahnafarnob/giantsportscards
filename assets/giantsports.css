@@ -44,6 +44,7 @@
 .text a {
   color: #00ab5b;
   text-decoration: none;
+  border-bottom: 0.5px solid #00ab5b;
   position: relative;
   display: inline-block;
 }
@@ -52,11 +53,11 @@
   content: "";
   position: absolute;
   width: 0;
-  height: 2px;
+  height: 1px;
   bottom: 0;
   left: 0;
   background-color: #00ab5b;
-  transition: width 0.3s ease;
+  transition: width 0.5s ease;
 }
 
 a:hover::after {
