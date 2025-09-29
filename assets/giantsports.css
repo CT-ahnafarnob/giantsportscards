@@ -42,7 +42,7 @@
 }
 
 .text a {
-  color: yellowgreen;
+  color: #00ab5b;
   text-decoration: none;
   position: relative;
   display: inline-block;
@@ -55,7 +55,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: yellowgreen;
+  background-color: #00ab5b;
   transition: width 0.3s ease;
 }
 
