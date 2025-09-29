@@ -10,11 +10,13 @@
     assign heading_3 = section.settings.heading_3
     assign heading_tag = section.settings.heading_level
     assign heading_color = section.settings.heading_color
+    assign heading_text_alignment = section.settings.heading_text_alignment 
     assign content_1 = section.settings.content_1
     assign content_2 = section.settings.content_2
     assign content_3 = section.settings.content_3
     assign font_size =section.settings.font_size
     assign text_alignment = section.settings.text_alignment
+    assign content_color = section.settings.content_color
    
 %}
 
@@ -30,9 +32,21 @@
         justify-content: center;
         justify-content: space-between;
         align-items: center;
-        
     }
-
+    .{{section.id}} p {
+        width: 95%;
+        font-family: var(--regular-arialMT-font);
+        text-align: {{ text_alignment }};
+        color: {{content_color}};
+    }
+    .feature_container_columns__icon {
+        text-align: {{icon_alignment}};
+    }
+@media (max-width:768px) {
+    .feature_container__columns{
+        flex-direction: column;
+    }
+}
 
 </style>
 
@@ -41,21 +55,24 @@
     <div class="feature_container custom-page-width">
         <div class="feature_container__columns">
             <div class="feature_container_columns__first">
-                {% if icon_image_1 != blank %}
-                    <img class="feature_container_columns_first__icon" src="{{icon_image_1 | image_url}}" width="" height="" alt="icon_image_1" >
+                <div class="feature_container_columns__icon"> 
+                    {% if icon_image_1 != blank %}
+                        <img src="{{icon_image_1 | image_url}}" width="76" height="72" alt="icon_image_1" >
                     {% else %}
-                        <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/feature-icon_1.png?v=1758933766" width="" height="" alt="icon_image_1">
+                        <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/feature-icon_1.png?v=1758933766" width="76" height="72" alt="icon_image_1">
                 {% endif %}
-                <div class="feature_container_columns_first__header"  style="color: {{ heading_color }};">
+                </div>
+               
+                <div class="feature_container_columns_first__header"  style="color: {{ heading_color }}; text-align:{{heading_text_alignment}}; width:90%;">
                     {% if heading_1 != blank %}
                         <{{heading_tag}}>
                             {{heading_1}}
                         </{{heading_tag}}>
                     {% endif %}
                 </div>
-                <div class="feature_container_columns_first__content" style="text-align: {{ text_alignment }};">
-                    {% if content_1 != blank %}
-                        <p style="font-size: {{ font_size }}px"> {{content_1}} </p>
+                <div class="feature_container_columns_second__content">
+                    {% if content_3 != blank %}
+                        <p style="font-size: {{ font_size }}px"> {{content_3}} </p>
                     {% endif %}
                 </div>
             </div>
@@ -63,20 +80,22 @@
 
 
             <div class="feature_container_columns__second">
+                <div class="feature_container_columns__icon"> 
                       {% if icon_image_2 != blank %}
-                    <img class="feature_container_columns_first__icon" src="{{icon_image_2 | image_url}}" width="" height="" alt="icon_image_1" >
+                    <img class="feature_container_columns__icon" src="{{icon_image_2 | image_url}}" width="76" height="72" alt="icon_image_1" >
                     {% else %}
-                        <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/feature-icon-2.png?v=1758933765" width="" height="" alt="icon_image_1">
+                        <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/feature-icon-2.png?v=1758933765" width="76" height="72" alt="icon_image_1">
                 {% endif %}
-                <div class="feature_container_columns_first__header" style="color: {{ heading_color }};">
+                </div>
+                <div class="feature_container_columns_second__header" style="color: {{ heading_color }}; text-align:{{heading_text_alignment}}; width:90%;">
                     {% if heading_2 != blank %}
                         <{{heading_tag}}>
                             {{heading_2}}
                         </{{heading_tag}}>
                     {% endif %}
                 </div>
-                <div class="feature_container_columns_first__content" style="text-align: {{ text_alignment }};">
-                    {% if content_1 != blank %}
+                <div class="feature_container_columns_second__content">
+                    {% if content_2 != blank %}
                         <p style="font-size: {{ font_size }}px"> {{content_2}} </p>
                     {% endif %}
                 </div>
@@ -86,19 +105,22 @@
 
 
             <div class="feature_container_columns__third">
-                {% if icon_image_3 != blank %}
-                    <img class="feature_container_columns_first__icon" src="{{icon_image_3 | image_url}}" width="" height="" alt="icon_image_1" >
+                <div class="feature_container_columns__icon"> 
+                    {% if icon_image_3 != blank %}
+                        <img class="feature_container_columns__icon" src="{{icon_image_3 | image_url}}" width="76" height="72" alt="icon_image_1" >
                     {% else %}
-                        <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/feature-icon-3..png?v=1758933766" width="" height="" alt="icon_image_1">
+                        <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/feature-icon-3..png?v=1758933766" width="76" height="72" alt="icon_image_1">
                 {% endif %}
-                <div class="feature_container_columns_first__header" style="color: {{ heading_color }};">
+                </div>
+                
+                <div class="feature_container_columns_third__header" style="color: {{ heading_color }}; text-align:{{heading_text_alignment}}; width:90%;">
                     {% if heading_3 != blank %}
                         <{{heading_tag}}>
                             {{heading_3}}
                         </{{heading_tag}}>
                     {% endif %}
                 </div>
-                <div class="feature_container_columns_first__content" style="text-align: {{ text_alignment }};">
+                <div class="feature_container_columns_third__content">
                     {% if content_3 != blank %}
                         <p style="font-size: {{ font_size }}px"> {{content_3}} </p>
                     {% endif %}
@@ -150,7 +172,7 @@
                     "label": "Left"
                     },
                     {
-                    "value": "centered",
+                    "value": "center",
                     "label": "Centered"
                     },
                     {
@@ -159,24 +181,6 @@
                     }
                 ],
                 "default": "left"
-            },
-            {
-                "type": "text",
-                "id": "heading_1",
-                "label": "Add Fist Heading",
-                "default":"Find the Newest Releases"
-            },
-            {
-                "type": "text",
-                "id": "heading_2",
-                "label": "Add Second Heading",
-                "default":"Shop Competitive Prices"
-            },
-            {
-                "type": "text",
-                "id": "heading_3",
-                "label": "Add Third Heading",
-                "default":"GOAT-Level Customer Service"
             },
             {
                 "type": "select",
@@ -200,6 +204,32 @@
                 "default":"#00342c"
             },
             {
+                "type": "select",
+                "id": "heading_text_alignment",
+                "label": "Heading Text Alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "left"
+            },
+            {
+                "type": "text",
+                "id": "heading_1",
+                "label": "Add Fist Heading",
+                "default":"Find the Newest Releases"
+            },
+             {
                 "type": "richtext",
                 "id": "content_1",
                 "label": "Add Fist Content",
@@ -207,10 +237,23 @@
             },
             {
                 "type": "text",
+                "id": "heading_2",
+                "label": "Add Second Heading",
+                "default":"Shop Competitive Prices"
+            },
+            {
+                "type": "text",
                 "id": "content_2",
                 "label": "Add Second Content",
                 "default":"<p>If you’re a collector like us, you’re not only interested in quality and service. You also want a sports card store with deals that improve your investment and make pulling the hottest rookie autos and patch cards that much sweeter. We offer cheap sports cards compared to other stores so you always get the best deals.</p>"
             },
+            {
+                "type": "text",
+                "id": "heading_3",
+                "label": "Add Third Heading",
+                "default":"GOAT-Level Customer Service"
+            },
+           
             {
                 "type": "text",
                 "id": "content_3",
@@ -224,8 +267,14 @@
                 "max": 24,
                 "step": 1,
                 "unit": "px",
-                "label": "Font size",
+                "label": "Content Font size",
                 "default": 16
+            },
+            {
+              "type": "color",
+              "id": "content_color",
+              "label": "Content Text Color",
+              "default": "#243d3f"  
             },
             {
                 "type": "select",
