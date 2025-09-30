@@ -273,6 +273,50 @@
     },
     "giantsports_featured_grid_qnmLBA": {
       "type": "giantsports-featured-grid",
+      "blocks": {
+        "product_block_cJtk4j": {
+          "type": "product_block",
+          "settings": {
+            "product": "brown-watch",
+            "product_title_font_size": 14,
+            "show_button": true,
+            "button_text": "Add to Cart"
+          }
+        },
+        "product_block_kJjidA": {
+          "type": "product_block",
+          "settings": {
+            "product": "blue-scarf",
+            "product_title_font_size": 14,
+            "show_button": true,
+            "button_text": "Add to Cart"
+          }
+        },
+        "product_block_a6QMag": {
+          "type": "product_block",
+          "settings": {
+            "product": "cream-tank",
+            "product_title_font_size": 14,
+            "show_button": true,
+            "button_text": "Add to Cart"
+          }
+        },
+        "product_block_jQzcgw": {
+          "type": "product_block",
+          "settings": {
+            "product": "expensive-electric-guitar",
+            "product_title_font_size": 14,
+            "show_button": true,
+            "button_text": "Add to Cart"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_cJtk4j",
+        "product_block_kJjidA",
+        "product_block_a6QMag",
+        "product_block_jQzcgw"
+      ],
       "name": "Featured Pre-Sales",
       "settings": {
         "background_color": "#ffffff",
@@ -285,8 +329,70 @@
         "content_text_color": "#243d3f",
         "content_text_alignment": "left",
         "btn_url": "",
-        "btn_text": "View",
-        "btn_color": "#00342C"
+        "btn_text": "View All Presales",
+        "btn_color": "#00342c"
+      }
+    },
+    "giantsports_featured_grid_UHJCc3": {
+      "type": "giantsports-featured-grid",
+      "blocks": {
+        "product_block_HGNrip": {
+          "type": "product_block",
+          "settings": {
+            "product": "brown-watch",
+            "product_title_font_size": 14,
+            "show_button": true,
+            "button_text": "Add to Cart"
+          }
+        },
+        "product_block_gX6Wbr": {
+          "type": "product_block",
+          "settings": {
+            "product": "blue-scarf",
+            "product_title_font_size": 14,
+            "show_button": true,
+            "button_text": "Add to Cart"
+          }
+        },
+        "product_block_MVz4bF": {
+          "type": "product_block",
+          "settings": {
+            "product": "cream-tank",
+            "product_title_font_size": 14,
+            "show_button": true,
+            "button_text": "Add to Cart"
+          }
+        },
+        "product_block_ywtWeT": {
+          "type": "product_block",
+          "settings": {
+            "product": "expensive-electric-guitar",
+            "product_title_font_size": 14,
+            "show_button": true,
+            "button_text": "Add to Cart"
+          }
+        }
+      },
+      "block_order": [
+        "product_block_HGNrip",
+        "product_block_gX6Wbr",
+        "product_block_MVz4bF",
+        "product_block_ywtWeT"
+      ],
+      "name": "Sasquatch Series Repacks",
+      "settings": {
+        "background_color": "#ffffff",
+        "heading_level": "h1",
+        "heading_color": "#00342c",
+        "heading_text_alignment": "left",
+        "header_text": "Sasquatch Series Repacks",
+        "content": "<p>Unbox Your Love Of The Game with the all new Sasquatch Series – the hottest repack to ever hit the hobby – exclusively from Giant Sports Cards! Each series is capped at only 100 boxes and is absolutely loaded with incredible value. We’re collectors too and want to ensure everyone gets an awesome card they will love, so countless thousands of cards are reviewed to come up with the final <a href=\"/collections/body\" title=\"Body\">checklist</a> of each series. Will you be one of the lucky ones to find a Sasquatch? Let the chase begin!</p>",
+        "content_font_size": 16,
+        "content_text_color": "#243d3f",
+        "content_text_alignment": "left",
+        "btn_url": "shopify://collections/face",
+        "btn_text": "Shop Sasquatch Series",
+        "btn_color": "#00342c"
       }
     }
   },
@@ -298,6 +404,7 @@
     "giantsports_grid_DkyQhY",
     "giantsports_icon_header_3_column_f9exgH",
     "giantsports_featured_grid_CHJ7Vh",
-    "giantsports_featured_grid_qnmLBA"
+    "giantsports_featured_grid_qnmLBA",
+    "giantsports_featured_grid_UHJCc3"
   ]
 }
