@@ -32,20 +32,20 @@
     .{{section.id}} .Feature_content{
         font-family: var(--regular-arialMT-font) ! important;
     }
-   .Feature_content {
+    .Feature_content {
         display: flex;
         align-items: flex-end; 
         justify-content: space-between;
         gap: 20px; 
         margin-bottom: 40px;
-    }
+    } 
 
     .Feature_content p {
         font-size: {{content_font_size}}px;
         color: {{content_text_color}};
         text-align: {{content_text_alignment}};
         flex: 1;
-        max-width: 60%; 
+        max-width: 90%; 
         margin: 0; 
     }
 
@@ -191,11 +191,28 @@
       min-height: 50px;
       align-items: center;
     }
+    .product-info a {
+      font-size: 12px;
+    }
    
      .pricing {
-      margin:10px;
+      margin:0px;
     }
+
+    .addtocart-button {
+        width: 100%;
+        padding: 2px;
+        font-size: 12px;
     }
+
+    .product-price {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      justify-items: center;
+      text-align: center;
+    }
+  }
 
     @media (max-width: 480px) {
       .product-grid {
@@ -219,8 +236,10 @@
         
         <div class="Feature_content">
             {% if content != blank %}
-                <p class="text">{{content}}</p>
+              <div class="text"> <p>{{content}}</p></div>
+               
             {% endif %}
+          
           {% comment %} button {% endcomment %}
         <div class="cst_button">
             <a href="{{btn_url}}" class="cst_btn">
@@ -275,7 +294,7 @@
             
             <div class="product-price" style="margin: 8px 0; font-size: 15px; text-align:center;color:#ffffff; background-color:#0b4f2f; font-weight: bold;">
               {% if product.compare_at_price > product.price %}
-                <span style="text-decoration: line-through; color: #be1616; margin-right: 8px; font-weight: bold;">
+                <span style="text-decoration: line-through; color: #e65555; margin-right: 8px; font-weight: bold; display:inline;">
                   {{ product.compare_at_price | money }}
                 </span>
                 <span style="color: #ffffff; font-weight: bold;">
