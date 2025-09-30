@@ -1,0 +1,49 @@
+<div class="custom-separator" style="
+  width: 100%; 
+  height: {{ section.settings.separator_height }}px; 
+  background-color: {{ section.settings.separator_color }};
+  margin: {{ section.settings.separator_margin }}px 0;
+">  &nbsp;</div>
+
+{% schema %}
+{
+  "name": "Custom Separator",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "separator_color",
+      "label": "Separator Color",
+      "default": "#e6e7e8"
+    },
+    {
+      "type": "range",
+      "id": "separator_height",
+      "label": "Separator Height",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "separator_margin",
+      "label": "Top/Bottom Spacing",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Separator",
+      "category": "Custom Section"
+    }
+  ]
+}
+{% endschema %}

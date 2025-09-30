@@ -24,6 +24,17 @@
     .{{section.id}} {
         background-color: {{background_color}};
     }
+
+    .{{section.id}} .feature_container h1, h2, h3, h4, h5, h6 {
+        color: {{heading_color}};
+        line-height:1;
+        font-family: var(--gothic-font) ! important;
+        letter-spacing: 2px ;
+        font-weight: bold;
+        font-style:normal;
+        text-transform: uppercase;
+    } 
+
     .feature_container{
         padding: 40px;
     }
@@ -41,6 +52,7 @@
     }
     .feature_container_columns__icon {
         text-align: {{icon_alignment}};
+        width:90%;
     }
 @media (max-width:768px) {
     .feature_container__columns{
@@ -229,7 +241,7 @@
                 "label": "Add Fist Heading",
                 "default":"Find the Newest Releases"
             },
-             {
+            {
                 "type": "richtext",
                 "id": "content_1",
                 "label": "Add Fist Content",

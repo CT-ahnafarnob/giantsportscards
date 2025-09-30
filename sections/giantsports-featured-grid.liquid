@@ -1,0 +1,377 @@
+{% liquid
+    assign background_color = section.settings.background_color
+    assign heading_level = section.settings.heading_level
+    assign heading_color = section.settings.heading_color
+    assign heading_text_alignment = section.settings.heading_text_alignment
+    assign header_text = section.settings.header_text
+    assign content = section.settings.content
+    assign font_size = section.settings.font_size
+    assign content_text_color = section.settings.content_text_color
+    assign content_text_alignment = section.settings.content_text_alignment
+    assign btn_url = section.settings.btn_url
+    assign btn_text = section.settings.btn_text
+    assign btn_color = section.settings.btn_color
+    assign product = section.settings.product
+    
+%}
+
+<style>
+    .{{section.id}} {
+        padding: 40px;
+        background-color: {{background_color}};
+    }
+      .{{section.id}} .featured_header h1, h2, h3, h4, h5, h6 {
+        color: {{heading_color}};
+        line-height:1;
+        font-family: var(--gothic-font) ! important;
+        letter-spacing: 2px ;
+        font-weight: bold;
+        font-style:normal;
+        text-transform: uppercase;
+    }
+    .{{section.id}} .Feature_content{
+        font-family: var(--regular-arialMT-font) ! important;
+    }
+    .upper-part{
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        justify-items: flex-end;
+        align-content: flex-end;
+        margin-bottom: 40px;
+    }   
+
+    .cst_btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        background-color: #12322a;
+        color: #fff;
+        padding: 5px 40px;
+        font-family: var(--gothic-font) ! important;
+        text-transform: uppercase;
+        font-size: 24px;
+        border-radius: 5px;
+
+
+        line-height:1;
+    font-family: var(--gothic-font) ! important;
+    font-style:italic;
+    letter-spacing: 2px ;
+    font-weight: bold ;
+    text-transform: uppercase;
+    }
+    .cst_btn svg:hover{
+        padding-right: 5px ;
+    }
+  
+
+    /* Product */
+    .{{section.id}} .product-grid{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .{{section.id}} .product-grid-item {
+        border: 2px solid black;
+        padding: 10px;
+    }
+    .product-info h3{
+        text-align: center;
+        padding: 0;
+        margin: 0;
+        font-family: var(--regular-arialMT-font) ! important;
+        min-height: 40px;
+    }
+  
+
+
+
+</style>
+<section class="{{section.id}} custom-page-width">
+    <div class="upper-part">
+        <div class="featured_header">
+           {% if header_text != blank %}
+                <{{heading_level}}>
+                    {{header_text}}
+                </{{heading_level}}>
+           {% endif %} 
+                 <div class="Feature_content">
+            {% if content != blank %}
+                <p style="font-size: {{font_size}};">{{content}}</p>
+            {% endif %}
+        </div>   
+        </div> 
+    
+        <div class="cst_button">
+            <a href="{{btn_url}}" class="cst_btn">
+                <span>{{btn_text}}</span>
+                <svg class="button-svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 320 512">
+                  <style>svg{fill:#ffffff}</style><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"></path>
+                </svg>
+              </a>
+        </div>
+              
+    </div>
+    
+    {% comment %} Grid Products Item {% endcomment %}
+<div class="product-grid-section">
+
+  <div class="product-grid">
+    {% for block in section.blocks %}
+      {% if block.settings.product != blank %}
+        <div class="product-grid-item" {{ block.shopify_attributes }}>
+          {% assign product = block.settings.product %}
+          
+          <!-- Product Image -->
+          {% if product.featured_image %}
+            <a href="{{ product.url }}">
+              <img 
+                src="{{ product.featured_image |  image_url}}" 
+                alt="{{ product.featured_image.alt | escape }}"
+                width="500" height="300"
+                loading="lazy"
+                style="width: 100%; height: 300px ; display: block;"
+              >
+            </a>
+          {% endif %}
+
+          <!-- Product Info -->
+          <div class="product-info">
+            <h3 style="font-size: {{ block.settings.product_title_font_size }}px;">
+              <a href="{{ product.url }}" style="text-decoration: none; color: inherit;">
+                {{ product.title }}
+              </a>
+            </h3>
+
+            <!-- Custom Title Override (Optional) -->
+            {% if block.settings.custom_title != blank %}
+              <p style="margin: 5px 0; font-style: italic; color: #666;">
+                {{ block.settings.custom_title }}
+              </p>
+            {% endif %}
+
+            <!-- Price -->
+            <div class="product-price" style="margin: 8px 0; font-size: 15px;">
+              {% if product.compare_at_price > product.price %}
+                <span style="text-decoration: line-through; color: #999; margin-right: 8px;">
+                  {{ product.compare_at_price | money }}
+                </span>
+                <span style="color: #e74c3c; font-weight: bold;">
+                  {{ product.price | money }}
+                </span>
+              {% else %}
+                <span>{{ product.price | money }}</span>
+              {% endif %}
+            </div>
+            
+            <!-- Add to Cart Button -->
+            {% if block.settings.show_button %}
+              <form action="/cart/add" method="post" style="margin-top: 12px;">
+                <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                <button 
+                  type="submit" 
+                  style="
+                    width: 100%;
+                    padding: 12px;
+                    background: #000;
+                    color: #fff;
+                    border: none;
+                    cursor: pointer;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                  "
+                  {% unless product.available %}disabled{% endunless %}
+                >
+                  {% if product.available %}
+                    {{ block.settings.button_text | default: 'Add to Cart' }}
+                  {% else %}
+                    Sold Out
+                  {% endif %}
+                </button>
+              </form>
+            {% endif %}
+
+          </div>
+        </div>
+      {% endif %}
+        {% endfor %}
+    </div>
+
+    {% if section.blocks.size == 0 %}
+        <div style="text-align: center; padding: 40px; color: #999;">
+        Add product blocks to display products in this grid
+        </div>
+    {% endif %}
+</div>
+    
+</section>
+
+{% schema %}
+    {
+        "name": "Featured Grid Section",
+        "disabled_on": {
+            "groups": ["header", "footer"]
+        },
+        "settings": [
+             {
+                "type": "color",
+                "id": "background_color",
+                "label": "Section background color",
+                "default":"#ffffff"
+            },
+            {
+                "type": "select",
+                "id": "heading_level",
+                "label": "Heading level",
+                "default": "h2",
+                "options": 
+                [
+                    { "value": "h1", "label": "H1" },
+                    { "value": "h2", "label": "H2" },
+                    { "value": "h3", "label": "H3" },
+                    { "value": "h4", "label": "H4" },
+                    { "value": "h5", "label": "H5" },
+                    { "value": "h6", "label": "H6" }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading color",
+                "default":"#00342c"
+            },
+            {
+                "type": "select",
+                "id": "heading_text_alignment",
+                "label": "Heading Text Alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "left"
+            },
+            {
+                "type": "text",
+                "id": "header_text",
+                "label": "Add Header Text",
+                "default":"Featured New Releases"
+            },
+            {
+                "type": "richtext",
+                "id": "content",
+                "label": "Add Fist Content",
+                "default":"<p>Giant Sports Cards is the online sports card store and brick-and-mortar sports card shop near Atlanta that always offers the hottest new releases at some of the lowest prices so you can stay on top of your collection without breaking the bank. Whether you’re looking for brands like Panini sports cards and Topps sports cards or you’re in the market for a hobby box or case under a couple of hundred bucks, you’re guaranteed to find super savings on the cards you want!</p>"
+            },
+            {
+                "type": "range",
+                "id": "font_size",
+                "min": 12,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Content Font size",
+                "default": 16
+            },
+            {
+              "type": "color",
+              "id": "content_text_color",
+              "label": "Content Text Color",
+              "default": "#243d3f"  
+            },
+            {
+                "type": "select",
+                "id": "content_text_alignment",
+                "label": "Text alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "left"
+            },
+            {
+                "type": "url",
+                "id": "btn_url",
+                "label": "Add Button Url"
+            },
+            {
+                "type": "text",
+                "id": "btn_text",
+                "label": "Button Text",
+                "default":"View"
+            },
+            {
+                "type": "color",
+                "id": "btn_color",
+                "label": "Change Button Color"
+
+            }
+            
+        ],
+        "blocks": [
+            {
+                "type": "product_block",
+                "name": "Products Block",
+                "settings": [
+                {
+                    "type":"product",
+                    "id": "product",
+                    "label": "Add product"
+                },
+                {
+                    "type": "range",
+                    "id": "product_title_font_size",
+                    "min": 12,
+                    "max": 24,
+                    "step": 1,
+                    "unit": "px",
+                    "label": "Content Font size",
+                    "default": 14
+                },
+                {
+                    "type": "checkbox",
+                    "id": "show_button",
+                    "label": "Show Add to Cart Button",
+                    "default": true
+                },
+                {
+                    "type": "text",
+                    "id": "button_text",
+                    "label": "Button Text",
+                    "default": "Add to Cart"
+                }
+
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Featured Grid Section",
+                "category": "Custom Section"
+            }
+            
+        ]
+    }
+{% endschema %}
