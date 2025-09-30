@@ -37,9 +37,7 @@
     },
     "header": {
       "type": "header",
-      "custom_css": [
-        "h2, h2, h3{font-family: var(--regular-arialMT-font) ! important;}"
-      ],
+      "custom_css": [],
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
