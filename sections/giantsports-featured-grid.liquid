@@ -58,7 +58,7 @@
         justify-content: center;
         align-items: center;
         gap: 10px;
-        background-color: {{btn_color}};
+        background-color:{{btn_color}};
         color: #ffffff;
         padding: 15px 30px;
         font-family: var(--gothic-font) !important;
@@ -217,11 +217,11 @@
            {% endif %} 
         </div> 
         
-        <div class="Feature_content">
+        <div class="Feature_content text">
             {% if content != blank %}
                 <p>{{content}}</p>
             {% endif %}
-          
+          {% comment %} button {% endcomment %}
         <div class="cst_button">
             <a href="{{btn_url}}" class="cst_btn">
                 <span>{{btn_text}}</span>
