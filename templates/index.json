@@ -242,7 +242,7 @@
         "product_block_JQD4CQ": {
           "type": "product_block",
           "settings": {
-            "product": "farmer-s-market-matte-vinyl-sticker-sheet-fresh-finds-for-everyday",
+            "product": "mi-amor-deodorant",
             "product_title_font_size": 14,
             "show_button": true,
             "button_text": "Add to Cart"
@@ -255,20 +255,38 @@
         "product_block_T4DTKq",
         "product_block_JQD4CQ"
       ],
-      "name": "Featured Grid Section",
+      "name": "Featured New Releases",
       "settings": {
         "background_color": "#ffffff",
-        "heading_level": "h2",
+        "heading_level": "h1",
         "heading_color": "#00342c",
         "heading_text_alignment": "left",
         "header_text": "Featured New Releases",
         "content": "<p>Giant Sports Cards is the online sports card store and brick-and-mortar sports card shop near Atlanta that always offers the hottest new releases at some of the lowest prices so you can stay on top of your collection without breaking the bank. Whether you’re looking for brands like Panini sports cards and Topps sports cards or you’re in the market for a hobby box or case under a couple of hundred bucks, you’re guaranteed to find super savings on the cards you want!</p>",
-        "font_size": 16,
+        "content_font_size": 16,
+        "content_text_color": "#243d3f",
+        "content_text_alignment": "left",
+        "btn_url": "",
+        "btn_text": "View All New Sports Card Releases",
+        "btn_color": "#00342c"
+      }
+    },
+    "giantsports_featured_grid_qnmLBA": {
+      "type": "giantsports-featured-grid",
+      "name": "Featured Pre-Sales",
+      "settings": {
+        "background_color": "#ffffff",
+        "heading_level": "h1",
+        "heading_color": "#00342c",
+        "heading_text_alignment": "left",
+        "header_text": "Featured Pre-Sales",
+        "content": "<p>Veteran collectors who are just getting back into the hobby will love our huge selection. We offer the best sports card hobby boxes and cases with many featuring guaranteed autographs and game-used patches. Of course, novice and seasoned collectors alike enjoy getting their hands on unreleased cards, including pre-sale hobby boxes and cases. We’re the sports card store that makes sure you have access to the best pre-sales and <a href=\"https://giantsportscards.com/collections/pre-sale-calendar\">sports card release dates</a>you need to capture the excitement and keep your collection fresh.</p>",
+        "content_font_size": 16,
         "content_text_color": "#243d3f",
         "content_text_alignment": "left",
         "btn_url": "",
         "btn_text": "View",
-        "btn_color": ""
+        "btn_color": "#00342C"
       }
     }
   },
@@ -279,6 +297,7 @@
     "giantsports_image_text_dhBcy8",
     "giantsports_grid_DkyQhY",
     "giantsports_icon_header_3_column_f9exgH",
-    "giantsports_featured_grid_CHJ7Vh"
+    "giantsports_featured_grid_CHJ7Vh",
+    "giantsports_featured_grid_qnmLBA"
   ]
 }
