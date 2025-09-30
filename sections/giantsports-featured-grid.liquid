@@ -201,7 +201,7 @@
 
     .addtocart-button {
         width: 100%;
-        padding: 2px;
+        padding: 5px;
         font-size: 12px;
     }
 
@@ -211,6 +211,8 @@
       justify-content: center;
       justify-items: center;
       text-align: center;
+      height: auto;
+      flex-wrap: wrap;
     }
   }
 
@@ -292,9 +294,9 @@
              <div class="pricing">
 
             
-            <div class="product-price" style="margin: 8px 0; font-size: 15px; text-align:center;color:#ffffff; background-color:#0b4f2f; font-weight: bold;">
+            <div class="product-price" style="margin: 8px 0; font-size: 15px; text-align:center;color:#ffffff; background-color:#00ab5b; font-weight: bold;">
               {% if product.compare_at_price > product.price %}
-                <span style="text-decoration: line-through; color: #e65555; margin-right: 8px; font-weight: bold; display:inline;">
+                <span style="text-decoration: line-through red 2px solid; margin-right: 8px; font-weight: bold;">
                   {{ product.compare_at_price | money }}
                 </span>
                 <span style="color: #ffffff; font-weight: bold;">
