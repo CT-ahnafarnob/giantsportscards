@@ -2832,7 +2832,7 @@ details[open] > .header__submenu {
   padding: 0 1rem;
 }
 
-.header__menu-item {
+/* .header__menu-item {
   padding: 1.2rem;
   text-decoration: none;
   color: rgba(var(--color-foreground), 0.75);
@@ -2847,9 +2847,39 @@ details[open] > .header__submenu {
 }
 
 .header__menu-item:hover span {
-  text-decoration: underline;
+  text-decoration: none;
   text-underline-offset: 0.3rem;
+} */
+
+/* my code starts for underline transition */
+
+.header__menu-item {
+  padding: 1.2rem;
+  text-decoration: none;
+  color: rgb(var(--color-foreground));
 }
+
+.header__menu-item span {
+  position: relative;
+}
+
+.header__menu-item span::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1.5px;
+  background-color: rgb(var(--color-foreground));
+  transform-origin: bottom left;
+  transition: width 0.3s ease;
+}
+
+.header__menu-item:hover span::before {
+  width: 100%;
+}
+
+/* my code ends here */
 
 details[open] > .header__menu-item {
   text-decoration: underline;
