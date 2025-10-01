@@ -437,35 +437,36 @@
 
   customElements.define('sticky-header', StickyHeader);
 
- //- Hover dropdown menu
+{% endjavascript %}
+<script>
+  // Hover dropdown menu
   document.addEventListener('DOMContentLoaded', function() {
     if (window.innerWidth >= 990) {
       const headerMenus = document.querySelectorAll('header-menu');
       
       headerMenus.forEach(menu => {
         const details = menu.querySelector('details');
+        if (!details) return;
+        
         const summary = details.querySelector('summary');
         
-        // Open on mouse enter
         menu.addEventListener('mouseenter', function() {
           details.setAttribute('open', '');
         });
         
-        // Close on mouse leave
         menu.addEventListener('mouseleave', function() {
           details.removeAttribute('open');
         });
         
-        // Prevent click toggle
-        summary.addEventListener('click', function(e) {
-          e.preventDefault();
-        });
+        if (summary) {
+          summary.addEventListener('click', function(e) {
+            e.preventDefault();
+          });
+        }
       });
     }
   });
-
-{% endjavascript %}
-
+</script>
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",

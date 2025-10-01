@@ -49,11 +49,11 @@
         right: 0;
         bottom: 20px; 
         z-index: 1; 
-        transition: background-color 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);; 
+        transition: background-color 0.6s ease; /*cubic-bezier(0.68, -0.55, 0.265, 1.55);  */
     }
     .{{section.id}} .main_container_grid__items:hover::after {
         background-color: rgba(0, 0, 0, 0.3); 
-        z-index: 2;
+        z-index: 1;
     }
     .{{section.id}} .main_container_grid__image {
         width: 100%;  
@@ -64,7 +64,7 @@
     .main_container_grid__text{
         position: absolute;
         bottom: 0;
-        z-index: 3;
+        z-index: 2;
         width: 100%;
         background-color: #28675c;
         min-height: 40px;
@@ -171,6 +171,10 @@
                 "default":"#ffffff"
             },
             {
+                  "type": "header",
+                  "content": "Header Settings"
+            },
+            {
                 "type": "text",
                 "id": "heading",
                 "label": "Write Heading",
@@ -203,6 +207,10 @@
                 "type": "image_block",
                 "name": "image Block",
                 "settings": [
+                    {
+                        "type": "header",
+                        "content": "Block Settings"
+                    },
                     {
                         "type": "image_picker",
                         "id": "grid_image",
