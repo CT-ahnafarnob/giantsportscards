@@ -35,6 +35,26 @@
         "enable_language_selector": false
       }
     },
+    "giantsports_header_GDzjMy": {
+      "type": "giantsports-header",
+      "name": "custom header",
+      "settings": {
+        "logo_position": "middle-left",
+        "mobile_logo_position": "center",
+        "menu": "giantsportscards-menu",
+        "menu_type_desktop": "dropdown",
+        "sticky_header_type": "on-scroll-up",
+        "show_line_separator": true,
+        "color_scheme": "",
+        "menu_color_scheme": "",
+        "enable_country_selector": false,
+        "enable_language_selector": true,
+        "enable_customer_avatar": true,
+        "margin_bottom": 0,
+        "padding_top": 12,
+        "padding_bottom": 12
+      }
+    },
     "header": {
       "type": "header",
       "disabled": true,
@@ -49,26 +69,6 @@
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
         "enable_country_selector": false,
-        "enable_language_selector": true,
-        "enable_customer_avatar": true,
-        "margin_bottom": 0,
-        "padding_top": 20,
-        "padding_bottom": 20
-      }
-    },
-    "giantsports_header_GDzjMy": {
-      "type": "giantsports-header",
-      "name": "custom header",
-      "settings": {
-        "logo_position": "middle-left",
-        "mobile_logo_position": "center",
-        "menu": "main-menu",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
-        "show_line_separator": true,
-        "color_scheme": "",
-        "menu_color_scheme": "",
-        "enable_country_selector": true,
         "enable_language_selector": true,
         "enable_customer_avatar": true,
         "margin_bottom": 0,
