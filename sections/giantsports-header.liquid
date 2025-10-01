@@ -272,7 +272,7 @@
               {%- if customer and customer.has_avatar? -%}
                 {{ customer | avatar }}
               {%- else -%}
-                <span class="svg-wrapper">{{ 'icon-account.svg' | inline_asset_content }}</span>
+                <span class="svg-wrapper">{% render 'giantsports-icon-avatar' %}</span>
               {%- endif -%}
             </account-icon>
           {%- else -%}
@@ -437,7 +437,7 @@
 
   customElements.define('sticky-header', StickyHeader);
 
- // NEW CODE - Hover dropdown menu
+ //- Hover dropdown menu
   document.addEventListener('DOMContentLoaded', function() {
     if (window.innerWidth >= 990) {
       const headerMenus = document.querySelectorAll('header-menu');
