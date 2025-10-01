@@ -29,10 +29,10 @@
         "p {font-family: var(--regular-arialMT-font) !important; font-size: 12px; font-weight: bold;}"
       ],
       "settings": {
-        "auto_rotate": true,
+        "auto_rotate": false,
         "change_slides_speed": 3,
         "color_scheme": "scheme-5",
-        "show_line_separator": true,
+        "show_line_separator": false,
         "show_social": false,
         "enable_country_selector": false,
         "enable_language_selector": false
@@ -67,7 +67,7 @@
         "mobile_logo_position": "center",
         "menu": "giantsportscards-menu",
         "menu_type_desktop": "dropdown",
-        "sticky_header_type": "reduce-logo-size",
+        "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "scheme-1",
