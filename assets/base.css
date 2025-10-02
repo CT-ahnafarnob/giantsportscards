@@ -1,3 +1,4 @@
+@import url("giantsports.css");
 :root {
   --alpha-button-background: 1;
   --alpha-button-border: 1;
@@ -2862,6 +2863,7 @@ details[open] > .header__submenu {
 
 .header__menu-item span {
   position: relative;
+  font-family: var(--gothic-font) !important;
 }
 
 .header__menu-item span::before {
