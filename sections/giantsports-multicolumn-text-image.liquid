@@ -1,19 +1,16 @@
 {{ 'giantsports.css' | asset_url | stylesheet_tag }}
 {% liquid
   assign heading_tag  = section.settings.heading_level 
-  assign heading_color =  section.settings.heading_color
+  assign upper_text_color =  section.settings.upper_text_color
+  assign lower_text_color =  section.settings.lower_text_color
   assign background_color = section.settings.background_color
-  assign banner_1_upper = section.settings.banner_1_upper
-  assign banner_1_lower = section.settings.banner_1_lower
-  assign banner_2_upper = section.settings.banner_2_upper
-  assign banner_2_lower = section.settings.banner_2_lower
-  assign banner_3_upper = section.settings.banner_3_upper
-  assign banner_3_lower = section.settings.banner_3_lower
+  assign icon_width = section.settings.icon_width
+  
 %}
 
 <style>
     
-  .special-features__inner {
+.special-features__inner {
    
     background-color: {{background_color}};
 }
@@ -21,27 +18,20 @@
 .special-features__blocks {
     padding: 40px 60px 20px 60px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
 .special-features__blocks a{
     text-decoration: none;
 } 
-
-.special-features__blocks__item {
-    display: flex;
-    align-items: center;
+.special-features__inner .inner_items {
+    display: flex;;
     justify-content: center;
-    gap: 20px;
-    padding: 10px;
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
-.special-features__blocks__item__content h1, h2, h3, h4, h5, h6 {
-    color: {{heading_color}};
+.special-features__blocks__item__content {{heading_tag}} {
+    color: {{lower_text_color}};
     line-height:1;
     font-family: var(--gothic-font) ! important;
     font-style:italic;
@@ -51,13 +41,7 @@
 }
 
 .special-features__blocks__item__content span{
-    color: #00342c;
-}
-
-.special-features__blocks__item__image img{
-    width: 110px;
-    height: 90px;
-    object-fit: contain;
+    color: {{upper_text_color}};
 }
 
 .special-features__blocks__item__image {
@@ -66,10 +50,10 @@
     justify-content: center;
 }
 
-@media(max-width: 1100px){
+@media(max-width: 1150px){
    .special-features__blocks {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 20px;
     padding: 10px 20px;
 } 
@@ -86,66 +70,38 @@
 <div class="special-features__inner">
     <div class="special-features__blocks custom-page-width">
       
+     
+        {% for block in section.blocks %}
         
+        <a href="{{ block.settings.banner_link }}" {{block.shopify_attributes}}>
         
-          <a href="">
-        
-        <div class="special-features__blocks__item" style="
-                         background-image: url(//cdn.shopify.com/s/files/1/0607/5393/6592/files/Background_1.avif?v=1758774101); 
-          ">
-          
+        <div class="special-features__blocks__item" 
+        {% if block.settings.banner_background != blank %}
+        style="background-image: url({{ block.settings.banner_background | image_url: width: 800 }});"
+        {% else %}
+            style="background-image: url(//cdn.shopify.com/s/files/1/0607/5393/6592/files/Background_1.avif?v=1758774101);"
+        {% endif %}
+        >
+        <div class="inner_items" style="gap: {{ block.settings.text_icon_width }}px;">
+                {% comment %} icon {% endcomment %}
             <div class="special-features__blocks__item__image">
-              <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/Layer_1.avif?v=1758774806" alt="" width="200" height="188">
+              {% if block.settings.banner_image != blank %}
+              <img src="{{ block.settings.banner_image | image_url: width: 200 }}" alt="" width="{{icon_width}}" height="{{icon_width}}">
+              {% else %}
+                <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/Layer_1.avif?v=1758774806" alt="" width="{{icon_width}}" height="{{icon_width}}">
+              {% endif %}
             </div>
-          
-          <div class="special-features__blocks__item__content">
-          
-             <{{heading_tag}}><span>{{banner_1_upper}}</span><br>{{banner_1_lower}}</{{heading_tag}}>
-          </div>
+                {% comment %} Text {% endcomment %}
+            <div class="special-features__blocks__item__content">
+                <{{heading_tag}}><span>{{ block.settings.banner_upper }}</span><br>{{ block.settings.banner_lower }}</{{heading_tag}}>
+            </div>
+
         </div>
-        
-          </a>
-        
-      
-        
-        
-          <a href="https://giantsportscards.com/collections/new-releases">
-        
-        <div class="special-features__blocks__item" style="
-                        background-image: url(//cdn.shopify.com/s/files/1/0607/5393/6592/files/Background_1.avif?v=1758774101); 
-          ">
-          
-            <div class="special-features__blocks__item__image">
-              <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/Layer_1_1.avif?v=1758774848" alt="" width="200" height="171">
             </div>
-          
-          <div class="special-features__blocks__item__content">
-             <{{heading_tag}}><span>{{banner_2_upper}}</span><br>{{banner_2_lower}}</{{heading_tag}}>
-          </div>
-        </div> 
         
-          </a>
+        </a>
         
-      
-        
-        
-          <a href="https://giantsportscards.com/policies/shipping-policy">
-        
-        <div class="special-features__blocks__item" style="
-                       background-image: url(//cdn.shopify.com/s/files/1/0607/5393/6592/files/Background_1.avif?v=1758774101); 
-          ">
-          
-            <div class="special-features__blocks__item__image">
-              <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/Layer_1_1.avif?v=1758774848" alt=""  width="200" height="200">
-            </div>
-          
-          <div class="special-features__blocks__item__content" >
-           <{{heading_tag}}><span>{{banner_3_upper}}</span><br>{{banner_3_lower}}</{{heading_tag}}>
-          </div>
-        </div>
-        
-          </a>
-        
+        {% endfor %}
       
     </div>
   </div>
@@ -159,6 +115,10 @@
             "groups": ["footer","header"]
         },
         "settings": [
+            {
+                "type": "header",
+                "content": "Typography"
+            },
             {
                 "type": "color",
                 "id": "background_color",
@@ -182,51 +142,75 @@
             },
             {
                 "type": "color",
-                "id": "heading_color",
-                "label": "Lower Heading Text color",
+                "id": "upper_text_color",
+                "label": "Upper Heading Text color",
+                "default": "#00342c"
+            },
+            {
+                "type": "color",
+                "id": "lower_text_color",
+                "label": "Upper Heading Text color",
                 "default": "#FFFFFF"
             },
             {
-                "type": "header",
-                "content": "Banner Text Settings"
-            },
-            {
-                "type": "text",
-                "id": "banner_1_upper",
-                "label": "Banner 1 - Upper Text",
-                "default": "PRE-SALE"
-            },
-            {
-                "type": "text",
-                "id": "banner_1_lower", 
-                "label": "Banner 1 - Lower Text",
-                "default": "CALENDAR"
-            },
-            {
-                "type": "text",
-                "id": "banner_2_upper",
-                "label": "Banner 2 - Upper Text", 
-                "default": "NEW"
-            },
-            {
-                "type": "text",
-                "id": "banner_2_lower",
-                "label": "Banner 2 - Lower Text",
-                "default": "RELEASES"
-            },
-            {
-                "type": "text",
-                "id": "banner_3_upper",
-                "label": "Banner 3 - Upper Text",
-                "default": "FREE SHIPPING"
-            },
-            {
-                "type": "text",
-                "id": "banner_3_lower",
-                "label": "Banner 3 - Lower Text", 
-                "default": "ORDERS $100+"
+                "type": "range",
+                "id": "icon_width",
+                "min": 20,
+                "max": 110,
+                "step": 2,
+                "unit": "px",
+                "label": "Icon Width",
+                "default": 86
             }
-
+        ],
+        "blocks": [
+            {
+                "type": "multi-banner-grid",
+                "name": "Banner Item",
+                "settings": [
+                    {
+                        "type":"header",
+                        "content": "Block Customization" 
+                    },
+                    {
+                        "type": "url",
+                        "id": "banner_link",
+                        "label": "Banner Link"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "banner_background",
+                        "label": "Background Image"
+                    },
+                    {
+                        "type": "image_picker",
+                        "id": "banner_image",
+                        "label": "Icon Image"
+                    },
+                    {
+                        "type": "text",
+                        "id": "banner_upper",
+                        "label": "Upper Text",
+                        "default": "UPPER TEXT"
+                    },
+                    {
+                        "type": "text",
+                        "id": "banner_lower",
+                        "label": "Lower Text",
+                        "default": "LOWER TEXT"
+                    },
+                    {
+                        "type": "range",
+                        "id": "text_icon_width",
+                        "min": 5,
+                        "max": 40,
+                        "step": 1,
+                        "unit": "px",
+                        "label": "Gap between text and icon",
+                        "default": 20
+                    }
+                ]
+            }
         ],
         "presets": [
             {
