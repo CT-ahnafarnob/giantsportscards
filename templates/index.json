@@ -394,6 +394,109 @@
         "btn_text": "Shop Sasquatch Series",
         "btn_color": "#00342c"
       }
+    },
+    "giantsports_statistics_section_jWDwwa": {
+      "type": "giantsports-statistics-section",
+      "blocks": {
+        "statistics_item_qJG3ye": {
+          "type": "statistics_item",
+          "name": "20,000,000",
+          "settings": {
+            "number_text": "20,000,000+",
+            "number_text_color": "#00AC5B",
+            "description_text": "Cards Sold",
+            "description_text_color": "#ffffff"
+          }
+        },
+        "statistics_item_qpWx48": {
+          "type": "statistics_item",
+          "name": "30,000+",
+          "settings": {
+            "number_text": "30,000+",
+            "number_text_color": "#00AC5B",
+            "description_text": "Orders Successfully Fulfilled",
+            "description_text_color": "#ffffff"
+          }
+        },
+        "statistics_item_GmaEDT": {
+          "type": "statistics_item",
+          "name": "99.9 %",
+          "settings": {
+            "number_text": "99.9%",
+            "number_text_color": "#00AC5B",
+            "description_text": "Of Shipments Arriving Undamaged & On Time",
+            "description_text_color": "#ffffff"
+          }
+        },
+        "statistics_item_RKRDQy": {
+          "type": "statistics_item",
+          "name": "250 +",
+          "settings": {
+            "number_text": "250+",
+            "number_text_color": "#00AC5B",
+            "description_text": "SKU’s of Factory Sealed Wax In Stock Any Given Day",
+            "description_text_color": "#ffffff"
+          }
+        },
+        "statistics_item_4qcDfp": {
+          "type": "statistics_item",
+          "name": "$150,000 +",
+          "settings": {
+            "number_text": "$150,000+",
+            "number_text_color": "#00AC5B",
+            "description_text": "Donated to Children’s Charities",
+            "description_text_color": "#ffffff"
+          }
+        },
+        "statistics_item_NdLPzP": {
+          "type": "statistics_item",
+          "name": "0",
+          "settings": {
+            "number_text": "0",
+            "number_text_color": "#00AC5B",
+            "description_text": "Shops That Can Compare to Our Ultimate Collector’s Cave™ Retail Shop",
+            "description_text_color": "#ffffff"
+          }
+        },
+        "statistics_item_FaK4Fx": {
+          "type": "statistics_item",
+          "settings": {
+            "number_text": "55%",
+            "number_text_color": "#00AC5B",
+            "description_text": "Of Shipments Arriving Undamaged & On Time",
+            "description_text_color": "#ffffff"
+          }
+        },
+        "statistics_item_47tPjj": {
+          "type": "statistics_item",
+          "settings": {
+            "number_text": "5.0★",
+            "number_text_color": "#00AC5B",
+            "description_text": "Google Rating",
+            "description_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "statistics_item_qJG3ye",
+        "statistics_item_qpWx48",
+        "statistics_item_GmaEDT",
+        "statistics_item_RKRDQy",
+        "statistics_item_4qcDfp",
+        "statistics_item_NdLPzP",
+        "statistics_item_FaK4Fx",
+        "statistics_item_47tPjj"
+      ],
+      "name": "Statistics Section",
+      "settings": {
+        "background_color": "#12322a",
+        "heading_color": "#ffffff",
+        "heading_text_alignment": "left",
+        "header_text": "By the Numbers",
+        "heading_text_font_size": 60,
+        "number_text_font_size": 60,
+        "description_font_size": 16
+      }
     }
   },
   "order": [
@@ -405,6 +508,7 @@
     "giantsports_icon_header_3_column_f9exgH",
     "giantsports_featured_grid_CHJ7Vh",
     "giantsports_featured_grid_qnmLBA",
-    "giantsports_featured_grid_UHJCc3"
+    "giantsports_featured_grid_UHJCc3",
+    "giantsports_statistics_section_jWDwwa"
   ]
 }
