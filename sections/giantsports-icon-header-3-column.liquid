@@ -5,7 +5,7 @@
     assign heading_tag = section.settings.heading_level
     assign heading_color = section.settings.heading_color
     assign heading_text_alignment = section.settings.heading_text_alignment 
-    assign font_size =section.settings.font_size
+    assign font_size = section.settings.font_size
     assign text_alignment = section.settings.text_alignment
     assign content_color = section.settings.content_color
    
@@ -69,31 +69,31 @@
 
         {% for blocks in section.blocks %}
           {% liquid
-                assign icon_image_1 = blocks.settings.icon_image_1
-                assign heading_1 = blocks.settings.heading_1
-                assign content_1 = blocks.settings.content_1
+                assign icon_image = blocks.settings.icon_image
+                assign heading = blocks.settings.heading
+                assign content = blocks.settings.content
           %}  
        
         <div class="feature_container__columns" {{blocks.shopify_attributes}}>
             <div class="feature_container_columns__first">
                 <div class="feature_container_columns__icon">
-                    {% if icon_image_1 != blank %}
-                        <img src="{{icon_image_1 | image_url}}" width="76" height="72" alt="icon_image_1" >
+                    {% if icon_image != blank %}
+                        <img src="{{icon_image | image_url}}" width="76" height="72" alt="icon_image" >
                     {% else %}
-                        <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/feature-icon_1.png?v=1758933766" width="76" height="72" alt="icon_image_1">
+                        <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/feature-icon_1.png?v=1758933766" width="76" height="72" alt="icon_image">
                 {% endif %}
                 </div>
                
                 <div class="feature_container_columns_first__header"  style="color: {{ heading_color }}; text-align:{{heading_text_alignment}}; width:90%;">
-                    {% if heading_1 != blank %}
+                    {% if heading != blank %}
                         <{{heading_tag}}>
-                            {{heading_1}}
+                            {{heading}}
                         </{{heading_tag}}>
                     {% endif %}
                 </div>
                 <div class="feature_container_columns_second__content text">
-                    {% if content_1 != blank %}
-                        <p style="font-size: {{ font_size }}px"> {{content_1}} </p>
+                    {% if content != blank %}
+                        <div style="font-size: {{ font_size }}px"> {{content}} </div>
                     {% endif %}
                 </div>
             </div>
@@ -225,19 +225,19 @@
                     "settings": [
                     {
                         "type": "image_picker",
-                        "id": "icon_image_1",
+                        "id": "icon_image",
                         "label": "Add Fist icon"
                     },
                     
                     {
                         "type": "text",
-                        "id": "heading_1",
+                        "id": "heading",
                         "label": "Add Fist Heading",
                         "default":"Find the Newest Releases"
                     },
                     {
                         "type": "richtext",
-                        "id": "content_1",
+                        "id": "content",
                         "label": "Add Fist Content",
                         "default":"<p>Finding the latest and greatest releases is crucial to keeping your collection up-to-date. We’ve got you covered from A-Z with this year’s releases across baseball, basketball, football, soccer, racing, and UFC. No matter what sport you love, we’re the shop that helps you craft a collection to be proud of.</p>"
                     }
