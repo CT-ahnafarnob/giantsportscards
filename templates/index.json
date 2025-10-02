@@ -56,17 +56,81 @@
     },
     "giantsports_multicolumn_text_image_M7AJch": {
       "type": "giantsports-multicolumn-text-image",
+      "blocks": {
+        "multi_banner_grid_FcMtfA": {
+          "type": "multi-banner-grid",
+          "settings": {
+            "banner_link": "",
+            "banner_upper": "Pre-Sale",
+            "banner_lower": "Calendar",
+            "text_icon_width": 20
+          }
+        },
+        "multi_banner_grid_pWC8Yn": {
+          "type": "multi-banner-grid",
+          "settings": {
+            "banner_link": "",
+            "banner_upper": "New",
+            "banner_lower": "Releases",
+            "text_icon_width": 20
+          }
+        },
+        "multi_banner_grid_etJwxj": {
+          "type": "multi-banner-grid",
+          "settings": {
+            "banner_link": "",
+            "banner_upper": "Free Shipping",
+            "banner_lower": "on Orders $199+",
+            "text_icon_width": 20
+          }
+        },
+        "multi_banner_grid_PbAYbA": {
+          "type": "multi-banner-grid",
+          "settings": {
+            "banner_link": "",
+            "banner_image": "shopify://shop_images/logo.svg",
+            "banner_upper": "Ahnaf",
+            "banner_lower": "arnob",
+            "text_icon_width": 20
+          }
+        },
+        "multi_banner_grid_izrek6": {
+          "type": "multi-banner-grid",
+          "settings": {
+            "banner_link": "",
+            "banner_image": "shopify://shop_images/privacy-guarantee-80x.png",
+            "banner_upper": "front-end",
+            "banner_lower": "developer",
+            "text_icon_width": 20
+          }
+        },
+        "multi_banner_grid_RGkWBi": {
+          "type": "multi-banner-grid",
+          "settings": {
+            "banner_link": "",
+            "banner_background": "shopify://shop_images/Background_2.avif",
+            "banner_image": "shopify://shop_images/logo.svg",
+            "banner_upper": "Transferred",
+            "banner_lower": "To Block items",
+            "text_icon_width": 20
+          }
+        }
+      },
+      "block_order": [
+        "multi_banner_grid_FcMtfA",
+        "multi_banner_grid_pWC8Yn",
+        "multi_banner_grid_etJwxj",
+        "multi_banner_grid_PbAYbA",
+        "multi_banner_grid_izrek6",
+        "multi_banner_grid_RGkWBi"
+      ],
       "name": "Custom Multi-Column Image Text",
       "settings": {
         "background_color": "#ece8cf",
         "heading_level": "h1",
-        "heading_color": "#ffffff",
-        "banner_1_upper": "PRE-SALE",
-        "banner_1_lower": "CALENDAR",
-        "banner_2_upper": "NEW",
-        "banner_2_lower": "RELEASES",
-        "banner_3_upper": "FREE SHIPPING",
-        "banner_3_lower": "ORDERS $100+"
+        "upper_text_color": "#00342c",
+        "lower_text_color": "#ffffff",
+        "icon_width": 86
       }
     },
     "giantsports_image_text_dhBcy8": {
@@ -191,6 +255,37 @@
     },
     "giantsports_icon_header_3_column_f9exgH": {
       "type": "giantsports-icon-header-3-column",
+      "blocks": {
+        "key_features_block_gLnNMh": {
+          "type": "key_features_block",
+          "settings": {
+            "icon_image_1": "shopify://shop_images/feature-icon_1.png",
+            "heading_1": "Find the Newest Releases",
+            "content_1": "<p>Finding the latest and greatest releases is crucial to keeping your collection up-to-date. We’ve got you covered from A-Z with this year’s releases across baseball, basketball, football, soccer, racing, and UFC. No matter what sport you love, we’re the shop that helps you craft a collection to be proud of.</p>"
+          }
+        },
+        "key_features_block_ghYYDp": {
+          "type": "key_features_block",
+          "settings": {
+            "icon_image_1": "shopify://shop_images/feature-icon-2.png",
+            "heading_1": "Shop Competitive Prices",
+            "content_1": "<p>If you’re a collector like us, you’re not <em>only</em> interested in quality and service. You also want a sports card store with deals that improve your investment and make pulling the hottest rookie autos and patch cards that much sweeter. We offer cheap sports cards compared to other stores so you always <a href=\"https://giantsportscards.com/collections/deals\">get the best deals</a>.</p>"
+          }
+        },
+        "key_features_block_EJrBMn": {
+          "type": "key_features_block",
+          "settings": {
+            "icon_image_1": "shopify://shop_images/feature-icon-3..png",
+            "heading_1": "GOAT-Level Customer Service",
+            "content_1": "<p>Opening new boxes of sports cards to add to your collection is exciting! We treat you like the MVP by offering lightning-quick, same-business-day shipping so you don’t have to wait forever to start ripping. Questions? Our friendly team is ready with GOAT-level <a href=\"https://giantsportscards.com/pages/contact\">customer service</a>.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "key_features_block_gLnNMh",
+        "key_features_block_ghYYDp",
+        "key_features_block_EJrBMn"
+      ],
       "name": "Key Features-3 Column",
       "settings": {
         "background_color": "#ffffff",
@@ -198,13 +293,7 @@
         "heading_level": "h2",
         "heading_color": "#00342c",
         "heading_text_alignment": "left",
-        "heading_1": "Find the Newest Releases",
-        "content_1": "<p>Finding the latest and greatest releases is crucial to keeping your collection up-to-date. We’ve got you covered from A-Z with this year’s releases across baseball, basketball, football,<a href=\"/products/blue-flower-dress\" title=\"Blue Flower Dress\"><em> soccer, racing</em></a>, and UFC. No matter what sport you love, we’re the shop that helps you craft a collection to be proud of.</p>",
-        "heading_2": "Shop Competitive Prices",
-        "content_2": "<p>If you’re a collector like us, you’re not only interested in quality and service. You also want a sports card store with deals that improve your investment and make pulling the hottest rookie autos and patch cards that much sweeter. We offer cheap sports cards compared to other stores so you always get the best deals.</p>",
-        "heading_3": "GOAT-Level Customer Service",
-        "content_3": "<p>Opening new boxes of sports cards to add to your collection is exciting! We treat you like the MVP by offering lightning-quick, same-business-day shipping so you don’t have to wait forever to start ripping. Questions? Our friendly team is ready with GOAT-level customer service.</p>",
-        "font_size": 16,
+        "font_size": 17,
         "content_color": "#243d3f",
         "text_alignment": "left"
       }
@@ -403,7 +492,7 @@
           "name": "20,000,000",
           "settings": {
             "number_text": "20,000,000+",
-            "number_text_color": "#00AC5B",
+            "number_text_color": "#00ac5b",
             "description_text": "Cards Sold",
             "description_text_color": "#ffffff"
           }
@@ -413,7 +502,7 @@
           "name": "30,000+",
           "settings": {
             "number_text": "30,000+",
-            "number_text_color": "#00AC5B",
+            "number_text_color": "#00ac5b",
             "description_text": "Orders Successfully Fulfilled",
             "description_text_color": "#ffffff"
           }
@@ -423,7 +512,7 @@
           "name": "99.9 %",
           "settings": {
             "number_text": "99.9%",
-            "number_text_color": "#00AC5B",
+            "number_text_color": "#00ac5b",
             "description_text": "Of Shipments Arriving Undamaged & On Time",
             "description_text_color": "#ffffff"
           }
@@ -433,7 +522,7 @@
           "name": "250 +",
           "settings": {
             "number_text": "250+",
-            "number_text_color": "#00AC5B",
+            "number_text_color": "#00ac5b",
             "description_text": "SKU’s of Factory Sealed Wax In Stock Any Given Day",
             "description_text_color": "#ffffff"
           }
@@ -443,7 +532,7 @@
           "name": "$150,000 +",
           "settings": {
             "number_text": "$150,000+",
-            "number_text_color": "#00AC5B",
+            "number_text_color": "#00ac5b",
             "description_text": "Donated to Children’s Charities",
             "description_text_color": "#ffffff"
           }
@@ -453,7 +542,7 @@
           "name": "0",
           "settings": {
             "number_text": "0",
-            "number_text_color": "#00AC5B",
+            "number_text_color": "#00ac5b",
             "description_text": "Shops That Can Compare to Our Ultimate Collector’s Cave™ Retail Shop",
             "description_text_color": "#ffffff"
           }
@@ -462,7 +551,7 @@
           "type": "statistics_item",
           "settings": {
             "number_text": "55%",
-            "number_text_color": "#00AC5B",
+            "number_text_color": "#00ac5b",
             "description_text": "Of Shipments Arriving Undamaged & On Time",
             "description_text_color": "#ffffff"
           }
@@ -471,7 +560,7 @@
           "type": "statistics_item",
           "settings": {
             "number_text": "5.0★",
-            "number_text_color": "#00AC5B",
+            "number_text_color": "#00ac5b",
             "description_text": "Google Rating",
             "description_text_color": "#ffffff"
           }
