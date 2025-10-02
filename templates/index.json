@@ -56,6 +56,74 @@
     },
     "giantsports_multicolumn_text_image_M7AJch": {
       "type": "giantsports-multicolumn-text-image",
+      "blocks": {
+        "multi_banner_grid_FcMtfA": {
+          "type": "multi-banner-grid",
+          "settings": {
+            "banner_link": "",
+            "banner_upper": "Pre-Sale",
+            "banner_lower": "Calendar",
+            "text_icon_width": 20
+          }
+        },
+        "multi_banner_grid_pWC8Yn": {
+          "type": "multi-banner-grid",
+          "settings": {
+            "banner_link": "",
+            "banner_upper": "New",
+            "banner_lower": "Releases",
+            "text_icon_width": 20
+          }
+        },
+        "multi_banner_grid_etJwxj": {
+          "type": "multi-banner-grid",
+          "settings": {
+            "banner_link": "",
+            "banner_upper": "Free Shipping",
+            "banner_lower": "on Orders $199+",
+            "text_icon_width": 20
+          }
+        },
+        "multi_banner_grid_PbAYbA": {
+          "type": "multi-banner-grid",
+          "settings": {
+            "banner_link": "",
+            "banner_image": "shopify://shop_images/logo.svg",
+            "banner_upper": "Ahnaf",
+            "banner_lower": "arnob",
+            "text_icon_width": 20
+          }
+        },
+        "multi_banner_grid_izrek6": {
+          "type": "multi-banner-grid",
+          "settings": {
+            "banner_link": "",
+            "banner_image": "shopify://shop_images/privacy-guarantee-80x.png",
+            "banner_upper": "front-end",
+            "banner_lower": "developer",
+            "text_icon_width": 20
+          }
+        },
+        "multi_banner_grid_RGkWBi": {
+          "type": "multi-banner-grid",
+          "settings": {
+            "banner_link": "",
+            "banner_background": "shopify://shop_images/Background_2.avif",
+            "banner_image": "shopify://shop_images/logo.svg",
+            "banner_upper": "Transferred",
+            "banner_lower": "To Block items",
+            "text_icon_width": 20
+          }
+        }
+      },
+      "block_order": [
+        "multi_banner_grid_FcMtfA",
+        "multi_banner_grid_pWC8Yn",
+        "multi_banner_grid_etJwxj",
+        "multi_banner_grid_PbAYbA",
+        "multi_banner_grid_izrek6",
+        "multi_banner_grid_RGkWBi"
+      ],
       "name": "Custom Multi-Column Image Text",
       "settings": {
         "background_color": "#ece8cf",
