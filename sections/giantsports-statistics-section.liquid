@@ -1,0 +1,318 @@
+{{ 'giantsports.css' | asset_url | stylesheet_tag }}
+{% liquid
+    assign background_color  = section.settings.background_color
+    assign heading_text_font_size  = section.settings.heading_text_font_size
+    assign heading_color  = section.settings.heading_color
+    assign heading_text_alignment  = section.settings.heading_text_alignment
+    assign header_text  = section.settings.header_text
+    assign background_color  = section.settings.background_color
+    assign background_color  = section.settings.background_color
+    assign description_font_size = section.settings.description_font_size
+    assign number_text_font_size = section.settings.number_text_font_size
+%}
+
+<style>
+   .{{section.id}} {
+    background-color:{{background_color}};
+}
+
+.success_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+}
+
+.success_container__text {
+    text-align: {{heading_text_alignment}};
+    align-self: flex-start;
+    padding-left: 50px;
+    width: 30%;
+}
+
+.success_container__text h1 {
+    color:{{heading_color}};
+    font-size: {{heading_text_font_size}}px;
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    line-height: 1.2;
+    margin: 0;
+}
+
+.success_container__numbers {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    width: 80%;
+    box-sizing: border-box;
+}
+
+.success_container_items {
+    border-right: 2px solid white;
+    padding: 10px 20px;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.success_container_items:nth-child(4n) {
+    border-right: none;
+}
+
+@media (max-width: 1150px) {
+    .success_container {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .success_container__text {
+        width: 100%;
+        padding-left: 0;
+        text-align: left;
+    }
+    
+    .success_container__text h1 {
+        width: 100%;
+    }
+    
+    .success_container__numbers {
+        grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+    }
+    
+    .success_container_items:nth-child(4n) {
+        border-right: 2px solid white;
+    }
+    
+    .success_container_items:nth-child(2n) {
+        border-right: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .success_container__numbers {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+     .success_container__text {
+        padding-left: 20px; 
+    }
+    .success_container_items {
+        border-right: none;
+        
+    }
+    .success_container_items:last-child {
+        border-bottom: none;
+    }
+}
+</style>
+<section class="{{section.id}}">
+    <div class="success_container custom-page-width">
+        <div class="success_container__text">
+            {% if section.settings.header_text != blank%}
+               <h1> {{header_text}} </h1>  
+            {% endif %}
+        </div>
+
+        <div class="success_container__numbers">
+            {% for block in section.blocks %}
+                {% liquid
+                    assign number_text = block.settings.number_text
+                    assign number_text_color = block.settings.number_text_color
+                    assign description_text = block.settings.description_text
+                    assign description_text_color = block.settings.description_text_color
+                    
+                %}
+                <div class="success_container_items" {{ block.shopify_attributes }}>
+
+                {% if number_text != blank %}
+                    <h1 style="color:{{number_text_color}}; font-size: {{number_text_font_size}}px;font-family: var(--gothic-font)!important; 
+                    font-style:normal; font-weight:400; margin:0; max-width: 100%">{{number_text}}
+                        </h1>
+                {% endif %}
+
+
+                {% if description_text != blank %}
+                    <p style="font-size: {{description_font_size}}px; color: {{description_text_color}};font-family: var(--regular-arialMT-font) ! important;">
+                        {{description_text}}
+                    </p>
+                {% endif %}
+                
+                </div>
+
+                
+            {% endfor %}
+        </div>
+
+    </div>
+</section>
+
+
+{% schema %}
+{
+    "name": "Statistics Section",
+    "disabled_on": {
+        "groups": ["header","footer"]
+    },
+    "settings": [
+            {
+                "type": "header",
+                "content": "Background Color Of the Section"
+            },
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "Section background color",
+                "default":"#12322a"
+            },
+            {
+                "type": "header",
+                "content": "Header Typography"
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading color",
+                "default":"#ffffff"
+            },
+            {
+                "type": "select",
+                "id": "heading_text_alignment",
+                "label": "Heading Text Alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "left"
+            },
+            {
+                "type": "text",
+                "id": "header_text",
+                "label": "Add Header Text",
+                "default":"By the Numbers"
+            },
+            {
+                "type": "range",
+                "id": "heading_text_font_size",
+                "min": 24,
+                "max": 100,
+                "step": 1,
+                "unit": "px",
+                "label": "Heading Font size",
+                "default": 60
+            },
+            {
+                "type": "header",
+                "content": "Block Typography"
+            },
+            {
+                "type": "range",
+                "id": "number_text_font_size",
+                "min": 24,
+                "max": 100,
+                "step": 1,
+                "unit": "px",
+                "label": "Matrix Font size",
+                "default": 60
+            },
+            {
+                "type": "range",
+                "id": "description_font_size",
+                "min": 12,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Description Font size",
+                "default": 16
+            }
+
+
+            
+        ],
+        "blocks": [
+            {   
+                "type": "statistics_item",
+                "name": "Statistics Item",
+                "settings": [
+                    {
+                        "type": "header",
+                        "content": "Success Matrix Customization"
+                    },
+                    {
+                        "type": "text",
+                        "id": "number_text",
+                        "label": "Add Success Matrix",
+                        "default":"20000+"
+                    },
+                    {
+                        "type": "color",
+                        "id": "number_text_color",
+                        "label": "Add color as you want",
+                        "default":"#00AC5B"
+                    },
+                    {
+                        "type": "select",
+                        "id": "stat_suffix",
+                        "label": "Suffix Symbol",
+                        "options": [
+                            {
+                            "value": "",
+                            "label": "None"
+                            },
+                            {
+                            "value": "+",
+                            "label": "+ (Plus)"
+                            },
+                            {
+                            "value": "%",
+                            "label": "% (Percent)"
+                            },
+                            {
+                            "value": "K",
+                            "label": "K (Thousand)"
+                            },
+                            {
+                            "value": "M",
+                            "label": "M (Million)"
+                            }
+                        ],
+                        "default": "+"
+                    },
+                    
+                    {
+                        "type": "header",
+                        "content": "Description Area Customization"
+                    },
+                    {
+                        "type": "textarea",
+                        "id": "description_text",
+                        "label": "Add Short Description",
+                        "default":"Orders Successfully Fulfilled"
+                    },
+                    {
+                        "type": "color",
+                        "id": "description_text_color",
+                        "label": "Add Description Text Color",
+                        "default":"#ffffff"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Statistics Section",
+                "category": "Custom Sections"
+            }
+        ]
+}
+{% endschema %}
