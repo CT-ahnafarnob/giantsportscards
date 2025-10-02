@@ -259,25 +259,25 @@
         "key_features_block_gLnNMh": {
           "type": "key_features_block",
           "settings": {
-            "icon_image_1": "shopify://shop_images/feature-icon_1.png",
-            "heading_1": "Find the Newest Releases",
-            "content_1": "<p>Finding the latest and greatest releases is crucial to keeping your collection up-to-date. We’ve got you covered from A-Z with this year’s releases across baseball, basketball, football, soccer, racing, and UFC. No matter what sport you love, we’re the shop that helps you craft a collection to be proud of.</p>"
+            "icon_image": "shopify://shop_images/feature-icon_1.png",
+            "heading": "Find the Newest Releases",
+            "content": "<p>Finding the latest and greatest releases is crucial to keeping your collection up-to-date. We’ve got you covered from A-Z with this year’s releases across baseball, basketball, football, soccer, racing, and UFC. No matter what sport you love, we’re the shop that helps you craft a collection to be proud of.</p>"
           }
         },
         "key_features_block_ghYYDp": {
           "type": "key_features_block",
           "settings": {
-            "icon_image_1": "shopify://shop_images/feature-icon-2.png",
-            "heading_1": "Shop Competitive Prices",
-            "content_1": "<p>If you’re a collector like us, you’re not <em>only</em> interested in quality and service. You also want a sports card store with deals that improve your investment and make pulling the hottest rookie autos and patch cards that much sweeter. We offer cheap sports cards compared to other stores so you always <a href=\"https://giantsportscards.com/collections/deals\">get the best deals</a>.</p>"
+            "icon_image": "shopify://shop_images/feature-icon-2.png",
+            "heading": "Shop Competitive Prices",
+            "content": "<p>If you’re a collector like us, you’re not <em>only</em> interested in quality and service. You also want a sports card store with deals that improve your investment and make pulling the hottest rookie autos and patch cards that much sweeter. We offer cheap sports cards compared to other stores so you always <a href=\"https://giantsportscards.com/collections/deals\">get the best deals</a>.</p>"
           }
         },
         "key_features_block_EJrBMn": {
           "type": "key_features_block",
           "settings": {
-            "icon_image_1": "shopify://shop_images/feature-icon-3..png",
-            "heading_1": "GOAT-Level Customer Service",
-            "content_1": "<p>Opening new boxes of sports cards to add to your collection is exciting! We treat you like the MVP by offering lightning-quick, same-business-day shipping so you don’t have to wait forever to start ripping. Questions? Our friendly team is ready with GOAT-level <a href=\"https://giantsportscards.com/pages/contact\">customer service</a>.</p>"
+            "icon_image": "shopify://shop_images/feature-icon-3..png",
+            "heading": "GOAT-Level Customer Service",
+            "content": "<p>Opening new boxes of sports cards to add to your collection is exciting! We treat you like the MVP by offering lightning-quick, same-business-day shipping so you don’t have to wait forever to start ripping. Questions? Our friendly team is ready with GOAT-level <a href=\"https://giantsportscards.com/pages/contact\">customer service</a>.</p>"
           }
         }
       },
