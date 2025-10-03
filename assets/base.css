@@ -2864,6 +2864,7 @@ details[open] > .header__submenu {
 .header__menu-item span {
   position: relative;
   font-family: var(--gothic-font) !important;
+  font-size: 24px;
 }
 
 .header__menu-item span::before {
