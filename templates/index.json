@@ -298,6 +298,24 @@
         "text_alignment": "left"
       }
     },
+    "giansports_custom_seperator_YHgdMd": {
+      "type": "giansports-custom-seperator",
+      "name": "Custom Separator",
+      "settings": {
+        "separator_color": "#e6e7e8",
+        "separator_height": 30,
+        "separator_margin": 0
+      }
+    },
+    "giansports_custom_seperator_GeVhVJ": {
+      "type": "giansports-custom-seperator",
+      "name": "Custom Separator",
+      "settings": {
+        "separator_color": "#e6e7e8",
+        "separator_height": 30,
+        "separator_margin": 0
+      }
+    },
     "giantsports_featured_grid_CHJ7Vh": {
       "type": "giantsports-featured-grid",
       "blocks": {
@@ -595,7 +613,9 @@
     "giantsports_image_text_dhBcy8",
     "giantsports_grid_DkyQhY",
     "giantsports_icon_header_3_column_f9exgH",
+    "giansports_custom_seperator_GeVhVJ",
     "giantsports_featured_grid_CHJ7Vh",
+    "giansports_custom_seperator_YHgdMd",
     "giantsports_featured_grid_qnmLBA",
     "giantsports_featured_grid_UHJCc3",
     "giantsports_statistics_section_jWDwwa"
