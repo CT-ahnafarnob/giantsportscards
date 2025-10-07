@@ -29,6 +29,7 @@
         font-weight: bold;
         text-transform: uppercase;
         color:{{heading_color}};
+        text-align:{{heading_text_alignment}};
     }
     .container_box{
         background: linear-gradient(265.55deg, #00AB5C 0%, #00714C 100%);
@@ -54,7 +55,7 @@
     }
 
     .left_container a.reward_btn{
-        background-color: white;
+        background-color: {{btn_color}};
         color: black;
         text-decoration: none;
         font-family: var(--regular-arialMT-font) ! important;
@@ -99,8 +100,8 @@
     <div class="reward_container">
 
         <div class="left_container">
-                <div class="left_container__title" style="color:{{heading_color}}; text-alignment:{{heading_text_alignment}};"> <{{heading_level}}>{{header_text}}</{{heading_level}}></div>
-                <div class="left_container__description" style="font-size: {{content_font_size}}px; color:{{content_text_color}};text-alignment:{{content_text_alignment}}"> 
+                <div class="left_container__title"> <{{heading_level}}>{{header_text}}</{{heading_level}}></div>
+                <div class="left_container__description" style="font-size: {{content_font_size}}px; color:{{content_text_color}};text-align:{{content_text_alignment}}"> 
                 {{content}} 
                 </div>
                 <a class="reward_btn" href="{{btn_url}}">{{btn_text}}</a>
@@ -148,7 +149,7 @@
                 "type": "select",
                 "id": "heading_level",
                 "label": "Heading level",
-                "default": "h2",
+                "default": "h1",
                 "options": 
                 [
                     { "value": "h1", "label": "H1" },
