@@ -1,0 +1,291 @@
+
+
+{% liquid
+    assign background_color = section.settings.background_color
+    assign heading_level = section.settings.heading_level
+    assign heading_color = section.settings.heading_color
+    assign heading_text_alignment = section.settings.heading_text_alignment
+    assign header_text = section.settings.header_text
+    assign content = section.settings.content
+    assign content_font_size = section.settings.content_font_size
+    assign content_text_color = section.settings.content_text_color
+    assign content_text_alignment = section.settings.content_text_alignment
+    assign btn_url = section.settings.btn_url
+    assign btn_text = section.settings.btn_text
+    assign btn_color = section.settings.btn_color
+    assign imageright = section.settings.imageright
+    assign image_width = section.settings.image_width
+%}
+<style>
+  .{{section.id}} {
+        background-color: {{background_color}};
+        margin:10px 30px;
+    }
+    .{{section.id}} {{heading_level}}{
+        line-height: 1;
+        font-family: var(--gothic-font) !important;
+        font-style: italic;
+        letter-spacing: 2px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color:{{heading_color}};
+    }
+    .container_box{
+        background: linear-gradient(265.55deg, #00AB5C 0%, #00714C 100%);
+        padding: 8px;
+        
+    }
+    .reward_container {
+        border: 2px solid rgba(255, 255, 255, 1);
+        padding: 50px;
+        display: flex;
+        gap: 20px;  
+    }
+
+    .right_container__image img {
+        margin-top: -50px;
+    }
+    .left_container__description{
+        font-family: var(--regular-arialMT-font);
+        width: 95%;
+    }
+    .left_container__title{
+        color:{{heading_color}};
+    }
+
+    .left_container a.reward_btn{
+        background-color: white;
+        color: black;
+        text-decoration: none;
+        font-family: var(--regular-arialMT-font) ! important;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 13px;
+        padding: 15px;
+       
+    }
+
+    @media (max-width:1100px){
+        .reward_container {
+            flex-direction: column-reverse;
+        }
+        .right_container__image img {
+            width: 100%;
+        }
+        .left_container__description{
+        width: 100%;
+    }
+    }
+      @media (max-width:768px){
+        .reward_container {
+     
+        padding: 20px;
+     
+    }
+     .right_container__image img {
+        margin-top: -20px;
+    }
+     .left_container a.reward_btn{
+        padding: 10px;
+     }
+    }
+</style>
+
+<section class="{{section.id}}">
+<div class="custom-page-width">
+
+<div class="container_box">
+
+    <div class="reward_container">
+
+        <div class="left_container">
+                <div class="left_container__title" style="color:{{heading_color}}; text-alignment:{{heading_text_alignment}};"> <{{heading_level}}>{{header_text}}</{{heading_level}}></div>
+                <div class="left_container__description" style="font-size: {{content_font_size}}px; color:{{content_text_color}};text-alignment:{{content_text_alignment}}"> 
+                {{content}} 
+                </div>
+                <a class="reward_btn" href="{{btn_url}}">{{btn_text}}</a>
+        </div>
+
+
+        <div class="right_container">
+            <div class="right_container__image">
+            {% if imageright != blank %}
+                <img src="{{ imageright | image_url}}" alt="" width="{{image_width}}px" height="auto" loading="lazy">
+                {% else %}
+                <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/Image_2bf7438d-d51b-40ec-a3fd-7b27a81e84dc.webp?v=1759869092" alt="" width="{{image_width}}px" height="auto">
+            {% endif %}
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+</section>
+
+{% schema %}
+{
+    "name": "Left Image Righ text",
+    "disabled_on": {
+        "groups": ["header","footer"]
+    },
+    "settings": [
+           {
+                "type": "header",
+                "content": "Section Settings"
+            },
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "Section background color",
+                "default": "#ffffff"
+            },
+            {
+                "type": "header",
+                "content": "Header Typography"
+            },
+            {
+                "type": "select",
+                "id": "heading_level",
+                "label": "Heading level",
+                "default": "h2",
+                "options": 
+                [
+                    { "value": "h1", "label": "H1" },
+                    { "value": "h2", "label": "H2" },
+                    { "value": "h3", "label": "H3" },
+                    { "value": "h4", "label": "H4" },
+                    { "value": "h5", "label": "H5" },
+                    { "value": "h6", "label": "H6" }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading color",
+                "default":"#ffffff"
+            },
+            {
+                "type": "select",
+                "id": "heading_text_alignment",
+                "label": "Heading Text Alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "left"
+            },
+            {
+                "type": "text",
+                "id": "header_text",
+                "label": "Add Header Text",
+                "default":"Giant Rewards Program"
+            },
+            {
+                "type": "header",
+                "content": "Description Typography"
+            },
+           {
+                "type": "richtext",
+                "id": "content",
+                "label": "Add Fist Content",
+                "default":"<p>There’s nothing better than being rewarded for your passion, and that’s what you get with our Giant Rewards program. Get 1 point for every $1 you spend on hobby boxes, sports card supplies, and other items both in-shop and online.Once you’ve racked up those points, you can cash them in for massive discounts on your favorite hobby boxes! Joining our rewards program is completely free. All you need to do is create an account and start your journey towards the Hall of Fame.</p>"
+            },
+            {
+                "type": "range",
+                "id": "content_font_size",
+                "min": 12,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Content Font size",
+                "default": 16
+            },
+            {
+              "type": "color",
+              "id": "content_text_color",
+              "label": "Content Text Color",
+              "default": "#243d3f"  
+            },
+            {
+                "type": "select",
+                "id": "content_text_alignment",
+                "label": "Text alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "left"
+            },
+            {
+                  "type": "header",
+                  "content": "Button Settings"
+            },
+            {
+                "type": "url",
+                "id": "btn_url",
+                "label": "Add Button Url"
+            },
+            {
+                "type": "text",
+                "id": "btn_text",
+                "label": "Button Text",
+                "default":"Earn Giant Rewards Now"
+            },
+            {
+                "type": "color",
+                "id": "btn_color",
+                "label": "Change Button Color",
+                "default":"#ffffff"
+
+            },
+            {
+                "type": "header",
+                "content": "Image Setup"
+            },
+            {
+                "type": "image_picker",
+                "id": "imageright",
+                "label": "Upload image"
+            },
+             {
+                "type": "range",
+                "id": "image_width",
+                "min": 300,
+                "max": 700,
+                "step": 50,
+                "unit": "px",
+                "label": "Image Width",
+                "default": 500
+            }
+            
+
+        ],
+        "presets": [
+            {
+                "name": "Left Text Right Image",
+                "category": "Custom Section"
+            }
+        ]
+}
+{% endschema %}
