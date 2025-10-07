@@ -298,15 +298,6 @@
         "text_alignment": "left"
       }
     },
-    "giansports_custom_seperator_YHgdMd": {
-      "type": "giansports-custom-seperator",
-      "name": "Custom Separator",
-      "settings": {
-        "separator_color": "#e6e7e8",
-        "separator_height": 30,
-        "separator_margin": 0
-      }
-    },
     "giansports_custom_seperator_GeVhVJ": {
       "type": "giansports-custom-seperator",
       "name": "Custom Separator",
@@ -376,6 +367,15 @@
         "btn_url": "",
         "btn_text": "View All New Sports Card Releases",
         "btn_color": "#00342c"
+      }
+    },
+    "giansports_custom_seperator_YHgdMd": {
+      "type": "giansports-custom-seperator",
+      "name": "Custom Separator",
+      "settings": {
+        "separator_color": "#e6e7e8",
+        "separator_height": 30,
+        "separator_margin": 0
       }
     },
     "giantsports_featured_grid_qnmLBA": {
@@ -604,6 +604,25 @@
         "number_text_font_size": 60,
         "description_font_size": 16
       }
+    },
+    "giantsports_left_text_right_image_bRUNm4": {
+      "type": "giantsports-left-text-right-image",
+      "name": "Left Text Right Image",
+      "settings": {
+        "background_color": "#ffffff",
+        "heading_level": "h1",
+        "heading_color": "#ffffff",
+        "heading_text_alignment": "left",
+        "header_text": "Giant Rewards Program",
+        "content": "<p>There’s nothing better than being rewarded for your passion, and that’s what you get with our Giant Rewards program. Get 1 point for every $1 you spend on hobby boxes, sports card supplies, and other items both in-shop and online.Once you’ve racked up those points, you can cash them in for massive discounts on your favorite hobby boxes! Joining our rewards program is completely free. All you need to do is create an account and start your journey towards the Hall of Fame.</p>",
+        "content_font_size": 16,
+        "content_text_color": "#ffffff",
+        "content_text_alignment": "left",
+        "btn_url": "",
+        "btn_text": "Earn Giant Rewards Now",
+        "btn_color": "#ffffff",
+        "image_width": 500
+      }
     }
   },
   "order": [
@@ -618,6 +637,7 @@
     "giansports_custom_seperator_YHgdMd",
     "giantsports_featured_grid_qnmLBA",
     "giantsports_featured_grid_UHJCc3",
-    "giantsports_statistics_section_jWDwwa"
+    "giantsports_statistics_section_jWDwwa",
+    "giantsports_left_text_right_image_bRUNm4"
   ]
 }
