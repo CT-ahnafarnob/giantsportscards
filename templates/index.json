@@ -674,18 +674,19 @@
       "name": "Custom Image with Text",
       "settings": {
         "background_color": "#ece8cf",
+        "image": "shopify://shop_images/Staff_Pic_June_2025_1_900x_eff6a8ca-6baf-4f05-b1ae-43a129d7626f.webp",
         "layout_direction": "row",
-        "heading": "Unbox Your Love of the Game™ at Our Sports Card Store",
+        "heading": "Our Story",
         "heading_level": "h2",
         "heading_color": "#00342c",
         "heading_font_style": "italic",
-        "content": "<p>Giant Sports Cards understands the needs of today’s collectors. In addition to selling online, we have a sports card shop near Atlanta: the Ultimate Collector’s Cave™! Whether you’re a fan of basketball, football, baseball, soccer, or another sport, we offer all of the newest sports card releases to appeal to a wide range of sports enthusiasts! Our vast inventory of card boxes and cases make it easy for you to find what you need to build your collection. With a focus on stellar products, unmatched integrity, and keeping the passion of collecting alive, Giant Sports Cards is your go-to sports card store for all your favorite sports card boxes and cases. Ready to dive into the action? Let’s go!</p>",
+        "content": "<p>Giant Sports Cards aims to provide the human touch you get from local baseball card shops with the convenience, speed, and accessibility of online shopping. We started this sports card store to fulfill a childhood dream. We grew up on sports: watching them, playing them, and collecting the cards that enshrined the greats in legend. Today, we still have that same passion for the hobby, and we’re thrilled to share that enthusiasm with the community.</p><p>We don’t just cater to just one type of fan. As founders who live, breathe, and love sports, we understand that there’s a large fan base across sports who want access to the top sports cards. We’re here to collect <em>with you</em>, have fun chasing hits, and making lifelong memories.</p>",
         "font_size": 16,
         "rich_text_color": "#00342c",
-        "btn_text": "",
+        "btn_text": "learn more about our story",
         "btn_txt_color": "#ffffff",
-        "btn_url": "",
-        "btn_color": "#ffffff"
+        "btn_url": "shopify://collections/body",
+        "btn_color": "#00ac5b"
       }
     },
     "giantsports_image_text_3B7r76": {
@@ -693,18 +694,19 @@
       "name": "Custom Image with Text (button)",
       "settings": {
         "background_color": "#ece8cf",
-        "layout_direction": "row",
-        "heading": "Unbox Your Love of the Game™ at Our Sports Card Store",
-        "heading_level": "h2",
+        "image": "shopify://shop_images/sports-card-store-Atlanta_900x_837afc8b-f9da-4ee1-ad56-6ebbadc608bf.webp",
+        "layout_direction": "row-reverse",
+        "heading": "Stop by Our Shop",
+        "heading_level": "h1",
         "heading_color": "#00342c",
         "heading_font_style": "italic",
-        "content": "<p>Giant Sports Cards understands the needs of today’s collectors. In addition to selling online, we have a sports card shop near Atlanta: the Ultimate Collector’s Cave™! Whether you’re a fan of basketball, football, baseball, soccer, or another sport, we offer all of the newest sports card releases to appeal to a wide range of sports enthusiasts! Our vast inventory of card boxes and cases make it easy for you to find what you need to build your collection. With a focus on stellar products, unmatched integrity, and keeping the passion of collecting alive, Giant Sports Cards is your go-to sports card store for all your favorite sports card boxes and cases. Ready to dive into the action? Let’s go!</p>",
+        "content": "<p>We’re so proud of our game-changing sports card store! Anytime you’re in the Alpharetta, GA area, be sure to stop by Giant’s Ultimate Collector’s Cave™—our state-of-the-art sports card shop near Atlanta. We went all out creating a community space where collectors and enthusiasts can spend the day surrounded by a huge range of creature comforts, including huge 4K TVs for watching games, free sports arcades, a museum of autographed memorabilia, and so much more. We guarantee you’ve never experienced baseball card shops like ours before, so plan a trip and make the Ultimate Collector’s Cave™ your home away from home!<br/><br/></p>",
         "font_size": 16,
         "rich_text_color": "#00342c",
-        "btn_text": "",
+        "btn_text": "Check out our sports shop in Atlana",
         "btn_txt_color": "#ffffff",
-        "btn_url": "",
-        "btn_color": "#ffffff"
+        "btn_url": "shopify://collections/all",
+        "btn_color": "#00ac5b"
       }
     }
   },
