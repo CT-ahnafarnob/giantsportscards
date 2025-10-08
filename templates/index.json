@@ -712,8 +712,28 @@
         "btn_color": "#00ac5b"
       }
     },
-    "gianmtsports_testimonial_VqxAeK": {
+    "gianmtsports_testimonial_UFRW4y": {
       "type": "gianmtsports-testimonial",
+      "blocks": {
+        "testimonial_details_tDcqVQ": {
+          "type": "testimonial_details",
+          "settings": {
+            "description": "<p>I appreciate y'alls kindness. I am rather new to the scene, but not the hobby.</p>",
+            "client_name": "Alen"
+          }
+        },
+        "testimonial_details_Y4zqPg": {
+          "type": "testimonial_details",
+          "settings": {
+            "description": "<p> I am rather new to the scene, but not the hobby.</p>",
+            "client_name": "Ahnaf"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_details_tDcqVQ",
+        "testimonial_details_Y4zqPg"
+      ],
       "name": "Custom Testimonial",
       "settings": {
         "background_color": "#ffffff",
@@ -745,6 +765,6 @@
     "giantsport_header_text_button_block_Lhf4F4",
     "giantsports_image_text_jTUN9N",
     "giantsports_image_text_3B7r76",
-    "gianmtsports_testimonial_VqxAeK"
+    "gianmtsports_testimonial_UFRW4y"
   ]
 }
