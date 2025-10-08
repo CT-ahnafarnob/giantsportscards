@@ -718,21 +718,45 @@
         "testimonial_details_tDcqVQ": {
           "type": "testimonial_details",
           "settings": {
-            "description": "<p>I appreciate y'alls kindness. I am rather new to the scene, but not the hobby.</p>",
-            "client_name": "Alen"
+            "description": "<p>I received my orders this week and everything was packed perfectly no damage to anything. It is a pleasure dealing with your company! Your quick service and phenomenal stock allows me to order confidently and I appreciate that. Thank you very much for your service. I will continue to order from your company!</p>",
+            "client_name": "Ronald S"
           }
         },
         "testimonial_details_Y4zqPg": {
           "type": "testimonial_details",
           "settings": {
-            "description": "<p> I am rather new to the scene, but not the hobby.</p>",
+            "description": "<p>I bought a Panini XR box from you guys not too long ago, and just bought a Playbook box along with some supplies too. I’m gonna be shopping with you guys for a longgg time! I love what you guys are doing as a whole…keep it going!</p>",
             "client_name": "Ahnaf"
+          }
+        },
+        "testimonial_details_dtRBgb": {
+          "type": "testimonial_details",
+          "settings": {
+            "description": "<p>I appreciate y'alls kindness. I am rather new to the scene, but not the hobby. We are working to build a community of collectors who like to buy/sale/trade cards and who enjoy good hobby product. I find myself coming back to your website as my first choice.  Now I know why :  Looking forward to a good, continued relationship!</p>",
+            "client_name": "Sean H"
+          }
+        },
+        "testimonial_details_rx9TAC": {
+          "type": "testimonial_details",
+          "settings": {
+            "description": "<p>You guys are the best and truly make this hobby fun! I can’t believe my box arrived so quickly!</p>",
+            "client_name": "Tiffany S"
+          }
+        },
+        "testimonial_details_kkQrCG": {
+          "type": "testimonial_details",
+          "settings": {
+            "description": "<p>I pre-ordered a case a couple of months ago. The case arrived safely today, which is much faster than I would have received it anywhere else and was packed with extreme care. Your team was also prompt in replying to my questions, both pre-purchase and after purchase. I cannot recommend Giant Sports Cards enough!</p>",
+            "client_name": "ROB H."
           }
         }
       },
       "block_order": [
         "testimonial_details_tDcqVQ",
-        "testimonial_details_Y4zqPg"
+        "testimonial_details_Y4zqPg",
+        "testimonial_details_dtRBgb",
+        "testimonial_details_rx9TAC",
+        "testimonial_details_kkQrCG"
       ],
       "name": "Custom Testimonial",
       "settings": {
