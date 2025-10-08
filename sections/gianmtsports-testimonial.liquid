@@ -1,0 +1,270 @@
+{% liquid
+    assign background_color = section.settings.background_color
+    assign heading = section.settings.heading
+    assign heading_level = section.settings.heading_level
+    assign heading_color = section.settings.heading_color
+    assign heading_text_alignment = section.settings.heading_text_alignment
+    assign content_font_size = section.settings.content_font_size
+    assign content_text_color = section.settings.content_text_color
+    assign content_text_alignment = section.settings.content_text_alignment
+    
+%}
+<style>
+    .{{section.id}} {
+        background-color: {{background_color}};
+        overflow:hidden;
+    }
+    .{{section.id}} .testimonial_main_container{
+        padding: 2rem 20rem;
+    }
+    .{{section.id}} :is(h1, h2, h3, h4, h5, h6) {
+        line-height: 1.2;
+        font-family: var(--gothic-font) !important;
+        font-style: italic;
+        letter-spacing: 2px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: {{heading_color}};
+        margin-bottom: 15px;
+        text-align: {{heading_text_alignment}};
+        padding-bottom: 3rem;
+    }
+    .{{section.id}} .icon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        fill: currentColor;
+    }
+    .{{section.id}} .testimonilas_content__inner {
+        padding: 0 3rem;;
+        text-align: center;
+    }
+    .{{section.id}} .client_says{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-items: center;
+    }
+    .client_name::before{
+        content: "\2014 ";
+    }
+    
+    /* Slider Button */
+
+    .slick-prev:before {
+        content: "❮";
+        color: #00342c;
+        font-size: 30px;
+        font-weight: 700;
+        vertical-align: middle;
+     
+    }
+
+    .slick-next:before {
+        content: "❯";
+        color: #00342c;
+        font-size: 30px;
+        font-weight: 700;
+      
+    }
+
+  @media (max-width:1000px){
+     .{{section.id}} .testimonial_main_container{
+        padding: 2rem 5rem;
+        
+    }
+    .{{section.id}} .testimonilas_content__inner {
+        padding: 0 1rem;
+    }
+  }
+</style>
+<section class="{{section.id}} ">
+<div class="testimonial_main_container custom-page-width ">
+    <div class="testimonial_header">
+        <{{heading_level}}> {{heading}}</{{heading_level}}>
+    </div>
+    <div class="testimonilas_content">
+        <div class="single-item">
+            {% for block in section.blocks %}
+                {% liquid
+                    assign client_name = block.settings.client_name
+                    assign description = block.settings.description
+                %}
+            <div class="testimonilas_content__inner">
+
+                <div class="quote-icon">
+                <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-quote" viewBox="0 0 41 35"><path d="M10.208 17.711h6.124v16.332H0V21.684C0 8.184 5.444.956 16.332 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766zm24.498 0h6.124v16.332H24.498V21.684C24.498 8.184 29.942.956 40.83 0v6.125c-4.083 1.14-6.124 4.414-6.124 9.82v1.766z" fill="#000" fill-rule="evenodd"></path></svg>
+              </div>
+              {% comment %} description {% endcomment %}
+              <div class="client_says" style="font-family: font-family: var(--regular-arialMT-font) ! important; font-style:italic; font-size:{{content_font_size}}; color:{{content_text_color}}; text-align:{{content_text_alignment}};">
+                {{description}}
+              </div>
+              {% comment %} client name  {% endcomment %}
+               <div class="client_name" style="font-family: font-family: var(--regular-arialMT-font) ! important; font-style:italic; font-size:{{content_font_size}}; color:{{block.settings.client_text_color}}; text-align:{{content_text_alignment}}; font-weight:600;">
+                {{client_name}}
+               </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+
+<script defer>
+document.addEventListener('DOMContentLoaded', function() {
+$('.single-item').slick({
+    arrows: true,
+    speed: 800,
+    adaptiveHeight: true,
+    prevArrow: '<button type="button" class="slick-prev"></button>',
+    nextArrow: '<button type="button" class="slick-next"></button>',
+});
+});
+</script>
+
+{% schema %}
+{
+    "name": "Custom Testimonial",
+    "settings": [
+            {
+                  "type": "header",
+                  "content": "Background Color Of the Section"
+            },
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "Section background color",
+                "default":"#ffffff"
+            },
+            {
+                "type": "header",
+                "content": "Heading Settings"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Write Heading",
+                "default":"Testimonials"
+            },
+             {
+                "type": "select",
+                "id": "heading_level",
+                "label": "Heading level",
+                "default": "h2",
+                "options": 
+                [
+                    { "value": "h1", "label": "H1" },
+                    { "value": "h2", "label": "H2" },
+                    { "value": "h3", "label": "H3" },
+                    { "value": "h4", "label": "H4" },
+                    { "value": "h5", "label": "H5" },
+                    { "value": "h6", "label": "H6" }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading color",
+                "default":"#00342c"
+            },
+            {
+                "type": "select",
+                "id": "heading_text_alignment",
+                "label": "Heading Text Alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "center"
+            },
+            {
+                  "type": "header",
+                  "content": "Client Says Typography"
+            },
+            {
+                "type": "range",
+                "id": "content_font_size",
+                "min": 12,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Content Font size",
+                "default": 16
+            },
+            {
+              "type": "color",
+              "id": "content_text_color",
+              "label": "Content Text Color",
+              "default": "#243d3f"  
+            },
+            {
+                "type": "select",
+                "id": "content_text_alignment",
+                "label": "Text alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "center"
+            },
+            {
+              "type": "color",
+              "id": "client_text_color",
+              "label": "Client Name Text Color",
+              "default": "#243d3f"  
+            },
+            
+        ],
+        "blocks": [
+            {
+                "name": "Testimonial Details",
+                "type": "testimonial_details",
+                "settings": [
+                    {
+                        "type":"richtext",
+                        "id": "description",
+                        "label": "Write Cleint Says",
+                        "default":"<p>I appreciate y'alls kindness. I am rather new to the scene, but not the hobby. We are working to build a community of collectors who like to buy/sale/trade cards and who enjoy good hobby product. I find myself coming back to your website as my first choice.  Now I know why :  Looking forward to a good, continued relationship!</p>" 
+                    },
+                    {
+                        "type": "text",
+                        "id": "client_name",
+                        "label": "Add Client Name",
+                        "default":"Ahnaf"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Custom Testimonial",
+                "category": "Custom Section"
+            }
+        ]
+}
+{% endschema %}
