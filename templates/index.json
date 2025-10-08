@@ -623,6 +623,45 @@
         "btn_color": "#ffffff",
         "image_width": 500
       }
+    },
+    "giantsport_header_text_button_block_Lhf4F4": {
+      "type": "giantsport-header-text-button-block",
+      "blocks": {
+        "image_text_background_Ae8HTW": {
+          "type": "image_text_background",
+          "settings": {
+            "header_text": "SPEEDY, SAME DAY SHIPPING",
+            "content": "<p>Orders received by 1 PM EST will ship out the same day!</p>",
+            "btn_url": "",
+            "btn_text": "SHOP THE HOTTEST RELEASES",
+            "backgroundimage": "shopify://shop_images/same-day-shipping_1080x_1e10ce9e-4b9f-4e12-adc2-53b555b0c29b.webp"
+          }
+        },
+        "image_text_background_6iYPgH": {
+          "type": "image_text_background",
+          "settings": {
+            "header_text": "SAVE $10 OFF",
+            "content": "<p>SAVE $10 OFF your 1st purchase when you sign up to receive our weekly sales special email!</p>",
+            "btn_url": "",
+            "btn_text": "GET ON THE LIST",
+            "backgroundimage": "shopify://shop_images/discount-banner_1080x_6d71ab44-ab41-49a1-a39d-d8abc060e543.webp"
+          }
+        }
+      },
+      "block_order": [
+        "image_text_background_Ae8HTW",
+        "image_text_background_6iYPgH"
+      ],
+      "name": "Text with Background Blocks",
+      "settings": {
+        "heading_level": "h2",
+        "heading_color": "#ffffff",
+        "heading_text_alignment": "left",
+        "content_font_size": 14,
+        "content_text_color": "#ffffff",
+        "content_text_alignment": "left",
+        "btn_color": "#ffffff"
+      }
     }
   },
   "order": [
@@ -638,6 +677,7 @@
     "giantsports_featured_grid_qnmLBA",
     "giantsports_featured_grid_UHJCc3",
     "giantsports_statistics_section_jWDwwa",
-    "giantsports_left_text_right_image_bRUNm4"
+    "giantsports_left_text_right_image_bRUNm4",
+    "giantsport_header_text_button_block_Lhf4F4"
   ]
 }
