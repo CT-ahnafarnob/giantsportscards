@@ -4,6 +4,7 @@
   assign heading = section.settings.heading
   assign heading_color = section.settings.heading_color
   assign heading_font_style = section.settings.heading_font_style
+  assign heading_text_alignment = section.settings.heading_text_alignment
   assign rich_text_color = section.settings.rich_text_color
   assign background_color = section.settings.background_color
   assign content = section.settings.content 
@@ -41,6 +42,7 @@
         font-weight: bold;
         font-style:{{heading_font_style}};
         text-transform: uppercase;
+        text-align:{{heading_text_alignment}}
     } 
     .{{section.id}} .container__content p {
         color: {{rich_text_color}};
@@ -186,6 +188,26 @@
                 "id": "heading_color",
                 "label": "Heading color",
                 "default":"#00342c"
+            },
+            {
+                "type": "select",
+                "id": "heading_text_alignment",
+                "label": "Heading Text Alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "center"
             },
             {
                 "type": "select",
