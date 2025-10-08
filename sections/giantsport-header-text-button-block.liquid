@@ -1,0 +1,321 @@
+{% liquid
+    assign heading_level = section.settings.heading_level
+    assign heading_color = section.settings.heading_color
+    assign heading_text_alignment = section.settings.heading_text_alignment
+    assign content_font_size = section.settings.content_font_size
+    assign content_text_color = section.settings.content_text_color
+    assign content_text_alignment = section.settings.content_text_alignment
+    assign btn_color = section.settings.btn_color
+%}
+<style>
+  .{{section.id}} {
+        
+    }
+    .{{section.id}} h1,
+    .{{section.id}} h2,
+    .{{section.id}} h3,
+    .{{section.id}} h4,
+    .{{section.id}} h5,
+    .{{section.id}} h6 {
+        line-height: 1.2;
+        font-family: var(--gothic-font) !important;
+        font-style: italic;
+        letter-spacing: 2px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: {{heading_color}};
+        margin-bottom: 15px;
+    }
+    
+    .block_grid_wrapper {
+        margin: 30px 50px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .block_grid_item {
+        background: linear-gradient(265.55deg, #00AB5C 0%, #00714C 100%);
+        padding: 8px;
+    }
+    
+    .block_item_card {
+        border: 2px solid rgba(255, 255, 255, 1);
+        padding: 40px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+    
+    .block_item_card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+    }
+    
+    .block_content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .block_content__description {
+        font-family: var(--regular-arialMT-font);
+        margin-bottom: 15px;
+        line-height: 1.5;
+    }
+    
+    .block_content__description p {
+        margin-bottom: 10px;
+    }
+
+    .block_content__title {
+        color: {{heading_color}};
+        text-align: {{heading_text_alignment}};
+    }
+
+    .block_content a.block_cta_btn {
+        background-color: {{btn_color}};
+        color: black;
+        text-decoration: none;
+        font-family: var(--regular-arialMT-font) !important;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 13px;
+        padding: 15px 25px;
+        display: inline-block;
+        margin-top: 10px;
+        transition: all 0.3s ease;
+    }
+    
+    .block_content a.block_cta_btn:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 1100px) {
+        .block_grid_wrapper {
+            grid-template-columns: 1fr;
+            margin: 30px 20px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .block_grid_wrapper {
+            margin: 20px 15px;
+        }
+        
+        .block_item_card {
+            padding: 30px 20px;
+            min-height: 250px;
+        }
+        
+        .block_content a.block_cta_btn {
+            padding: 12px 20px;
+            font-size: 12px;
+        }
+    }
+</style>
+
+<section class="{{section.id}}">
+<div class="custom-page-width">
+
+<div class="block_grid_wrapper">
+    {% for block in section.blocks %}
+        {% liquid
+            assign header_text = block.settings.header_text
+            assign content = block.settings.content
+            assign btn_url = block.settings.btn_url
+            assign btn_text = block.settings.btn_text
+            assign backgroundimage = block.settings.backgroundimage 
+        %}
+        
+        <div class="block_grid_item">
+            <div class="block_item_card" 
+                {% if backgroundimage != blank %}
+                    style="background-image: url({{ backgroundimage | image_url: width: 800 }}); background-repeat: no-repeat; background-size: cover; background-position: center center;"
+                {% else %}
+                    style="background: linear-gradient(265.55deg, #00AB5C 0%, #00714C 100%);"
+                {% endif %}
+                {{ block.shopify_attributes }}>
+                
+                <div class="block_content">
+                    <div class="block_content__title">
+                        <{{heading_level}}>{{header_text}}</{{heading_level}}>
+                    </div>
+                    <div class="block_content__description" style="font-size: {{content_font_size}}px; color:{{content_text_color}}; text-align:{{content_text_alignment}}"> 
+                        {{content}} 
+                    </div>
+                    {% if btn_text != blank %}
+                        <a class="block_cta_btn" href="{{btn_url}}">{{btn_text}}</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+</div>
+</section>
+
+{% schema %}
+{
+    "name": "Text with Background",
+    "disabled_on": {
+        "groups": ["header","footer"]
+    },
+    "settings": [
+        {
+            "type": "header",
+            "content": "Section Settings"
+        },
+        {
+            "type": "header",
+            "content": "Header Typography"
+        },
+        {
+            "type": "select",
+            "id": "heading_level",
+            "label": "Heading level",
+            "default": "h2",
+            "options": [
+                { "value": "h1", "label": "H1" },
+                { "value": "h2", "label": "H2" },
+                { "value": "h3", "label": "H3" },
+                { "value": "h4", "label": "H4" },
+                { "value": "h5", "label": "H5" },
+                { "value": "h6", "label": "H6" }
+            ]
+        },
+        {
+            "type": "color",
+            "id": "heading_color",
+            "label": "Heading color",
+            "default":"#ffffff"
+        },
+        {
+            "type": "select",
+            "id": "heading_text_alignment",
+            "label": "Heading Text Alignment",
+            "options": [
+                { "value": "left", "label": "Left" },
+                { "value": "center", "label": "Center" },
+                { "value": "right", "label": "Right" }
+            ],
+            "default": "left"
+        },
+        {
+            "type": "header",
+            "content": "Description Typography"
+        },
+        {
+            "type": "range",
+            "id": "content_font_size",
+            "min": 12,
+            "max": 20,
+            "step": 1,
+            "unit": "px",
+            "label": "Content Font size",
+            "default": 14
+        },
+        {
+            "type": "color",
+            "id": "content_text_color",
+            "label": "Content Text Color",
+            "default": "#ffffff"  
+        },
+        {
+            "type": "select",
+            "id": "content_text_alignment",
+            "label": "Text alignment",
+            "options": [
+                { "value": "left", "label": "Left" },
+                { "value": "center", "label": "Center" },
+                { "value": "right", "label": "Right" }
+            ],
+            "default": "left"
+        },
+        {
+            "type": "header",
+            "content": "Button Settings"
+        },
+        {
+            "type": "color",
+            "id": "btn_color",
+            "label": "Button Background Color",
+            "default":"#ffffff"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "image_text_background",
+            "name": "Content Block",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "header_text",
+                    "label": "Heading Text",
+                    "default":"SPEEDY, SAME DAY SHIPPING"
+                },
+                {
+                    "type": "richtext",
+                    "id": "content",
+                    "label": "Description",
+                    "default":"<p>Orders received by 1 PM EST will ship out the same day! *Excludes pre-sale items.</p>"
+                },
+                {
+                    "type": "url",
+                    "id": "btn_url",
+                    "label": "Button URL"
+                },
+                {
+                    "type": "text",
+                    "id": "btn_text",
+                    "label": "Button Text",
+                    "default":"SHOP THE HOTTEST RELEASES"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "backgroundimage",
+                    "label": "Background Image",
+                    "info": "Leave empty to use green gradient background"
+                }
+            ]
+        }
+    ],
+    "max_blocks": 6,
+    "presets": [
+        {
+            "name": "Text with Background Blocks",
+            "category": "Custom Section",
+            "blocks": [
+                {
+                    "type": "image_text_background",
+                    "settings": {
+                        "header_text": "SPEEDY, SAME DAY SHIPPING",
+                        "content": "<p>Orders received by 1 PM EST will ship out the same day!</p>",
+                        "btn_text": "SHOP THE HOTTEST RELEASES"
+                    }
+                },
+                {
+                    "type": "image_text_background",
+                    "settings": {
+                        "header_text": "SAVE $10 OFF",
+                        "content": "<p>SAVE $10 OFF your 1st purchase when you sign up to receive our weekly sales special email!</p>",
+                        "btn_text": "GET ON THE LIST"
+                    }
+                }
+            ]
+        }
+    ]
+}
+{% endschema %}
