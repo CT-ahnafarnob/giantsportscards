@@ -263,8 +263,26 @@ $('.single-item').slick({
         "presets": [
             {
                 "name": "Custom Testimonial",
-                "category": "Custom Section"
+                "category": "Custom Section",
+                 "blocks": [
+                {
+                    "type": "testimonial_details",
+                    "settings": {
+                        "description": "<p>I appreciate y'alls kindness. I am rather new to the scene, but not the hobby.</p>",
+                        "client_name": "Add Client Name"
+                        
+                    }
+                },
+                 {
+                    "type": "testimonial_details",
+                    "settings": {
+                        "description": "<p> I am rather new to the scene, but not the hobby.</p>",
+                        "client_name": "Ahnaf"
+                    }
+                }
+            ]
             }
         ]
+       
 }
 {% endschema %}
