@@ -138,12 +138,18 @@
       "name": "Custom Image with Text",
       "settings": {
         "background_color": "#ece8cf",
+        "layout_direction": "row",
         "heading": "Unbox Your Love of the Game™ at Our Sports Card Store",
         "heading_level": "h1",
         "heading_color": "#00342c",
+        "heading_font_style": "italic",
         "content": "<p>Giant Sports Cards understands the needs of today’s collectors. In addition to selling online, we have a sports card shop near Atlanta: the Ultimate Collector’s Cave™! Whether you’re a fan of <a href=\"/products/blue-scarf\" title=\"Blue Scarf\">basketball</a>, <a href=\"/products/beaufort-mens-deodorant\" title=\"Beaufort Men's Deodorant\">football</a>, <a href=\"/products/blue-flower-dress\" title=\"Blue Flower Dress\">baseball</a>, <a href=\"/products/body-lotion\" title=\"Body Lotion\">soccer</a>, or another sport, we offer all of the newest sports card releases to appeal to a wide range of sports enthusiasts! Our vast inventory of card boxes and cases make it easy for you to find what you need to build your collection. With a focus on stellar products, unmatched integrity, and keeping the passion of collecting alive, Giant Sports Cards is your go-to sports card store for all your favorite sports card boxes and cases. Ready to dive into the action? Let’s go!</p>",
         "font_size": 16,
-        "rich_text_color": "#00342c"
+        "rich_text_color": "#00342c",
+        "btn_text": "",
+        "btn_txt_color": "#ffffff",
+        "btn_url": "",
+        "btn_color": "#ffffff"
       }
     },
     "giantsports_grid_DkyQhY": {
@@ -662,6 +668,44 @@
         "content_text_alignment": "left",
         "btn_color": "#ffffff"
       }
+    },
+    "giantsports_image_text_jTUN9N": {
+      "type": "giantsports-image-text",
+      "name": "Custom Image with Text",
+      "settings": {
+        "background_color": "#ece8cf",
+        "layout_direction": "row",
+        "heading": "Unbox Your Love of the Game™ at Our Sports Card Store",
+        "heading_level": "h2",
+        "heading_color": "#00342c",
+        "heading_font_style": "italic",
+        "content": "<p>Giant Sports Cards understands the needs of today’s collectors. In addition to selling online, we have a sports card shop near Atlanta: the Ultimate Collector’s Cave™! Whether you’re a fan of basketball, football, baseball, soccer, or another sport, we offer all of the newest sports card releases to appeal to a wide range of sports enthusiasts! Our vast inventory of card boxes and cases make it easy for you to find what you need to build your collection. With a focus on stellar products, unmatched integrity, and keeping the passion of collecting alive, Giant Sports Cards is your go-to sports card store for all your favorite sports card boxes and cases. Ready to dive into the action? Let’s go!</p>",
+        "font_size": 16,
+        "rich_text_color": "#00342c",
+        "btn_text": "",
+        "btn_txt_color": "#ffffff",
+        "btn_url": "",
+        "btn_color": "#ffffff"
+      }
+    },
+    "giantsports_image_text_3B7r76": {
+      "type": "giantsports-image-text",
+      "name": "Custom Image with Text (button)",
+      "settings": {
+        "background_color": "#ece8cf",
+        "layout_direction": "row",
+        "heading": "Unbox Your Love of the Game™ at Our Sports Card Store",
+        "heading_level": "h2",
+        "heading_color": "#00342c",
+        "heading_font_style": "italic",
+        "content": "<p>Giant Sports Cards understands the needs of today’s collectors. In addition to selling online, we have a sports card shop near Atlanta: the Ultimate Collector’s Cave™! Whether you’re a fan of basketball, football, baseball, soccer, or another sport, we offer all of the newest sports card releases to appeal to a wide range of sports enthusiasts! Our vast inventory of card boxes and cases make it easy for you to find what you need to build your collection. With a focus on stellar products, unmatched integrity, and keeping the passion of collecting alive, Giant Sports Cards is your go-to sports card store for all your favorite sports card boxes and cases. Ready to dive into the action? Let’s go!</p>",
+        "font_size": 16,
+        "rich_text_color": "#00342c",
+        "btn_text": "",
+        "btn_txt_color": "#ffffff",
+        "btn_url": "",
+        "btn_color": "#ffffff"
+      }
     }
   },
   "order": [
@@ -678,6 +722,8 @@
     "giantsports_featured_grid_UHJCc3",
     "giantsports_statistics_section_jWDwwa",
     "giantsports_left_text_right_image_bRUNm4",
-    "giantsport_header_text_button_block_Lhf4F4"
+    "giantsport_header_text_button_block_Lhf4F4",
+    "giantsports_image_text_jTUN9N",
+    "giantsports_image_text_3B7r76"
   ]
 }
