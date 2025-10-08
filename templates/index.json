@@ -142,6 +142,7 @@
         "heading": "Unbox Your Love of the Game™ at Our Sports Card Store",
         "heading_level": "h1",
         "heading_color": "#00342c",
+        "heading_text_alignment": "center",
         "heading_font_style": "italic",
         "content": "<p>Giant Sports Cards understands the needs of today’s collectors. In addition to selling online, we have a sports card shop near Atlanta: the Ultimate Collector’s Cave™! Whether you’re a fan of <a href=\"/products/blue-scarf\" title=\"Blue Scarf\">basketball</a>, <a href=\"/products/beaufort-mens-deodorant\" title=\"Beaufort Men's Deodorant\">football</a>, <a href=\"/products/blue-flower-dress\" title=\"Blue Flower Dress\">baseball</a>, <a href=\"/products/body-lotion\" title=\"Body Lotion\">soccer</a>, or another sport, we offer all of the newest sports card releases to appeal to a wide range of sports enthusiasts! Our vast inventory of card boxes and cases make it easy for you to find what you need to build your collection. With a focus on stellar products, unmatched integrity, and keeping the passion of collecting alive, Giant Sports Cards is your go-to sports card store for all your favorite sports card boxes and cases. Ready to dive into the action? Let’s go!</p>",
         "font_size": 16,
@@ -679,6 +680,7 @@
         "heading": "Our Story",
         "heading_level": "h2",
         "heading_color": "#00342c",
+        "heading_text_alignment": "center",
         "heading_font_style": "italic",
         "content": "<p>Giant Sports Cards aims to provide the human touch you get from local baseball card shops with the convenience, speed, and accessibility of online shopping. We started this sports card store to fulfill a childhood dream. We grew up on sports: watching them, playing them, and collecting the cards that enshrined the greats in legend. Today, we still have that same passion for the hobby, and we’re thrilled to share that enthusiasm with the community.</p><p>We don’t just cater to just one type of fan. As founders who live, breathe, and love sports, we understand that there’s a large fan base across sports who want access to the top sports cards. We’re here to collect <em>with you</em>, have fun chasing hits, and making lifelong memories.</p>",
         "font_size": 16,
@@ -699,6 +701,7 @@
         "heading": "Stop by Our Shop",
         "heading_level": "h1",
         "heading_color": "#00342c",
+        "heading_text_alignment": "center",
         "heading_font_style": "italic",
         "content": "<p>We’re so proud of our game-changing sports card store! Anytime you’re in the Alpharetta, GA area, be sure to stop by Giant’s Ultimate Collector’s Cave™—our state-of-the-art sports card shop near Atlanta. We went all out creating a community space where collectors and enthusiasts can spend the day surrounded by a huge range of creature comforts, including huge 4K TVs for watching games, free sports arcades, a museum of autographed memorabilia, and so much more. We guarantee you’ve never experienced baseball card shops like ours before, so plan a trip and make the Ultimate Collector’s Cave™ your home away from home!<br/><br/></p>",
         "font_size": 16,
@@ -707,6 +710,21 @@
         "btn_txt_color": "#ffffff",
         "btn_url": "shopify://collections/all",
         "btn_color": "#00ac5b"
+      }
+    },
+    "gianmtsports_testimonial_VqxAeK": {
+      "type": "gianmtsports-testimonial",
+      "name": "Custom Testimonial",
+      "settings": {
+        "background_color": "#ffffff",
+        "heading": "Testimonials",
+        "heading_level": "h2",
+        "heading_color": "#00342c",
+        "heading_text_alignment": "center",
+        "content_font_size": 16,
+        "content_text_color": "#243d3f",
+        "content_text_alignment": "center",
+        "client_text_color": "#243d3f"
       }
     }
   },
@@ -726,6 +744,7 @@
     "giantsports_left_text_right_image_bRUNm4",
     "giantsport_header_text_button_block_Lhf4F4",
     "giantsports_image_text_jTUN9N",
-    "giantsports_image_text_3B7r76"
+    "giantsports_image_text_3B7r76",
+    "gianmtsports_testimonial_VqxAeK"
   ]
 }
