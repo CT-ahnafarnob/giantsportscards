@@ -3,10 +3,15 @@
   assign heading_tag = section.settings.heading_level | default: 'h2'
   assign heading = section.settings.heading
   assign heading_color = section.settings.heading_color
+  assign heading_font_style = section.settings.heading_font_style
   assign rich_text_color = section.settings.rich_text_color
   assign background_color = section.settings.background_color
   assign content = section.settings.content 
   assign font_size = section.settings.font_size
+  assign btn_url = section.settings.btn_url
+  assign btn_text = section.settings.btn_text
+  assign btn_color = section.settings.btn_color
+  assign btn_txt_color = section.settings.btn_txt_color
 %}
 <style>
     .{{section.id}} {
@@ -33,7 +38,7 @@
         font-family: var(--gothic-font) ! important;
         letter-spacing: 2px ;
         font-weight: bold;
-        font-style:italic;
+        font-style:{{heading_font_style}};
         text-transform: uppercase;
     } 
     .{{section.id}} .container__content p {
@@ -110,6 +115,9 @@
                    <p>{{content}}</p> 
                 {% endif %}
              </div>
+                {% if btn_text != blank and btn_url != blank%}
+                    <a class="block_cta_btn" style="background-color: {{btn_color}}; color:{{btn_txt_color}}" href="{{btn_url}}">{{btn_text}}</a>
+                {% endif %}
             </div>
             
     </div>
@@ -132,6 +140,10 @@
                 "type": "image_picker",
                 "id": "image",
                 "label": "Change Image"
+            },
+            {
+                "type": "header",
+                "content": "Heading Typography"
             },
             {
                 "type": "text",
@@ -161,6 +173,20 @@
                 "default":"#00342c"
             },
             {
+                "type": "select",
+                "id": "heading_font_style",
+                "label": "Heading Font Style",
+                "options": [
+                    { "value": "normal", "label": "Normal" },
+                    { "value": "italic", "label": "Italic" }
+                ],
+                "default": "italic"
+            },
+            {
+                "type": "header",
+                "content": "Description Typography"
+            },
+            {
                 "type": "richtext",
                 "id": "content",
                 "label": "Write Description",
@@ -182,7 +208,35 @@
                 "id": "rich_text_color",
                 "label": "Description text color",
                 "default":"#00342c"
-            }
+            },
+            {
+                "type": "header",  
+                "content": "Button Config"
+
+            },
+            {
+                "type": "text",
+                "id": "btn_text",
+                "label": "Button Text"
+               
+            },
+            {
+                "type": "color",
+                "id": "btn_txt_color",
+                "label": "Button Background Color",
+                "default":"#ffffff"
+            }, 
+            {
+                "type": "url",
+                "id": "btn_url",
+                "label": "Button URL"
+            },
+            {
+                "type": "color",
+                "id": "btn_color",
+                "label": "Button Background Color",
+                "default":"#ffffff"
+            }   
         ],
         "presets": [
             {
