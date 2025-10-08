@@ -673,7 +673,7 @@
       "type": "giantsports-image-text",
       "name": "Custom Image with Text",
       "settings": {
-        "background_color": "#ece8cf",
+        "background_color": "#ffffff",
         "image": "shopify://shop_images/Staff_Pic_June_2025_1_900x_eff6a8ca-6baf-4f05-b1ae-43a129d7626f.webp",
         "layout_direction": "row",
         "heading": "Our Story",
@@ -693,7 +693,7 @@
       "type": "giantsports-image-text",
       "name": "Custom Image with Text (button)",
       "settings": {
-        "background_color": "#ece8cf",
+        "background_color": "#ffffff",
         "image": "shopify://shop_images/sports-card-store-Atlanta_900x_837afc8b-f9da-4ee1-ad56-6ebbadc608bf.webp",
         "layout_direction": "row-reverse",
         "heading": "Stop by Our Shop",
