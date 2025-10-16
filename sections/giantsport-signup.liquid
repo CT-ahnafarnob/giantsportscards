@@ -1,3 +1,122 @@
+{% liquid
+    assign background_color = section.settings.background_color
+    assign heading = section.settings.heading
+    assign heading_level = section.settings.heading_level
+    assign heading_color = section.settings.heading_color
+    assign heading_text_alignment = section.settings.heading_text_alignment
+    assign description = section.settings.description
+    assign description_font_size = section.settings.description_font_size
+    assign description_text_color = section.settings.description_text_color
+    assign description_text_alignment = section.settings.description_text_alignment
+    assign signup_text_color = section.settings.signup_text_color
+    assign show_email = section.settings.show_email
+    assign email_placeholder = section.settings.email_placeholder
+    assign button_text = section.settings.button_text
+    assign show_phone = section.settings.show_phone
+    assign terms = section.settings.terms
+%}
+
+<style>
+    .{{section.id}} {
+        background-color: {{background_color}};
+        overflow:hidden;
+    }
+    .{{section.id}} .subscrib_form{
+        padding: 40px;
+    }
+    .{{section.id}} :is(h1, h2, h3, h4, h5, h6) {
+        line-height: 1.2;
+        font-family: var(--gothic-font) !important;
+        font-style: italic;
+        letter-spacing: 2px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: {{heading_color}};
+        margin-bottom: 15px;
+        text-align: {{heading_text_alignment}};
+        padding-bottom: 3rem;
+    }
+    .{{section.id}}  .subscrib_form_description {
+        font-family: var(--regular-arialMT-font) ! important;
+        text-align: {{description_text_alignment}};
+        color:{{description_text_color}};
+        font-size:{{description_font_size}};
+
+    }
+    .{{section.id}} input {
+        box-sizing: border-box;
+        border-radius: 2px;
+        padding: 0 20px;
+        width: 420px;
+        height: 45px;
+        text-align: left;
+        color: rgb(0, 0, 0);
+        opacity: 0.8;
+        font-family: var(--redline-font-family);
+        font-size: 22px;
+        font-weight: 400;
+        letter-spacing: 0px;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(0, 0, 0);
+        margin-bottom: 2rem;
+        display: block;
+        margin-left: auto;
+        margin-right: auto; 
+    }
+
+    .{{section.id}} .signup {
+        display: flex;
+        margin: 8rem auto;
+        max-width: 600px;
+        gap: 0;
+    }
+    .{{section.id}} .subbtn {
+        background-color: red;
+        color: {{signup_text_color}};
+        padding: 12px 30px;
+        text-decoration: none;
+        display: inline-block;
+        white-space: nowrap;
+        border: none;
+        border-radius: 0; /* Remove any default border radius */
+    }
+
+    .{{section.id}} .subbtn:hover{
+        color: aliceblue;
+    }
+</style>
+
+<section class="{{section.id}}">
+    <div class="subscrib_form">
+        <div class="subscrib_form__heading">
+             <{{heading_level}}> {{heading}} </{{heading_level}}>
+        </div>
+        <div class="subscrib_form_description">
+            {% if description != blank %}
+               {{description}}
+            {% endif %}
+        </div>
+
+        {% comment %} subscribe form {% endcomment %}
+        <div>
+            {% if show_email %}
+               <div class="signup">
+
+                    <input type="email" placeholder="{{ email_placeholder}}">
+                    <div style="color:{{signup_text_color}}"><a href="#" class="btn subbtn"> {{ button_text }}</a></div> 
+                
+                </div>
+            
+            {% endif %}
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
 {% schema %}
 {
     "name": "Custom Signup Section",
@@ -5,7 +124,155 @@
         "groups": ["footer","header"]
     },
     "settings": [
-        
+            {
+                "type": "header",
+                "content": "Section Settings"
+            },
+             {
+                "type": "color",
+                "id": "background_color",
+                "label": "Section background color",
+                "default":"#ffffff"
+            },
+            {
+                "type": "header",
+                "content": "Heading Settings"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Write Heading",
+                "default":"SAVE $10 OFF YOUR FIRST PURCHASE"
+            },
+            {
+                "type": "select",
+                "id": "heading_level",
+                "label": "Heading level",
+                "default": "h2",
+                "options": 
+                [
+                    { "value": "h1", "label": "H1" },
+                    { "value": "h2", "label": "H2" },
+                    { "value": "h3", "label": "H3" },
+                    { "value": "h4", "label": "H4" },
+                    { "value": "h5", "label": "H5" },
+                    { "value": "h6", "label": "H6" }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading color",
+                "default":"#00342c"
+            },
+            {
+                "type": "select",
+                "id": "heading_text_alignment",
+                "label": "Heading Text Alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "center"
+            },
+            {
+                "type": "header",
+                "content": "Description"
+            },
+            {
+                "type":"richtext",
+                "id": "description",
+                "label": "Change Short Sign up Description",
+                "default":"<p>Save $10 off your 1st purchase when you sign up for our weekly specials email! *Valid on any order $150+. Limit one per person. </p>" 
+            },
+            {
+                "type": "range",
+                "id": "description_font_size",
+                "min": 12,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Content Font size",
+                "default": 16
+            },
+            {
+                "type": "color",
+                "id": "description_text_color",
+                "label": "Content Text Color",
+                "default": "#243d3f"  
+            },
+            {
+                "type": "select",
+                "id": "description_text_alignment",
+                "label": "Text alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "center"
+            },
+            {
+                "type": "color",
+                "id": "signup_text_color",
+                "label": "Client Name Text Color",
+                "default": "#243d3f"  
+            },
+            {
+                "type": "header",
+                "content": "Sbscribe Form Settings"
+            },
+            {
+                "type": "checkbox",
+                "id": "show_email",
+                "label": "Show email field",
+                "default": true
+            },
+            {
+                "type": "text",
+                "id": "email_placeholder",
+                "label": "Email placeholder text",
+                "default": "Enter your email (required)"
+            },
+            {
+                "type": "text",
+                "id": "button_text",
+                "label": "Subscribe button text",
+                "default": "SUBSCRIBE"
+            },
+            {
+                "type": "header",
+                "content": "Phone Number Field Settings"
+            },
+            {
+                "type": "checkbox",
+                "id": "show_phone",
+                "label": "Show phone number field"
+            },
+            {
+                "type": "richtext",
+                "id": "terms",
+                "label": "Terms and conditions"
+            }
         ],
         "presets": [
             {
