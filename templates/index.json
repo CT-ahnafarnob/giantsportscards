@@ -770,6 +770,27 @@
         "content_text_alignment": "center",
         "client_text_color": "#243d3f"
       }
+    },
+    "giantsport_signup_LeqU7P": {
+      "type": "giantsport-signup",
+      "name": "Custom Signup Section",
+      "settings": {
+        "background_color": "#00675b",
+        "heading": "SAVE $10 OFF YOUR FIRST PURCHASE",
+        "heading_level": "h2",
+        "heading_color": "#ffffff",
+        "heading_text_alignment": "center",
+        "description": "<p>Save $10 off your 1st purchase when you sign up for our weekly specials email!<br/> *Valid on any order $150+. Limit one per person. </p>",
+        "description_font_size": 16,
+        "description_text_color": "#ffffff",
+        "description_text_alignment": "center",
+        "signup_text_color": "#243d3f",
+        "show_email": true,
+        "email_placeholder": "Enter your email (required)",
+        "button_text": "SUBSCRIBE",
+        "show_phone": true,
+        "terms": "<p>Keep me up to date on news and offers</p>"
+      }
     }
   },
   "order": [
@@ -789,6 +810,7 @@
     "giantsport_header_text_button_block_Lhf4F4",
     "giantsports_image_text_jTUN9N",
     "giantsports_image_text_3B7r76",
-    "gianmtsports_testimonial_UFRW4y"
+    "gianmtsports_testimonial_UFRW4y",
+    "giantsport_signup_LeqU7P"
   ]
 }
