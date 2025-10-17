@@ -20,6 +20,7 @@
     .{{section.id}} {
         background-color: {{background_color}};
         overflow:hidden;
+        box-sizing: border-box;
     }
     .{{section.id}} .subscrib_form{
         padding: 40px;
@@ -27,62 +28,107 @@
     .{{section.id}} :is(h1, h2, h3, h4, h5, h6) {
         line-height: 1.2;
         font-family: var(--gothic-font) !important;
-        font-style: italic;
+        font-style: normal;
         letter-spacing: 2px;
         font-weight: bold;
         text-transform: uppercase;
         color: {{heading_color}};
         margin-bottom: 15px;
         text-align: {{heading_text_alignment}};
-        padding-bottom: 3rem;
+        padding-bottom: 1rem;
     }
     .{{section.id}}  .subscrib_form_description {
         font-family: var(--regular-arialMT-font) ! important;
         text-align: {{description_text_alignment}};
         color:{{description_text_color}};
-        font-size:{{description_font_size}};
-
+        word-wrap: break-word;
+        word-break: break-word;
+        white-space: normal;
+        line-height: 150% !important;
+        
     }
-    .{{section.id}} input {
-        box-sizing: border-box;
+  
+    .{{section.id}} .input_field {
+        box-sizing:border-box;
         border-radius: 2px;
-        padding: 0 20px;
-        width: 420px;
-        height: 45px;
+        padding: 0px 12px;
+        width: 459px;
+        height: 53px;
         text-align: left;
-        color: rgb(0, 0, 0);
-        opacity: 0.8;
-        font-family: var(--redline-font-family);
-        font-size: 22px;
+        color: rgb(0 0 0);
+        font-family: var(--regular-arialMT-font) ! important;
+        font-size: 16px;
         font-weight: 400;
         letter-spacing: 0px;
         background-color: rgb(255, 255, 255);
         border: 1px solid rgb(0, 0, 0);
-        margin-bottom: 2rem;
-        display: block;
-        margin-left: auto;
-        margin-right: auto; 
     }
 
     .{{section.id}} .signup {
         display: flex;
-        margin: 8rem auto;
+        margin: 2rem auto;
         max-width: 600px;
         gap: 0;
     }
     .{{section.id}} .subbtn {
-        background-color: red;
-        color: {{signup_text_color}};
-        padding: 12px 30px;
+        background-color: rgb(0 172 91);
+        color: #000;
+        padding: 12px 48px;
         text-decoration: none;
         display: inline-block;
         white-space: nowrap;
-        border: none;
-        border-radius: 0; /* Remove any default border radius */
     }
 
     .{{section.id}} .subbtn:hover{
         color: aliceblue;
+    }
+
+
+    .{{section.id}} .phone_title{
+        font-weight: 600;
+        margin: 0;
+        padding: 0;    
+    }
+
+    .{{section.id}} .phone {
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem;;
+    }
+
+   .{{section.id}} .phone-input-container {
+        display: flex;
+        gap: 20px;
+        margin-top: 10px;
+    }
+
+    #country_code{
+        width: 100px;
+        height: 53px;
+        text-align: center;
+    }
+    #phone {
+        width: 300px;
+    }
+    .{{section.id}} .terms {
+        display: flex;
+    }
+   
+
+
+    @media (max-width: 768px) {
+     .{{section.id}} .signup {
+        flex-direction: column;
+        align-items: center;
+     }
+     .{{section.id}} .input_field, .{{section.id}} .phone-input-container {
+        width: 100%;
+        margin-bottom: 1rem;
+     }
+    .{{section.id}} .phone {
+      
+        padding-left: 0;
+    }
     }
 </style>
 
@@ -91,25 +137,54 @@
         <div class="subscrib_form__heading">
              <{{heading_level}}> {{heading}} </{{heading_level}}>
         </div>
-        <div class="subscrib_form_description">
-            {% if description != blank %}
-               {{description}}
-            {% endif %}
+        <div class="subscrib_form_description" style="font-size: {{description_font_size}};">
+             {{description}}
         </div>
 
         {% comment %} subscribe form {% endcomment %}
         <div>
             {% if show_email %}
                <div class="signup">
-
-                    <input type="email" placeholder="{{ email_placeholder}}">
+                          
+                    <input class="input_field" type="email" placeholder="{{ email_placeholder}}" id="email">
                     <div style="color:{{signup_text_color}}"><a href="#" class="btn subbtn"> {{ button_text }}</a></div> 
                 
                 </div>
-            
+
             {% endif %}
 
         </div>
+
+
+        {% comment %} Phone Field {% endcomment %}
+        {% if show_phone %} 
+
+        <div class="signup phone">
+              <p class="phone_title">Phone Number</p>
+        <div class="phone-input-container">
+
+            <!-- Country Dropdown -->
+
+                <select name="country_code" id="country_code">
+                    {% for country in localization.available_countries %}
+                            <option value="{{ country.iso_code }}" {% if country.iso_code == localization.country.iso_code %}selected{% endif %}>
+                                {{ country.iso_code }}
+                            </option>
+                    {% endfor %}
+                </select>
+        
+                <!-- Phone Input -->
+                <input class="input_field" type="tel" name="phone" id="phone" placeholder="Phone">
+              
+
+        </div>
+        <div class="terms">
+            <input type="checkbox" name="phone_opt_in" id="phone_opt_in">
+            <label for="phone_opt_in">{{terms}}</label>
+        </div>
+
+        </div>
+        {% endif %}
     </div>
 </section>
 
@@ -132,7 +207,7 @@
                 "type": "color",
                 "id": "background_color",
                 "label": "Section background color",
-                "default":"#ffffff"
+                "default":"#00675b"
             },
             {
                 "type": "header",
@@ -163,7 +238,7 @@
                 "type": "color",
                 "id": "heading_color",
                 "label": "Heading color",
-                "default":"#00342c"
+                "default":"#ffffff"
             },
             {
                 "type": "select",
@@ -193,7 +268,7 @@
                 "type":"richtext",
                 "id": "description",
                 "label": "Change Short Sign up Description",
-                "default":"<p>Save $10 off your 1st purchase when you sign up for our weekly specials email! *Valid on any order $150+. Limit one per person. </p>" 
+                "default":"<p>Save $10 off your 1st purchase when you sign up for our weekly specials email!<br> *Valid on any order $150+. Limit one per person. </p>" 
             },
             {
                 "type": "range",
@@ -209,7 +284,7 @@
                 "type": "color",
                 "id": "description_text_color",
                 "label": "Content Text Color",
-                "default": "#243d3f"  
+                "default": "#ffffff"  
             },
             {
                 "type": "select",
@@ -266,12 +341,14 @@
             {
                 "type": "checkbox",
                 "id": "show_phone",
-                "label": "Show phone number field"
+                "label": "Show phone number field",
+                "default":true
             },
             {
                 "type": "richtext",
                 "id": "terms",
-                "label": "Terms and conditions"
+                "label": "Terms and conditions",
+                "default":"<p>Keep me up to date on news and offers</p>"
             }
         ],
         "presets": [
