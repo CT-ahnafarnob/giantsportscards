@@ -792,6 +792,24 @@
         "terms": "<p>Keep me up to date on news and offers</p>"
       }
     },
+    "giantsports_custom_blogpost_T7WmNH": {
+      "type": "giantsports-custom-blogpost",
+      "name": "Custom Blog Post",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "heading": "Blog posts",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": false,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "giantsports_faq_AHdBLy": {
       "type": "giantsports-faq",
       "blocks": {
@@ -860,24 +878,6 @@
         "answer_font_size": 16,
         "answer_text_color": "#00342c"
       }
-    },
-    "giantsports_custom_blogpost_T7WmNH": {
-      "type": "giantsports-custom-blogpost",
-      "name": "Custom Blog Post",
-      "settings": {
-        "blog": "news",
-        "post_limit": 3,
-        "heading": "Blog posts",
-        "heading_size": "h1",
-        "columns_desktop": 3,
-        "show_view_all": false,
-        "show_image": true,
-        "show_date": true,
-        "show_author": false,
-        "color_scheme": "",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
@@ -899,7 +899,7 @@
     "giantsports_image_text_3B7r76",
     "gianmtsports_testimonial_UFRW4y",
     "giantsport_signup_LeqU7P",
-    "giantsports_faq_AHdBLy",
-    "giantsports_custom_blogpost_T7WmNH"
+    "giantsports_custom_blogpost_T7WmNH",
+    "giantsports_faq_AHdBLy"
   ]
 }
