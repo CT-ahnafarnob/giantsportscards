@@ -1,0 +1,339 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+{% liquid
+    assign background_color = section.settings.background_color
+    assign section_title = section.settings.section_title
+    assign heading_level = section.settings.heading_level
+    assign heading_color = section.settings.heading_color
+    assign heading_text_alignment = section.settings.heading_text_alignment
+    assign heading_font_style = section.settings.heading_font_style
+    assign question_heading_level = section.settings.question_heading_level
+    assign question_text_color = section.settings.question_text_color
+    assign answer_font_size = section.settings.answer_font_size
+    assign answer_text_color = section.settings.answer_text_color
+    assign faq_text_alignment = section.settings.faq_text_alignment
+%}
+
+
+<style>
+    .{{section.id}} {
+        background-color: {{background_color}};
+    }
+    .{{section.id}} .title :is(h1, h2, h3, h4, h5, h6) {
+        color: {{heading_color}};
+        line-height:1;
+        font-family: var(--gothic-font) ! important;
+        letter-spacing: 2px ;
+        font-weight: bold;
+        font-style:{{heading_font_style}};
+        text-transform: uppercase;
+        text-align:{{heading_text_alignment}}
+    } 
+    .{{section.id}} .faq-header :is(h1, h2, h3, h4, h5, h6) {
+        color: {{question_text_color}};
+        line-height:1;
+        font-family: var(--regular-arialMT-font) ! important;
+        letter-spacing: 2px;
+        font-weight:400;
+        font-style:normal;
+        text-transform: capitalize;
+        text-align:{{faq_text_alignment}}
+    } 
+    /* Faq Group */
+    .{{section.id}} .faq-group {
+        border-bottom: 1px solid #0eae63;
+        width: 80%; 
+        margin: 0 auto;
+    }
+    .faq-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .faq-group-body {
+        max-height: 0px;
+        overflow: hidden;
+        padding-bottom: 0;
+        color: #666;
+        transition: max-height 0.9s ease, padding-bottom 0.4s ease;
+    }
+    .faq-group-body.open {
+        max-height: 500px; 
+    } 
+
+    @media (max-width: 768px) {
+        .{{section.id}} .faq-header :is(h1, h2, h3, h4, h5, h6) {
+                 font-size: 1.17em;
+        } 
+    }
+</style>
+
+
+<section class="{{section.id}}">
+    <div class="container custom-page-width">
+        <div class="title">
+            <{{heading_level}}>
+                {{section_title}}
+            </{{heading_level}}>
+        </div>
+        
+        <div class="faq-content" style="text-align: {{faq_text_alignment}};">  
+            {% for block in section.blocks %}
+                {% liquid
+                    assign question = block.settings.question
+                    assign answer = block.settings.answer
+                %}
+                <div class="faq-group">
+                    <div class="faq-header">
+                        <{{question_heading_level}}>{{question}}</{{question_heading_level}}>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-group-body" style="font-size: {{answer_font_size}}px; color: {{answer_text_color}}; font-family: var(--regular-arialMT-font) ! important;">
+                        <p>{{answer}}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<script>
+    // FAQ Accordion
+    function initFAQ() {
+      const faqContainer = document.querySelector(".{{section.id}} .faq-content");
+      if (!faqContainer) return;
+      
+      // Remove existing listener to prevent duplicates
+      const newFaqContainer = faqContainer.cloneNode(true);
+      faqContainer.parentNode.replaceChild(newFaqContainer, faqContainer);
+      
+      newFaqContainer.addEventListener("click", (e) => {
+        const faqHeader = e.target.closest(".faq-header");
+        if (!faqHeader) return;
+        
+        const group = faqHeader.parentElement;
+        const groupBody = group.querySelector(".faq-group-body");
+        const icon = faqHeader.querySelector("i");
+        
+        // Toggle current FAQ
+        const isOpen = groupBody.classList.contains("open");
+        
+        // Close all FAQs
+        const allGroups = newFaqContainer.querySelectorAll(".faq-group");
+        allGroups.forEach((otherGroup) => {
+          const otherBody = otherGroup.querySelector(".faq-group-body");
+          const otherIcon = otherGroup.querySelector(".faq-header i");
+          otherBody.classList.remove("open");
+          otherIcon.classList.remove("fa-chevron-up");
+          otherIcon.classList.add("fa-chevron-down");
+        });
+        
+        // If it wasn't open, open it
+        if (!isOpen) {
+          groupBody.classList.add("open");
+          icon.classList.remove("fa-chevron-down");
+          icon.classList.add("fa-chevron-up");
+        }
+      });
+    }
+    
+    // Initialize on page load
+    document.addEventListener("DOMContentLoaded", initFAQ);
+    
+    // Re-initialize when Shopify theme editor updates the section
+    if (Shopify && Shopify.designMode) {
+      document.addEventListener("shopify:section:load", initFAQ);
+      document.addEventListener("shopify:section:reorder", initFAQ);
+      document.addEventListener("shopify:block:select", initFAQ);
+    }
+</script>
+
+
+
+{% schema %}
+{
+    "name": "Custom Faq",
+    "disabled_on": {
+        "groups": ["footer","header"]
+    },
+    "settings": [
+        {
+                "type": "header",
+                "content": "Section Settings"
+        },
+        {
+                "type": "color",
+                "id": "background_color",
+                "label": "Section background color",
+                "default":"#ffffff"
+        },
+        {
+                "type": "select",
+                "id": "faq_text_alignment",
+                "label": "Faq Group Text Alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "left"
+        },
+        {
+            "type": "text",
+            "label": "Section Title",
+            "id": "section_title",
+            "default": "Frequently Asked Questions"
+        },
+        {
+                "type": "select",
+                "id": "heading_level",
+                "label": "Heading level",
+                "default": "h2",
+                "options": 
+                [
+                    { "value": "h1", "label": "H1" },
+                    { "value": "h2", "label": "H2" },
+                    { "value": "h3", "label": "H3" },
+                    { "value": "h4", "label": "H4" },
+                    { "value": "h5", "label": "H5" },
+                    { "value": "h6", "label": "H6" }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading color",
+                "default":"#00342c"
+            },
+            {
+                "type": "select",
+                "id": "heading_text_alignment",
+                "label": "Heading Text Alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "center"
+            },
+            {
+                "type": "select",
+                "id": "heading_font_style",
+                "label": "Heading Font Style",
+                "options": [
+                    { "value": "normal", "label": "Normal" },
+                    { "value": "italic", "label": "Italic" }
+                ],
+                "default": "italic"
+            },
+            {
+                "type": "header",
+                "content": "Question Typography"
+            },
+            {
+                "type": "select",
+                "id": "question_heading_level",
+                "label": "Question's Heading level",
+                "default": "h2",
+                "options": 
+                [
+                    { "value": "h1", "label": "H1" },
+                    { "value": "h2", "label": "H2" },
+                    { "value": "h3", "label": "H3" },
+                    { "value": "h4", "label": "H4" },
+                    { "value": "h5", "label": "H5" },
+                    { "value": "h6", "label": "H6" }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "question_text_color",
+                "label": "Question's Text Color",
+                "default": "#00342c"
+            },
+            {
+                "type": "header",
+                "content": "Answer Typography"
+            },
+             {
+                "type": "range",
+                "id": "answer_font_size",
+                "min": 12,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Font size",
+                "default": 16
+            },
+            {
+                "type": "color",
+                "id": "answer_text_color",
+                "label": "Answer's text color",
+                "default":"#00342c"
+            }
+    ],
+    "blocks": [
+        {
+            "type": "faq",
+            "name": "Faq Item",
+                "settings": [
+                    {
+                        "type": "text",
+                        "label": "Question",
+                        "id": "question",
+                        "default": "What is your return policy?"
+                    },
+                    {
+                        "type": "richtext",
+                        "label": "Answer",
+                        "id": "answer",
+                        "default": "<p>Our return policy is 30 days...</p>"
+                    }
+                ]
+            }
+        ],
+        "presets": [
+            {
+                "name": "Custom Faq",
+                "category": "Custom Section",
+                 "blocks": [
+                {
+                    "type": "faq",
+                    "settings": {
+                        "question": "Are hobby boxes the same as retail boxes?",
+                        "answer": "<p>No! Retail boxes are the cheap sports cards that are available in the checkout aisle at the big-box stores. You have to go to a real sports card store to find hobby boxes and cases that are packed with high-value pulls, like autos, parallels, memorabilia cards, and numbered cards.</p>"
+                      
+                    }
+                },
+                {
+                    "type": "faq",
+                    "settings": {
+                        "question": "What are the best sports cards to buy as a gift?",
+                        "answer": "<p>Many collectors are picky about their cards, so we recommend getting a Giant Sports Cards gift card so the lucky collector on your list can choose their favorites.</p>"
+                      
+                    }
+                }
+            ]
+            }
+           
+        ]
+}
+{% endschema %}
