@@ -851,7 +851,7 @@
         "background_color": "#ffffff",
         "faq_text_alignment": "left",
         "section_title": "Frequently Asked Questions",
-        "heading_level": "h2",
+        "heading_level": "h1",
         "heading_color": "#00342c",
         "heading_text_alignment": "center",
         "heading_font_style": "italic",
