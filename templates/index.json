@@ -791,6 +791,75 @@
         "show_phone": true,
         "terms": "<p>Keep me up to date on news and offers</p>"
       }
+    },
+    "giantsports_faq_AHdBLy": {
+      "type": "giantsports-faq",
+      "blocks": {
+        "faq_yBYiTB": {
+          "type": "faq",
+          "settings": {
+            "question": "Are hobby boxes the same as retail boxes?",
+            "answer": "<p>No! Retail boxes are the cheap sports cards that are available in the checkout aisle at the big-box stores. You have to go to a real sports card store to find hobby boxes and cases that are packed with high-value pulls, like autos, parallels, memorabilia cards, and numbered cards.</p>"
+          }
+        },
+        "faq_bjETmD": {
+          "type": "faq",
+          "settings": {
+            "question": "What are the best sports cards to buy as a gift?",
+            "answer": "<p>Many collectors are picky about their cards, so we recommend getting a Giant Sports Cards gift card so the lucky collector on your list can choose their favorites.</p>"
+          }
+        },
+        "faq_aq897Y": {
+          "type": "faq",
+          "settings": {
+            "question": "How should I store my sports cards?",
+            "answer": "<p>Soft sleeves are ideal for sorting and organizing low-value cards. Toploaders offer more protection for higher-value cards. Premium cards should be stored in magnetic holders.</p>"
+          }
+        },
+        "faq_Fhk9kT": {
+          "type": "faq",
+          "settings": {
+            "question": "How do I get new sports card releases before they sell out?",
+            "answer": "<p>Check our<a href=\"https://giantsportscards.com/collections/pre-sale-calendar\">pre-sale calendar</a>daily, and order pre-sales in advance. Or, come chat with us at our baseball card shop to get the inside scoop on what’s coming up.</p>"
+          }
+        },
+        "faq_rcKdMz": {
+          "type": "faq",
+          "settings": {
+            "question": "Where is the Giant Sports Cards sports card shop near Atlanta located exactly?",
+            "answer": "<p>5530 Windward Parkway, Ste 110E</p><p>Alpharetta, GA 30004</p>"
+          }
+        },
+        "faq_9htipf": {
+          "type": "faq",
+          "settings": {
+            "question": "What are Giant Sports Cards’ hours?",
+            "answer": "<p>11:00 am – 7:00 pm Monday thru Friday</p><p>10:00 am – 5:00 pm Saturday</p><p>Closed Sunday</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_yBYiTB",
+        "faq_bjETmD",
+        "faq_aq897Y",
+        "faq_Fhk9kT",
+        "faq_rcKdMz",
+        "faq_9htipf"
+      ],
+      "name": "Custom Faq",
+      "settings": {
+        "background_color": "#ffffff",
+        "faq_text_alignment": "left",
+        "section_title": "Frequently Asked Questions",
+        "heading_level": "h2",
+        "heading_color": "#00342c",
+        "heading_text_alignment": "center",
+        "heading_font_style": "italic",
+        "question_heading_level": "h2",
+        "question_text_color": "#00342c",
+        "answer_font_size": 16,
+        "answer_text_color": "#00342c"
+      }
     }
   },
   "order": [
@@ -811,6 +880,7 @@
     "giantsports_image_text_jTUN9N",
     "giantsports_image_text_3B7r76",
     "gianmtsports_testimonial_UFRW4y",
-    "giantsport_signup_LeqU7P"
+    "giantsport_signup_LeqU7P",
+    "giantsports_faq_AHdBLy"
   ]
 }
