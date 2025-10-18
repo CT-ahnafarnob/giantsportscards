@@ -863,11 +863,18 @@
             "answer": "<p>Soft sleeves are ideal for sorting and organizing low-value cards. Toploaders offer more protection for higher-value cards. Premium cards should be stored in magnetic holders.</p>"
           }
         },
+        "faq_7XrjcG": {
+          "type": "faq",
+          "settings": {
+            "question": "What is your return policy?",
+            "answer": "<p>Our return policy is 30 days...</p>"
+          }
+        },
         "faq_Fhk9kT": {
           "type": "faq",
           "settings": {
             "question": "How do I get new sports card releases before they sell out?",
-            "answer": "<p>Check our<a href=\"https://giantsportscards.com/collections/pre-sale-calendar\">pre-sale calendar</a>daily, and order pre-sales in advance. Or, come chat with us at our baseball card shop to get the inside scoop on what’s coming up.</p>"
+            "answer": "<p>Check our <a href=\"https://giantsportscards.com/collections/pre-sale-calendar\">pre-sale calendar</a> daily, and order pre-sales in advance. Or, come chat with us at our baseball card shop to get the inside scoop on what’s coming up.</p>"
           }
         },
         "faq_rcKdMz": {
@@ -889,6 +896,7 @@
         "faq_yBYiTB",
         "faq_bjETmD",
         "faq_aq897Y",
+        "faq_7XrjcG",
         "faq_Fhk9kT",
         "faq_rcKdMz",
         "faq_9htipf"
