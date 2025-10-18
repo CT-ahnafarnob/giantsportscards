@@ -860,6 +860,24 @@
         "answer_font_size": 16,
         "answer_text_color": "#00342c"
       }
+    },
+    "featured_blog_FB8cgb": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "news",
+        "post_limit": 3,
+        "heading": "Blog posts",
+        "heading_size": "h1",
+        "columns_desktop": 3,
+        "show_view_all": false,
+        "show_image": true,
+        "show_date": true,
+        "show_author": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
@@ -881,6 +899,7 @@
     "giantsports_image_text_3B7r76",
     "gianmtsports_testimonial_UFRW4y",
     "giantsport_signup_LeqU7P",
-    "giantsports_faq_AHdBLy"
+    "giantsports_faq_AHdBLy",
+    "featured_blog_FB8cgb"
   ]
 }
