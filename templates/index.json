@@ -792,6 +792,35 @@
         "terms": "<p>Keep me up to date on news and offers</p>"
       }
     },
+    "giansports_custom_seperator_nkJ9QC": {
+      "type": "giansports-custom-seperator",
+      "name": "Custom Separator",
+      "settings": {
+        "separator_color": "#ffffff",
+        "separator_height": 42,
+        "separator_margin": 0
+      }
+    },
+    "giantsports_left_large_image_V6Dazy": {
+      "type": "giantsports-left-large-image",
+      "name": "Custom column left large image right text",
+      "settings": {
+        "background_color": "#ffffff",
+        "layout_direction": "row",
+        "heading": "Balls & Whistles:Our Sports Card Blog",
+        "heading_level": "h1",
+        "heading_color": "#ece8cf",
+        "heading_text_alignment": "left",
+        "heading_font_style": "italic",
+        "content": "<p>Giant Sports Cards is so much more than a sports card store. Collectors and fans are a passionate bunch with sports always on their minds (it takes one to know one!), so we go above and beyond to create an all-encompassing place to satisfy your cravings for the many aspects of the hobby. Our <a href=\"https://giantsportscards.com/blogs/blog\" target=\"_blank\" title=\"https://giantsportscards.com/blogs/blog\">sports card blog</a> is packed with information on everything from expert card care tips to insight into the most valuable releases to look out for. There’s always something new to learn and discover, and we’re constantly adding new content, so keep coming back for more!<br/><br/></p>",
+        "font_size": 16,
+        "rich_text_color": "#ffffff",
+        "btn_text": "",
+        "btn_txt_color": "rgba(0,0,0,0)",
+        "btn_url": "shopify://blogs/news/test-blog-macbook",
+        "btn_color": "#ffffff"
+      }
+    },
     "giantsports_custom_blogpost_T7WmNH": {
       "type": "giantsports-custom-blogpost",
       "name": "Custom Blog Post",
@@ -878,26 +907,6 @@
         "answer_font_size": 16,
         "answer_text_color": "#00342c"
       }
-    },
-    "giantsports_left_large_image_V6Dazy": {
-      "type": "giantsports-left-large-image",
-      "name": "Custom column left large image right text",
-      "settings": {
-        "background_color": "#ffffff",
-        "layout_direction": "row",
-        "heading": "Balls & Whistles:Our Sports Card Blog",
-        "heading_level": "h1",
-        "heading_color": "#ece8cf",
-        "heading_text_alignment": "left",
-        "heading_font_style": "italic",
-        "content": "<p>Giant Sports Cards is so much more than a sports card store. Collectors and fans are a passionate bunch with sports always on their minds (it takes one to know one!), so we go above and beyond to create an all-encompassing place to satisfy your cravings for the many aspects of the hobby. Our <a href=\"https://giantsportscards.com/blogs/blog\" target=\"_blank\" title=\"https://giantsportscards.com/blogs/blog\">sports card blog</a> is packed with information on everything from expert card care tips to insight into the most valuable releases to look out for. There’s always something new to learn and discover, and we’re constantly adding new content, so keep coming back for more!<br/><br/></p>",
-        "font_size": 16,
-        "rich_text_color": "#ffffff",
-        "btn_text": "",
-        "btn_txt_color": "rgba(0,0,0,0)",
-        "btn_url": "shopify://blogs/news/test-blog-macbook",
-        "btn_color": "#ffffff"
-      }
     }
   },
   "order": [
@@ -919,8 +928,9 @@
     "giantsports_image_text_3B7r76",
     "gianmtsports_testimonial_UFRW4y",
     "giantsport_signup_LeqU7P",
+    "giansports_custom_seperator_nkJ9QC",
+    "giantsports_left_large_image_V6Dazy",
     "giantsports_custom_blogpost_T7WmNH",
-    "giantsports_faq_AHdBLy",
-    "giantsports_left_large_image_V6Dazy"
+    "giantsports_faq_AHdBLy"
   ]
 }
