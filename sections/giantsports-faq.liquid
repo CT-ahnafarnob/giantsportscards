@@ -32,13 +32,14 @@
     } 
     .{{section.id}} .faq-header :is(h1, h2, h3, h4, h5, h6) {
         color: {{question_text_color}};
-        line-height:1;
+        line-height:1.5;
         font-family: var(--regular-arialMT-font) ! important;
         letter-spacing: 2px;
         font-weight:400;
         font-style:normal;
         text-transform: capitalize;
-        text-align:{{faq_text_alignment}}
+        text-align:{{faq_text_alignment}};
+        flex:1;
     } 
     /* Faq Group */
     .{{section.id}} .faq-group {
@@ -50,6 +51,12 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        width: 100%;
+    }
+
+    .faq-header :is(h1, h2, h3, h4, h5, h6) {
+        flex: 1;
+        margin: 10px;
     }
     .faq-group-body {
         max-height: 0px;
@@ -64,8 +71,7 @@
     .faq-header i {
         color: #00ac5b;
         font-size: 25px;
-        cursor: pointer;
-        
+        cursor: pointer;   
     }
 
     @media (max-width: 768px) {
