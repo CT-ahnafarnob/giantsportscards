@@ -1,0 +1,298 @@
+{{ 'giantsports.css' | asset_url | stylesheet_tag }}
+{% liquid
+  assign heading_tag = section.settings.heading_level | default: 'h2'
+  assign heading = section.settings.heading
+  assign heading_color = section.settings.heading_color
+  assign heading_font_style = section.settings.heading_font_style
+  assign heading_text_alignment = section.settings.heading_text_alignment
+  assign rich_text_color = section.settings.rich_text_color
+  assign background_color = section.settings.background_color
+  assign content = section.settings.content 
+  assign font_size = section.settings.font_size
+  assign btn_url = section.settings.btn_url
+  assign btn_text = section.settings.btn_text
+  assign btn_color = section.settings.btn_color
+  assign btn_txt_color = section.settings.btn_txt_color
+  assign layout_direction = section.settings.layout_direction
+%}
+<style>
+    .{{section.id}} {
+        background-color: {{background_color}};
+        
+    }
+    .{{section.id}} .container{
+        padding: 0 40px;
+        overflow: hidden;
+        
+    }
+    .{{section.id}} .inner_container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 6rem;
+        text-align: left;
+        flex-direction: {{layout_direction}};
+        background: linear-gradient(130deg, 
+            #05aa5c 0%, 
+            #079952 20%, 
+            #098748 35%, 
+            #0b753f 50%, 
+            #0d5e34 65%, 
+            #0f4729 80%, 
+            #10321f 100%
+            );    
+    }
+    .{{section.id}} .container__content {
+        width: 50%;
+    }
+    .{{section.id}} :is(h1, h2, h3, h4, h5, h6) {
+        color: {{heading_color}};
+        line-height:1;
+        font-family: var(--gothic-font) ! important;
+        letter-spacing: 2px ;
+        font-weight: bold;
+        font-style:{{heading_font_style}};
+        text-transform: uppercase;
+        text-align:{{heading_text_alignment}};
+        width:60%
+    } 
+    .{{section.id}} .container__content p {
+        color: {{rich_text_color}};
+        font-family: var(--regular-arialMT-font) ! important;
+        font-size: {{font_size}}px;
+        line-height:27px;
+        word-wrap: break-word;
+        word-break: break-word;
+        white-space: normal;
+    }
+
+    .{{section.id}} .container__image img{
+        width: 100%;  
+        height: auto; 
+        max-width: 600px;
+        display: block;
+    }
+
+    .{{section.id}} .text a {
+        color: #ffffff;
+        border-bottom-color: #ffffff;
+    }
+
+    .{{section.id}} .text a::after {
+        background-color: #ffffff;
+    }
+     
+    
+    @media (max-width: 768px) {
+         .{{section.id}} .inner_container {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+        .{{section.id}} .container__image {
+            margin: 0;
+            padding: 0;
+        }
+        .{{section.id}} .container__content {
+            width: 90%;
+        }
+        .{{section.id}} :is(h1, h2, h3, h4, h5, h6) {
+            width:100%
+        } 
+    }
+
+
+</style>
+<section class="{{section.id}}">
+    <div class="container custom-page-width">
+        {% comment %} Image {% endcomment %}
+         <div class="inner_container">
+            <div class="container__image">
+            {% if section.settings.image != blank %}
+               <img src="{{ section.settings.image | image_url }}" alt="" width="auto" height="auto">
+                {% else %}
+                <img src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/Layer_9_2.webp?v=1760763042&amp;width=500" alt="" srcset="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/Layer_9_2.webp?v=1760763042&amp;width=352 352w, https://cdn.shopify.com/s/files/1/0607/5393/6592/files/Layer_9_2.webp?v=1760763042&amp;width=500 500w" width="500" height="524" loading="lazy">   
+            {% endif %}    
+        </div>
+
+         {% comment %} Heading {% endcomment %}
+            <div class="container__content">
+                {% if heading_tag != blank %}
+                    <{{heading_tag}}>{{heading}}</{{heading_tag}}>
+                   {% else %}
+                     <h2>{{heading}}</h2>
+                {% endif %}
+                {% comment %} content {% endcomment %}
+             <div class="text">
+                {% if content != blank %}
+                   <p>{{content}}</p> 
+                {% endif %}
+             </div>
+                {% if btn_text != blank and btn_url != blank%}
+                    <a class="block_cta_btn" style="background-color: {{btn_color}}; color:{{btn_txt_color}}" href="{{btn_url}}">{{btn_text}}</a>
+                {% endif %}
+            </div>
+         </div>
+        
+            
+    </div>
+</section>
+{% schema %}
+    {
+        "name": "Custom left large image",
+        "disabled_on": {
+            "groups": ["header","footer"]
+        },
+        "settings": 
+        [
+            {
+                "type": "header",
+                "content": "Section Settings"
+            },
+            {
+                "type": "color",
+                "id": "background_color",
+                "label": "Section background color",
+                "default":"#ffffff"
+            },
+            {   
+                "type": "image_picker",
+                "id": "image",
+                "label": "Change Image"
+            },
+            {
+                "type": "select",
+                "id": "layout_direction",
+                "label": "Layout Direction",
+                "options": [
+                    { "value": "row", "label": "Image Left, Text Right" },
+                    { "value": "row-reverse", "label": "Image Right, Text Left" }
+                ],
+                "default": "row"
+            },
+            {
+                "type": "header",
+                "content": "Heading Typography"
+            },
+            {
+                "type": "text",
+                "id": "heading",
+                "label": "Write Heading",
+                "default":"Unbox Your Love of the Game™ at Our Sports Card Store"
+            },
+            {
+                "type": "select",
+                "id": "heading_level",
+                "label": "Heading level",
+                "default": "h2",
+                "options": 
+                [
+                    { "value": "h1", "label": "H1" },
+                    { "value": "h2", "label": "H2" },
+                    { "value": "h3", "label": "H3" },
+                    { "value": "h4", "label": "H4" },
+                    { "value": "h5", "label": "H5" },
+                    { "value": "h6", "label": "H6" }
+                ]
+            },
+            {
+                "type": "color",
+                "id": "heading_color",
+                "label": "Heading color",
+                "default":"#00342c"
+            },
+            {
+                "type": "select",
+                "id": "heading_text_alignment",
+                "label": "Heading Text Alignment",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "Left"
+                    },
+                    {
+                        "value": "center",
+                        "label": "Center"
+                    },
+                    {
+                        "value": "right",
+                        "label": "Right"
+                    }
+                ],
+                "default": "center"
+            },
+            {
+                "type": "select",
+                "id": "heading_font_style",
+                "label": "Heading Font Style",
+                "options": [
+                    { "value": "normal", "label": "Normal" },
+                    { "value": "italic", "label": "Italic" }
+                ],
+                "default": "italic"
+            },
+            {
+                "type": "header",
+                "content": "Description Typography"
+            },
+            {
+                "type": "richtext",
+                "id": "content",
+                "label": "Write Description",
+                "default":"<p>Giant Sports Cards understands the needs of today’s collectors. In addition to selling online, we have a sports card shop near Atlanta: the Ultimate Collector’s Cave™! Whether you’re a fan of basketball, football, baseball, soccer, or another sport, we offer all of the newest sports card releases to appeal to a wide range of sports enthusiasts! Our vast inventory of card boxes and cases make it easy for you to find what you need to build your collection. With a focus on stellar products, unmatched integrity, and keeping the passion of collecting alive, Giant Sports Cards is your go-to sports card store for all your favorite sports card boxes and cases. Ready to dive into the action? Let’s go!</p>"
+
+            },
+            {
+                "type": "range",
+                "id": "font_size",
+                "min": 12,
+                "max": 24,
+                "step": 1,
+                "unit": "px",
+                "label": "Font size",
+                "default": 16
+            },
+            {
+                "type": "color",
+                "id": "rich_text_color",
+                "label": "Description text color",
+                "default":"#00342c"
+            },
+            {
+                "type": "header",  
+                "content": "Button Config"
+
+            },
+            {
+                "type": "text",
+                "id": "btn_text",
+                "label": "Button Text"
+               
+            },
+            {
+                "type": "color",
+                "id": "btn_txt_color",
+                "label": "Button Background Color",
+                "default":"#ffffff"
+            }, 
+            {
+                "type": "url",
+                "id": "btn_url",
+                "label": "Button URL"
+            },
+            {
+                "type": "color",
+                "id": "btn_color",
+                "label": "Button Background Color",
+                "default":"#ffffff"
+            }   
+        ],
+        "presets": [
+            {
+                "name": "Custom column left large image right text",
+                "category": "Custom Section"
+            }
+            
+        ]
+    }
+{% endschema %}
