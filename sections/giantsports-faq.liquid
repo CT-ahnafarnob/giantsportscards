@@ -1,5 +1,4 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+{{ 'font-awsome.css' | asset_url | stylesheet_tag }}
 {% liquid
     assign background_color = section.settings.background_color
     assign section_title = section.settings.section_title
