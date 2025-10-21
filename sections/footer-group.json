@@ -11,8 +11,60 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "giantsports_footer_GhRkHg": {
+      "type": "giantsports-footer",
+      "blocks": {
+        "award_image_9BBxBa": {
+          "type": "award_image",
+          "settings": {
+            "award_image": "shopify://shop_images/Logo_1.avif",
+            "image_width_size": 100,
+            "image_height_size": 100
+          }
+        },
+        "award_image_zePqjQ": {
+          "type": "award_image",
+          "settings": {
+            "award_image": "shopify://shop_images/Panini_Direct_1_1.avif",
+            "image_width_size": 100,
+            "image_height_size": 52
+          }
+        },
+        "award_image_iXpjqt": {
+          "type": "award_image",
+          "settings": {
+            "award_image": "shopify://shop_images/Topps_Direct_Badge_2_1.avif",
+            "image_width_size": 100,
+            "image_height_size": 100
+          }
+        },
+        "award_image_8qhtNY": {
+          "type": "award_image",
+          "settings": {
+            "image_width_size": 100,
+            "image_height_size": 100
+          }
+        }
+      },
+      "block_order": [
+        "award_image_9BBxBa",
+        "award_image_zePqjQ",
+        "award_image_iXpjqt",
+        "award_image_8qhtNY"
+      ],
+      "name": "Custom Footer",
+      "settings": {
+        "footer_menu": "footer",
+        "footer_menu2": "main-menu",
+        "footer_text": "Save $10 Off",
+        "description_1": "<p>SAVE $10 OFF your 1st purchase when you sign up to receive our weekly sales special email! *Valid on any order $150+. Limit one per person.</p>",
+        "contact_header": "Contact US",
+        "description_2": "<p>Customer Service:<br/><a href=\"tel:+18006012650\" target=\"_blank\" title=\"tel:+18006012650\">800-601-2650</a><br/><a href=\"mailto:info@giantsportscards.com\" target=\"_blank\" title=\"mailto:info@giantsportscards.com\">info@giantsportscards.com</a></p><p>Mailing Address:<br/>5530 Windward Pkwy, Ste 110E<br/>Alpharetta, Georgia 30004, United States</p>"
+      }
+    },
     "footer": {
       "type": "footer",
+      "disabled": true,
       "settings": {
         "color_scheme": "scheme-1",
         "newsletter_enable": true,
@@ -30,6 +82,7 @@
     }
   },
   "order": [
+    "giantsports_footer_GhRkHg",
     "footer"
   ]
 }
