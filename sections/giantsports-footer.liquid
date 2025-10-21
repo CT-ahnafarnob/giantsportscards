@@ -125,26 +125,26 @@
 
     </footer>
 
-
        {% comment %} Award {% endcomment %}
     <div class="footer-award__wrapper">
         <div class="footer-award__inner">
             <div class="footer-award__image">
-                {% for block in section.blocks %}
+                {% for block in section.blocks %} 
                     {% if block.settings.award_image != blank %}
                         <img 
                         src="{{ block.settings.award_image | image_url: width: 250 }}" 
                         alt="{{ block.settings.award_image.alt | default: 'Award image' }}" 
                         width="100" 
                         height="{{block.settings.image_height_size}}" 
-                        loading="lazy">
+                        loading="lazy" {{block.shopify_attributes}}>
                     {% else %}
                         <img 
                         src="https://cdn.shopify.com/s/files/1/0607/5393/6592/files/Upper_Deck_Badge_1_1.avif?v=1761021671" 
                         alt="Default logo" 
                         width="100" 
                         height="100" 
-                        loading="lazy">
+                        loading="lazy"
+                        {{block.shopify_attributes}}>
                     {% endif %}
                 {% endfor %}
             </div>
