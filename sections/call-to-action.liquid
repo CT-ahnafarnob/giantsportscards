@@ -2,8 +2,9 @@
     <div class="title"> 
 
       <h1>The {{ collection.title }} is out Now</h1>
-        <h2> {{section.settings.title}}</h2>
-      
+        {% if section.settings.title != blank %}
+          <h2> {{section.settings.title}}</h2>
+        {% endif %}
         <p> {{ section.settings.description }}</p>
     </div>
 </section>
@@ -23,7 +24,6 @@
             "type": "text",
             "id": "title",
             "label": "Write the Title",
-            "default":"The ('choose collection') is out now"
         },
         {
             "type": "textarea",
