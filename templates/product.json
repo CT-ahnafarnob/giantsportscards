@@ -54,6 +54,15 @@
           "settings": {
             "share_label": "Share"
           }
+        },
+        "collapsible_tab_ygm8Jf": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Model Info",
+            "icon": "silhouette",
+            "content": "<p>{{ product.metafields.custom.model_info.value.name.value }}is {{ product.metafields.custom.model_info.value.name_height | metafield_tag }}and wearing size {{ product.metafields.custom.wearing_size.value }}<br/><br/>{{ product.metafields.custom.model_info.value.name.value }}'s Measurement<br/>Bust: {{ product.metafields.custom.model_info.value.name_bust | metafield_tag }}<br/>Height: {{ product.metafields.custom.model_info.value.name_height | metafield_tag }}<br/>West:{{ product.metafields.custom.model_info.value.name_waist | metafield_tag }}<br/>Hips: {{ product.metafields.custom.model_info.value.name_hips | metafield_tag }}<br/></p>",
+            "page": ""
+          }
         }
       },
       "block_order": [
@@ -64,7 +73,8 @@
         "quantity_selector",
         "buy_buttons",
         "description",
-        "share"
+        "share",
+        "collapsible_tab_ygm8Jf"
       ],
       "settings": {
         "enable_sticky_info": true,
