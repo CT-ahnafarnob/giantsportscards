@@ -9,6 +9,44 @@
  */
 {
   "sections": {
+    "1765560097fe0f8b3e": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_2ae8177_4ckxyT": {
+          "type": "ai_gen_block_2ae8177",
+          "settings": {
+            "end_date": "2025-12-31",
+            "end_time": "23:59:59",
+            "heading": "Limited Time Offer",
+            "message": "Hurry! Sale ends soon",
+            "expired_message": "This promotion has ended",
+            "heading_size": 36,
+            "heading_color": "#121212",
+            "message_size": 18,
+            "message_color": "#121212",
+            "unit_width": 100,
+            "unit_height": 100,
+            "timer_gap": 16,
+            "number_size": 40,
+            "number_color": "#ffffff",
+            "number_bg_color": "#121212",
+            "number_border_width": 0,
+            "number_border_color": "#121212",
+            "number_border_radius": 8,
+            "label_size": 14,
+            "label_color": "#121212",
+            "expired_size": 24,
+            "expired_color": "#121212",
+            "background_color": "#f3f3f3"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_2ae8177_4ckxyT"
+      ],
+      "settings": {}
+    },
     "image_banner": {
       "type": "image-banner",
       "settings": {
@@ -919,47 +957,10 @@
     "176555999192baf180": {
       "type": "_blocks",
       "settings": {}
-    },
-    "1765560097fe0f8b3e": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_2ae8177_4ckxyT": {
-          "type": "ai_gen_block_2ae8177",
-          "settings": {
-            "end_date": "2025-12-31",
-            "end_time": "23:59:59",
-            "heading": "Limited Time Offer",
-            "message": "Hurry! Sale ends soon",
-            "expired_message": "This promotion has ended",
-            "heading_size": 36,
-            "heading_color": "#121212",
-            "message_size": 18,
-            "message_color": "#121212",
-            "unit_width": 100,
-            "unit_height": 100,
-            "timer_gap": 16,
-            "number_size": 40,
-            "number_color": "#ffffff",
-            "number_bg_color": "#121212",
-            "number_border_width": 0,
-            "number_border_color": "#121212",
-            "number_border_radius": 8,
-            "label_size": 14,
-            "label_color": "#121212",
-            "expired_size": 24,
-            "expired_color": "#121212",
-            "background_color": "#f3f3f3"
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_2ae8177_4ckxyT"
-      ],
-      "settings": {}
     }
   },
   "order": [
+    "1765560097fe0f8b3e",
     "image_banner",
     "featured_collection",
     "giantsports_multicolumn_text_image_M7AJch",
@@ -982,7 +983,6 @@
     "giantsports_left_large_image_V6Dazy",
     "giantsports_custom_blogpost_T7WmNH",
     "giantsports_faq_AHdBLy",
-    "176555999192baf180",
-    "1765560097fe0f8b3e"
+    "176555999192baf180"
   ]
 }
