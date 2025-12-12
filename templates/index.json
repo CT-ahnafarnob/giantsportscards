@@ -17,7 +17,7 @@
           "settings": {
             "end_date": "2025-12-31",
             "end_time": "23:59:59",
-            "heading": "Limited Time Offer",
+            "heading": "",
             "message": "Hurry! Sale ends soon",
             "expired_message": "This promotion has ended",
             "heading_size": 36,
@@ -957,6 +957,65 @@
     "176555999192baf180": {
       "type": "_blocks",
       "settings": {}
+    },
+    "17655604833e876c37": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_a4e0805_qpW4Q4": {
+          "type": "ai_gen_block_a4e0805",
+          "settings": {
+            "heading": "Frequently Asked Questions",
+            "heading_size": 32,
+            "heading_alignment": "center",
+            "heading_spacing": 30,
+            "heading_color": "#121212",
+            "first_item_open": true,
+            "allow_multiple_open": false,
+            "item_spacing": 12,
+            "question_1": "What is your return policy?",
+            "answer_1": "We offer a 30-day return policy on all items. Products must be in their original condition with tags attached.",
+            "question_2": "How long does shipping take?",
+            "answer_2": "Standard shipping typically takes 5-7 business days. Express shipping options are available at checkout.",
+            "question_3": "Do you ship internationally?",
+            "answer_3": "Yes, we ship to most countries worldwide. International shipping rates and delivery times vary by location.",
+            "question_4": "",
+            "answer_4": "",
+            "question_5": "",
+            "answer_5": "",
+            "question_6": "",
+            "answer_6": "",
+            "question_7": "",
+            "answer_7": "",
+            "question_8": "",
+            "answer_8": "",
+            "question_9": "",
+            "answer_9": "",
+            "question_10": "",
+            "answer_10": "",
+            "question_size": 18,
+            "question_color": "#121212",
+            "question_hover_color": "#000000",
+            "question_padding": 20,
+            "answer_size": 16,
+            "answer_color": "#666666",
+            "icon_size": 24,
+            "icon_color": "#121212",
+            "item_background_color": "#ffffff",
+            "border_width": 1,
+            "border_color": "#e5e5e5",
+            "border_radius": 8,
+            "background_color": "#f9f9f9",
+            "max_width": 800,
+            "section_padding_top": 60,
+            "section_padding_bottom": 60
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_a4e0805_qpW4Q4"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -983,6 +1042,7 @@
     "giantsports_left_large_image_V6Dazy",
     "giantsports_custom_blogpost_T7WmNH",
     "giantsports_faq_AHdBLy",
-    "176555999192baf180"
+    "176555999192baf180",
+    "17655604833e876c37"
   ]
 }
