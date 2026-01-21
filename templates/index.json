@@ -63,35 +63,6 @@
         "show_text_below": false
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
-      "disabled": true,
-      "settings": {
-        "collection": "all",
-        "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
-      }
-    },
     "giantsports_multicolumn_text_image_M7AJch": {
       "type": "giantsports-multicolumn-text-image",
       "blocks": {
@@ -954,10 +925,6 @@
         "answer_text_color": "#00342c"
       }
     },
-    "176555999192baf180": {
-      "type": "_blocks",
-      "settings": {}
-    },
     "17655604833e876c37": {
       "type": "_blocks",
       "blocks": {
@@ -1016,12 +983,24 @@
         "ai_gen_block_a4e0805_qpW4Q4"
       ],
       "settings": {}
+    },
+    "product_filter_pAt88q": {
+      "type": "product-filter",
+      "name": "Product Filter",
+      "settings": {
+        "collection": "",
+        "max_products": 9,
+        "section_width": "page-width",
+        "gap": 24,
+        "padding-block-start": 48,
+        "padding-block-end": 48
+      }
     }
   },
   "order": [
     "1765560097fe0f8b3e",
     "image_banner",
-    "featured_collection",
+    "product_filter_pAt88q",
     "giantsports_multicolumn_text_image_M7AJch",
     "giantsports_image_text_dhBcy8",
     "giantsports_grid_DkyQhY",
@@ -1042,7 +1021,6 @@
     "giantsports_left_large_image_V6Dazy",
     "giantsports_custom_blogpost_T7WmNH",
     "giantsports_faq_AHdBLy",
-    "176555999192baf180",
     "17655604833e876c37"
   ]
 }
