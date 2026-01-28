@@ -27,6 +27,12 @@
           "type": "price",
           "settings": {}
         },
+        "custom_liquid_LmCHdL": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "{% render 'dynamic-copy-testing' %}"
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -69,6 +75,7 @@
         "vendor",
         "title",
         "price",
+        "custom_liquid_LmCHdL",
         "variant_picker",
         "quantity_selector",
         "buy_buttons",
