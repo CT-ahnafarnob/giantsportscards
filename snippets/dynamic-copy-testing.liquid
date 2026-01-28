@@ -47,21 +47,28 @@ const productData = {
   ]
 };
 
-// Function to populate the template
-function updateProductDescription(productIndex) {
-  const product = productData.products[productIndex];
-  const template = `
-    <p>
-      The ${product.product_name} is ideal for ${product.product_name} where ${product.problem_solved} is critical. 
-      Its ${product.feature_reference} helps users maintain ${product.outcome}, making it a reliable choice for ${product.audience_type}.
-    </p>
-  `;
-  
-  // Insert the template into the product-description div
-  document.getElementById('product-description').innerHTML = template;
+// Function to update the product description based on the current product URL
+function updateProductDescription() {
+  const currentUrl = window.location.href;  // Get the current product page URL
+
+  // Find the product matching the current URL
+  const product = productData.products.find(p => p.product_url === currentUrl);
+
+  if (product) {
+    const template = `
+      <p>
+        The ${product.product_name} is ideal for ${product.product_name} where ${product.problem_solved} is critical. 
+        Its ${product.feature_reference} helps users maintain ${product.outcome}, making it a reliable choice for ${product.audience_type}.
+      </p>
+    `;
+
+    // Insert the generated description into the product-description div
+    document.getElementById('product-description').innerHTML = template;
+  } else {
+    console.error('Product not found');
+  }
 }
 
-// Example: Update description for the first product (Beaufort Men's Deodorant)
-updateProductDescription(0);
+// Call the function to update the description when the page loads
+window.onload = updateProductDescription;
 </script>
-
