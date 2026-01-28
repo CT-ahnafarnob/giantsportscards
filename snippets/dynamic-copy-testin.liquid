@@ -1,0 +1,67 @@
+<div id="product-description"></div>
+
+<script>
+// Your product JSON data
+const productData = {
+  "products": [
+    {
+      "product_url": "https://coalition-training.myshopify.com/products/beaufort-mens-deodorant",
+      "product_name": "Beaufort Men's Deodorant",
+      "problem_solved": "Provides long-lasting protection against body odor",
+      "feature_reference": "All-day freshness with natural ingredients",
+      "outcome": "Keeps you feeling fresh and confident all day without harmful chemicals",
+      "audience_type": "Men looking for a natural and effective deodorant solution"
+    },
+    {
+      "product_url": "https://coalition-training.myshopify.com/products/blue-flower-dress",
+      "product_name": "Blue Flower Dress",
+      "problem_solved": "Provides a stylish, comfortable option for casual or semi-formal occasions",
+      "feature_reference": "Floral design with breathable fabric and flattering fit",
+      "outcome": "Elegance and comfort combined, perfect for a variety of events",
+      "audience_type": "Women looking for fashionable, versatile clothing"
+    },
+    {
+      "product_url": "https://coalition-training.myshopify.com/products/blue-pants",
+      "product_name": "Blue Pants",
+      "problem_solved": "A comfortable and stylish option for everyday wear",
+      "feature_reference": "Stretchable fabric for all-day comfort with a sleek design",
+      "outcome": "Versatile pants suitable for work or casual outings",
+      "audience_type": "Individuals seeking comfortable, stylish pants for daily wear"
+    },
+    {
+      "product_url": "https://coalition-training.myshopify.com/products/body-lotion",
+      "product_name": "Body Lotion",
+      "problem_solved": "Helps to moisturize and hydrate dry skin",
+      "feature_reference": "Rich in vitamins and essential oils for smooth, nourished skin",
+      "outcome": "Restores moisture to your skin, leaving it soft and hydrated all day",
+      "audience_type": "People with dry skin or anyone seeking daily hydration"
+    },
+    {
+      "product_url": "https://coalition-training.myshopify.com/products/brown-watch",
+      "product_name": "Brown Watch",
+      "problem_solved": "Offers a stylish accessory that complements any outfit",
+      "feature_reference": "Elegant leather strap with precise timekeeping functionality",
+      "outcome": "Elevates your look with a timeless design that suits both casual and formal settings",
+      "audience_type": "Individuals looking for a reliable and fashionable watch"
+    }
+  ]
+};
+
+// Function to populate the template
+function updateProductDescription(productIndex) {
+  const product = productData.products[productIndex];
+  const template = `
+    <p>
+      The ${product.product_name} is ideal for ${product.product_name} where ${product.problem_solved} is critical. 
+      Its ${product.feature_reference} helps users maintain ${product.outcome}, making it a reliable choice for ${product.audience_type}.
+    </p>
+  `;
+  
+  // Insert the template into the product-description div
+  document.getElementById('product-description').innerHTML = template;
+}
+
+// Example: Update description for the first product (Beaufort Men's Deodorant)
+updateProductDescription(0);
+</script>
+
